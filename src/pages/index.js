@@ -13,18 +13,18 @@ export default function Home() {
   return (
     <Box >
       <Head>
-        <title>Yujo Izakaya: Japanese Kitchen and Cocktail bar with some West Coast Flare</title>
-        <meta name="description" content="Japanese Kitchen and Cocktail bar with some West Coast Flare" />
+        <title>Great Outdoors Kalanamu - Retreat.Rest.Rejuvenate</title>
+        <meta name="description" content="Retreat.Rest.Rejuvenate" />
 
-        <meta property="og:title" content="Yujo Izakaya" />
-        <meta property="og:description" content="Japanese Kitchen and Cocktail bar with some West Coast Flare" />
-        <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1710195209/yujo4_eaxmbe.png" />
-        <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1710195209/yujo4_eaxmbe.png" />
-        <meta property="og:url" content="https://www.yujo.ug/" />
+        <meta property="og:title" content="Great Outdoors Kalanamu" />
+        <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
+        <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
 
 
-        <link rel="icon" href="/yujo_icon.svg" />
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
 
     
@@ -43,14 +43,14 @@ export default function Home() {
           <NextLink href='/about'>
             <Image
               // src={getCloudinaryImage('yujo9.svg')} 
-              src={getCloudinaryImage('yujo9.svg')} 
+              src={getCloudinaryImage('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg')} 
               
-              alt="Yujo Brand Logo"
+              alt="Great Outdoors Brand Logo"
               width={250}
               height= {250}
               priority={true}
               placeholder="blur"
-              blurDataURL={getCloudinaryImageBlur('yujo9.svg')}
+              blurDataURL={getCloudinaryImageBlur('https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg')}
               />
               
             </NextLink>
