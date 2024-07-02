@@ -38,7 +38,10 @@ export default function Home() {
       
       <Box bg={'red.600'} 
       minH={'100vh'} 
-      backgroundSize={'100%'}
+      // backgroundSize={'100%'}
+      backgroundSize={'cover'}
+
+      bgRepeat={'no-repeat'}
       backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}
       >
         <FloatingReservationsComponent />

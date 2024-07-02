@@ -36,7 +36,7 @@ import {
   
   function ReservationsButton() {
     return (
-        <Button  size='sm' colorScheme='red' fontFamily={'navBarFont'} py={-1} rounded={'none'} >
+        <Button  size={{base:'xs', md: 'sm'}} colorScheme='red' fontFamily={'navBarFont'} py={-1} rounded={'none'} >
           Reservations
         </Button>
     )
