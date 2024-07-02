@@ -1,107 +1,132 @@
+'use client'
+
 import {
-    Box,
-    Stack,
-    Text,
+  Box,
+  chakra,
+  Container,
+  SimpleGrid,
+  Stack,
+  Text,
+  Button,
+  VisuallyHidden,
+  Input,
+  IconButton,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { ReactNode } from 'react'
+import { FaInstagram, FaLinkedin, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { BiMailSend } from 'react-icons/bi'
 
-    Tooltip,
-    useClipboard,
-    IconButton,
-    useColorModeValue,
-  } from '@chakra-ui/react';
-  import { FaInstagram } from 'react-icons/fa';
-  import { HiOutlineMail } from 'react-icons/hi';  
-  import { RiMapPinLine } from "react-icons/ri";
-  
-  export default function Footer() {
-    const { hasCopied, onCopy } = useClipboard('reservations@yujo.ug');
-
-
-
-    return (
-      <Box
-        bg={useColorModeValue('blackAlpha.900', 'gray.800')}
-        pt={2}
-        zIndex={999}
-        >
+import NextLink from 'next/link'
+import Image from 'next/image'
 
 
-              <Stack direction={'row'} spacing={6} p={2} >
-                <Tooltip
-                    label={hasCopied ? 'Email Copied!' : 'Copy Email'}
-                    closeOnClick={false}
-                    hasArrow>
-                    <IconButton
-                      aria-label="email"
-                      color={'red.50'}
-                      variant="ghost"
-                      size="lg"
-                      fontSize="xl"
-                      icon={<HiOutlineMail />}
-                      _hover={{
-                        bg: 'red.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      onClick={onCopy}
-                      isRound
-                    />
-                  </Tooltip>
 
+const Logo = (props) => {
+  return (
+    <Box p={4}>
+        <Image src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
+        width={800/6} height={529/6}/>
+    </Box>
+  )
+}
 
-                    <IconButton
-                    as='a'
-                      aria-label="Instagram"
-                      variant="ghost"
-                      color={'red.50'}
-                      size="lg"
-                      fontSize="xl"
-                      href={'https://www.instagram.com/yujoizakaya/'}
-                      icon={<FaInstagram />}
-                      _hover={{
-                        bg: 'red.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      isRound
-                    />
+const SocialButton = ({
+  children,
+  label,
+  href,
+}) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue('purple.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
+      href={href}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      _hover={{
+        bg: useColorModeValue('purple.400', 'whiteAlpha.200'),
+      }}>
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  )
+}
 
-                  <IconButton
-                    as='a'
-                      aria-label="Maps"
-                      variant="ghost"
-                      color={'red.50'}
-                      size="lg"
-                      fontSize="xl"
-                      href={'https://maps.app.goo.gl/RT3ZEuogVDjsqX818'}
-                      icon={<RiMapPinLine />}
-                      _hover={{
-                        bg: 'red.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      isRound
-                    />
+const ListHeader = ({ children }) => {
+  return (
+    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+      {children}
+    </Text>
+  )
+}
 
-                    
+export default function LargeWithNewsletter() {
+  return (
+    <Box
+      bg={'blue.900'}
+      position='relative'
+      bottom='0'
+      width='100vw'      
+      >
+      <Container as={Stack} maxW={'7xl'} py={12}>
+        <SimpleGrid
+          templateColumns={{ sm: '1fr 1fr', md: '2fr  2fr' }}
+          spacing={8}>
+          <Stack spacing={{base: 4,md:2}}>
+            <Box>
+              <Logo  />
+            </Box>
 
-                <Stack marginLeft='auto' marginRight='0' pb={2}>
-                  <Text
-                  fontFamily={'navBarFont'}
-                  fontSize={'sm'}
-                  color={'white'}
-                  >
-                  +256 708 109856
-                  </Text>
-                  <Text
-                  fontFamily={'navBarFont'}
-                  fontSize={'sm'}
-                  color={'white'}
+            <Stack direction={'row'} spacing={4}>
+              <SocialButton  label={'LinkedIn'} href={'/#'}>
+                <FaLinkedinIn />
+              </SocialButton>
+              <Button as='a' href='https://www.dralegawebops.com/' size='sm' colorScheme='purple' fontSize={{base:'xs',md:'xs'}}
+                variant="outline"
+                color='white'
+                fontFamily='navBarFont'
+                borderRadius='3px'
+                boxShadow={useColorModeValue('1px 1px 0 black', '6px 6px 0 cyan')} >
+              Built by DWO
+             </Button>
 
-                  >
-                  36 Kyadondo Rd, Kampala
-                  </Text>
-                </Stack>
-                
-              </Stack>
+            </Stack>
+            <Box>
+            <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>© 2024 Great Outdoors Ltd. All Rights Reserved</Text>
+            </Box>
 
+          </Stack>
+          {/* <Stack align={'fl'}>
+            <ListHeader>Company</ListHeader>
+            <Box as="a" href={'#'}>
+              Contact us
+            </Box>
+            <Box as="a" href={'#'}>
+              Testimonials
+            </Box>
+          </Stack> */}
 
-      </Box>
-    );
-  }
+          
+          <Stack align={{base:'flex-start', md:'flex-end'}} pt={{md:4}}>
+            <Box>
+                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>manager@greatoutdoorsuganda.com</Text>
+            </Box>
+            <Box>
+                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>+256 701519853</Text>
+            </Box>
+            <Box>
+                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>Kalanamu, Gayaza Rd</Text>
+            </Box>
+          </Stack>
+
+        </SimpleGrid>
+      </Container>
+    </Box>
+  )
+}
