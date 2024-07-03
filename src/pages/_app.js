@@ -28,9 +28,9 @@ const theme = extendTheme({
 export default function App({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <NavBar />
+      {/* <NavBar /> */}
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </ChakraProvider>
 
       )

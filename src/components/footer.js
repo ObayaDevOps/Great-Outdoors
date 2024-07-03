@@ -71,9 +71,13 @@ export default function LargeWithNewsletter() {
     <Box
       bg={'blue.900'}
       position='relative'
+      // left='0'
       bottom='0'
-      width='100vw'      
-      >
+      width='100vw'
+      // h={'360px'}
+      // mb={'-40vh'}
+        // overflow='-moz-hidden-unscrollable'
+        >
       <Container as={Stack} maxW={'7xl'} py={12}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr  2fr' }}

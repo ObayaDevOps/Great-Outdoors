@@ -13,12 +13,16 @@ import EatAndDrinkComponent from '../components/landingPage/EatAndDrinkComponent
 import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
 import OffersComponent from '../components/landingPage/OffersComponent'
+import LandingPageImageSlider from '../components/landingPage/LandingPageImageSlider'
 
+
+import NavBar from '../components/navbar' 
+import Footer from '../components/footer' 
 
 
 export default function Home() {
   return (
-    <Box >
+    <Box>
       <Head>
         <title>Great Outdoors Kalanamu - Retreat.Rest.Rejuvenate</title>
         <meta name="description" content="Retreat.Rest.Rejuvenate" />
@@ -34,25 +38,34 @@ export default function Home() {
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
 
-    
+      <Box>
+        <NavBar />
+      </Box>
       
-      <Box bg={'red.600'} 
-      minH={'100vh'} 
-      // backgroundSize={'100%'}
-      backgroundSize={'cover'}
-
-      bgRepeat={'no-repeat'}
-      backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}
+      <Box 
+      bg={'whiteAlpha'} 
+        // minH={'100vh'} 
+        // backgroundSize={'100%'}
+        backgroundSize={'cover'}
+        bgRepeat={'no-repeat'}
+        // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
-        <FloatingReservationsComponent />
-        <AboutUsComponent />
-        <AmenitiesComponent />
-        <EatAndDrinkComponent />
-        <ForestComponent />
-        <TestimonialsComponent />
-        <OffersComponent />
+        <Box>
+          <LandingPageImageSlider />
+          <FloatingReservationsComponent />
+          <AboutUsComponent />
+          <EatAndDrinkComponent />
+          <AmenitiesComponent />
+          <ForestComponent />
+          <TestimonialsComponent />
+          <OffersComponent />
+        </Box>
+
 
               
+      </Box>
+      <Box>
+        <Footer />
       </Box>
     </Box>
       

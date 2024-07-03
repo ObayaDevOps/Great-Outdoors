@@ -36,7 +36,7 @@ import {
   
   function ReservationsButton() {
     return (
-        <Button  size={{base:'xs', md: 'sm'}} colorScheme='red' fontFamily={'navBarFont'} py={-1} rounded={'none'} >
+        <Button  size={{base:'xs', md: 'sm'}}  rounded='lg' colorScheme='red' fontFamily={'navBarFont'} py={-1}  >
           Reservations
         </Button>
     )
@@ -52,6 +52,7 @@ import {
     return (
       <Box>
         <Flex
+        overflow='-moz-hidden-unscrollable'
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
