@@ -5,12 +5,13 @@ import Image from 'next/image'
 const AboutUsComponent = () => {
   return (
     <Box minH={'100vh'} bg={{base:'#ffffff' , lg:'#0e1720'}} >
-      <Box bg={'#ffffff'} mx={{base: 0, lg: 10}}  p={{base: 0 ,lg: 0}} rounded='xl' >
+      <Box bg={'#ffffff'} mx={{base: 0, lg: 10, xl: 10}}  p={{base: 0 ,lg: 0}}   >
 
-        <Stack p={8} direction={{base: 'column', lg: 'row'}}>
+        <Stack p={{base: 8, lg:4, xl:8}} direction={{base: 'column', lg: 'row'}}>
           <Box 
           bg={'#f5f6f9'}
-           maxW={'xl'} p={{base: 6, md: 20}} py={{base: 16, lg:24}}
+           maxW={'6xl'} 
+           p={{base: 6, md: 20, lg: 12}} py={{base: 16, lg:20}}
            rounded={'xl'}
            >
              <HStack>
@@ -19,11 +20,11 @@ const AboutUsComponent = () => {
             ABOUT US
             </Text>
             </HStack>
-            <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} pb={10} lineHeight={'55px'} fontWeight={800} fontSize='50px'>
+            <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} pb={10} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}>
             Retreat. Rest. Rejuvenate
             </Text>
 
-            <Box maxW={'9xl'} letterSpacing={'1px'} fontSize={{base: '17px', lg:'15px'}} >
+            <Box maxW={{lg:'2xl', xl:'xl' }} letterSpacing={'1px'} fontSize={{base: '17px', lg:'15px'}} >
               <Text textColor='#797979' fontWeight={'400'} fontFamily={'bodyFont'} mb={4} >
               The Great Outdoors is the ideal retreat for nature lovers, teams,
               and people that just want to leave the metropolitan hustle & bustle behind, 
@@ -52,7 +53,7 @@ const AboutUsComponent = () => {
             </Text>
           </Box> */}
 
-          <Box rounded={'xl'}>
+          <Box rounded={'xl'} my={{lg: 24}}>
             <Image
               src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg'}
               width={1000}
@@ -62,11 +63,9 @@ const AboutUsComponent = () => {
 
         </Stack>
         </Box>
-
-
-        <Box>
-        </Box>
-      </Box>
+      <Box>
+    </Box>
+    </Box>
   )
 }
 
