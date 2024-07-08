@@ -1,11 +1,15 @@
-import { Box, Spinner } from '@chakra-ui/react'
+import { Box, Spinner, Center, Text, Stack } from '@chakra-ui/react'
 import Head from 'next/head'
+
+import NavBar from '../components/navbar' 
+import Footer from '../components/footer' 
+
 
 
 export default function RetreatPage() {
 
     return (
-      <Box bg={'red.600'} >
+      <Box bg={'blue.900'} >
       <Head>
         <title>Retreat | Great Outdoors</title>
         <meta name="description" content="Retreat.Rest.Rejuvenate" />
@@ -21,9 +25,26 @@ export default function RetreatPage() {
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
 
-        <Box mb='-10'>
-         Retreat!
+        <Box>
+          <NavBar />
         </Box>
+
+        <Center minH={'55vh'} p={20} >
+          <Text fontFamily='navBarFont' fontSize='6xl' textColor='white'>
+            Retreats
+          </Text>
+        </Center>
+
+        <Box bgColor={'white'} m={20} rounded='2xl' shadow='xl' >
+          <Stack>
+
+          </Stack>
+        </Box>
+
+
+        <Box>
+          <Footer />
+        </Box> 
   
       </Box>      
     )

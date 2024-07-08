@@ -36,7 +36,7 @@ import {
   
   function ReservationsButton() {
     return (
-        <Button  size={{base:'xs', md: 'sm'}}  rounded='lg' colorScheme='red' fontFamily={'navBarFont'} py={-1}  >
+        <Button  size={{base:'xs', md: 'sm'}}  rounded='sm' colorScheme='red' fontFamily={'redTopFont'} py={-1}  >
           Reservations
         </Button>
     )
@@ -55,7 +55,7 @@ import {
         overflow='-moz-hidden-unscrollable'
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
-          minH={'60px'}
+          minH={'80px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
           // borderBottom={1}
@@ -76,14 +76,14 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <NextLink href='/#' passHref>
-                <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} width={40} height={40}/>
-          </NextLink>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
+            <NextLink href='/#' passHref>
+                  <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} width={50} height={50}/>
+            </NextLink>
 
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-              <DesktopNav />
-            </Flex>
+              <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+                <DesktopNav />
+              </Flex>
           </Flex>
   
           <Stack
@@ -95,7 +95,7 @@ import {
           </Stack>
         </Flex>
   
-        <Collapse in={isOpen} animateOpacity>
+        <Collapse in={isOpen} animateOpacity >
           <MobileNav />
         </Collapse>
       </Box>
@@ -118,12 +118,13 @@ import {
                 <PopoverTrigger>
                   <Link
                   p={2}
-                  fontSize={'sm'}
+                  fontSize={'15px'}
+                  letterSpacing={'0.05em'}
                   href={navItem.href ?? '#'}
-                  fontWeight={500}
                   color={linkColor}
-                  _hover={{ bg: colorMode === 'light' ? 'blue.50': 'gray.700', textColor: 'blue.400'}}
-                  fontFamily={'navBarFont'}
+                  _hover={{  textColor: 'red.600'}}
+                  fontFamily={'redTopFont'}
+                  fontWeight={700}
                   >
                     {navItem.label}
                   </Link>
@@ -170,7 +171,7 @@ import {
               transition={'all .3s ease'}
               _groupHover={{ color: 'blue.400' }}
               fontWeight={500}
-              fontFamily={'navBarFont'}
+              fontFamily={'redTopFont'}
               _hover={{ color: 'blue.400' }}
               >
               {label}
@@ -219,7 +220,7 @@ import {
           href={href ?? '#'}
           justify={'space-between'}
           align={'center'}
-          fontFamily="navBarFont"
+          fontFamily="redTopFont"
 
           _hover={{
             textDecoration: 'none',
@@ -251,7 +252,7 @@ import {
             {children &&
               children.map((child) => (
                 <NextLink href={child.href} key={child.label} passHref>
-                  {/* <Link  py={2}  fontFamily="navBarFont"> */}
+                  {/* <Link  py={2}  fontFamily="redTopFont"> */}
                     {child.label}
                   {/* </Link> */}
                 </NextLink>
@@ -278,11 +279,11 @@ import {
     },
     {
         label: 'Retreat',
-        href: '/gallery',
+        href: '/retreat',
     }, 
     {
         label: 'Rest',
-        href: '/gallery',
+        href: '/rest',
     },
     {
       label: 'Rejuvenate',

@@ -69,7 +69,7 @@ const ListHeader = ({ children }) => {
 export default function LargeWithNewsletter() {
   return (
     <Box
-      bg={'blue.900'}
+      bg={'#0e1720'}
       position='relative'
       // left='0'
       bottom='0'

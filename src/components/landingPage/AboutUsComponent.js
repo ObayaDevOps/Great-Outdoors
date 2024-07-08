@@ -1,64 +1,72 @@
 import React from 'react'
-import { Box, Center, Text, Button, HStack } from '@chakra-ui/react'
+import { Box, Center, Text, Button, HStack, Divider, Stack } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const AboutUsComponent = () => {
   return (
-    <Box minH={'100vh'} bg={'blue.900'}>
-      <Box bg={'white'} mx={10}  p={12} rounded='xl'>
+    <Box minH={'100vh'} bg={{base:'#ffffff' , lg:'#0e1720'}} >
+      <Box bg={'#ffffff'} mx={{base: 0, lg: 10}}  p={{base: 0 ,lg: 0}} rounded='xl' >
 
-        <HStack p={28}>
-          <Box bg={'gray.200'} maxW={'35vw'} p={12}>
-            <Text textColor='red' fontFamily={'navBarFont'}>
+        <Stack p={8} direction={{base: 'column', lg: 'row'}}>
+          <Box 
+          bg={'#f5f6f9'}
+           maxW={'xl'} p={{base: 6, md: 20}} py={{base: 16, lg:24}}
+           rounded={'xl'}
+           >
+             <HStack>
+               <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}} />
+            <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
             ABOUT US
             </Text>
-            <Text textColor='blue.800' fontFamily={'navBarFont'} fontSize='4xl'>
+            </HStack>
+            <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} pb={10} lineHeight={'55px'} fontWeight={800} fontSize='50px'>
             Retreat. Rest. Rejuvenate
             </Text>
 
-            <Text textColor='blue.800' fontFamily={'navBarFont'} fontSize='lg' py={4}>
-            The Great Outdoors is the ideal retreat for nature lovers, teams,
-            and people that just want to leave the metropolitan hustle & bustle behind, 
-            get a breath of fresh air, rest, and rejuvenate in the lap of nature.
-            </Text>
-            <Text textColor='blue.800' fontFamily={'navBarFont'} fontSize='lg'>
-            This eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala,
-            is a place people come to for unique retreat experiences, 
-            unforgettable weekends, relaxation, corporate retreats, and reconnecting with family.
-            </Text>
+            <Box maxW={'9xl'} letterSpacing={'1px'} fontSize={{base: '17px', lg:'15px'}} >
+              <Text textColor='#797979' fontWeight={'400'} fontFamily={'bodyFont'} mb={4} >
+              The Great Outdoors is the ideal retreat for nature lovers, teams,
+              and people that just want to leave the metropolitan hustle & bustle behind, 
+              get a breath of fresh air, rest, and rejuvenate in the lap of nature.
+              </Text>
+              <Text textColor='#797979' fontWeight={'400'} fontFamily={'bodyFont'}   >
+              This eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala,
+              is a place people come to for unique retreat experiences, 
+              unforgettable weekends, relaxation, corporate retreats, and reconnecting with family.
+              </Text>
+            </Box>
 
-            <Box py={4}>
-              <Button fontFamily={'navBarFont'}>
+            <Box mt={6}>
+              <Button fontFamily={'bodyFont'}>
                 Discover More
               </Button>
             </Box>
           </Box>
-
-          <Box bg={'red.600'} h={'10vh'} w={'10vw'}>
-            <Text textColor='white' fontFamily={'navBarFont'} fontSize='lg'>
-              Find Calm in the Forest
+{/* 
+          <Box bg={'#da3c3c'} h={'165px'} w={'153px'} zIndex={999} >
+            <Text textColor='white' fontFamily={'floatBoxFont'} fontSize='13px' textAlign='center'
+            letterSpacing='2px'
+            lineHeight='20px'
+            >
+             FIND CALM IN THE FOREST
             </Text>
+          </Box> */}
 
-          </Box>
-
-          <Box>
+          <Box rounded={'xl'}>
             <Image
               src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg'}
               width={1000}
-              height={666}      
+              height={666} 
             />
             </Box>
 
-        </HStack>
+        </Stack>
         </Box>
 
 
         <Box>
-
         </Box>
-        
       </Box>
-    // </Box>
   )
 }
 
