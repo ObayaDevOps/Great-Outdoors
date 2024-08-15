@@ -21,8 +21,8 @@ export default function RoomsListPage() {
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
 
-        <Box mb='-10'>
-         Room  List!
+        <Box>
+         Room  List! - This is copied from exhibtions landing page afropocene
         </Box>
   
       </Box>      

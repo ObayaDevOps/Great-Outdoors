@@ -14,7 +14,8 @@ import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
 import OffersComponent from '../components/landingPage/OffersComponent'
 import LandingPageImageSlider from '../components/landingPage/LandingPageImageSlider'
-
+import Carousel from '../components/carousel'
+import ForestComponent2 from '../components/landingPage/ForestComponent2'
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
@@ -51,13 +52,15 @@ export default function Home() {
         // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
         <Box>
-          <LandingPageImageSlider />
-          <FloatingReservationsComponent />
+          {/* <LandingPageImageSlider /> */}
+          <Carousel />
+          {/* <FloatingReservationsComponent /> */}
           <AboutUsComponent />
           <EatAndDrinkComponent />
           <AmenitiesComponent />
           <ForestComponent />
-          <TestimonialsComponent />
+          <ForestComponent2 />
+          {/* <TestimonialsComponent /> */}
           <OffersComponent />
         </Box>
 

@@ -1,51 +1,75 @@
+
+
 import React from 'react'
-import { Box, Center, Text, Button, HStack } from '@chakra-ui/react'
+import { Box, Center, Text, Button, HStack, Divider, Stack } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const EatAndDrinkComponent = () => {
   return (
-    <Box minH={'100vh'} bg={'blue.900'} pt={4}>
-      <Box bg={'white'} mx={10}  p={12} rounded='xl'>
+    <Box minH={'100vh'} bg={{base:'#ffffff' , lg:'#0e1720'}} >
+      <Box bg={'#ffffff'} mx={{base: 0, lg: 10, xl: 10}}  p={{base: 0 ,lg: 0}}   >
 
-        <HStack p={28}>
-          <Box bg={'gray.200'} maxW={'35vw'} p={12}>
-            <Text textColor='red' fontFamily={'navBarFont'}>
-            EAT & DRINK
+        <Stack p={{base: 8, lg:4, xl:8}} direction={{base: 'column', lg: 'row'}}>
+          <Box 
+          bg={'#f5f6f9'}
+           maxW={'6xl'} 
+           p={{base: 6, md: 20, lg: 12}} py={{base: 16, lg:20}}
+           rounded={'xl'}
+           >
+             <HStack>
+               <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}} />
+            <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+            EAT AND DRINK
             </Text>
-            <Text textColor='blue.800' fontFamily={'navBarFont'} fontSize='4xl'>
+            </HStack>
+            <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} pb={10} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}>
             Indulge in healthy & fresh food
             </Text>
 
-            <Text textColor='blue.800' fontFamily={'navBarFont'} fontSize='lg' py={4}>
-            Open Daily : 7.30 am - 11.00pm
-            </Text>
+            <Box maxW={{lg:'2xl', xl:'xl' }} letterSpacing={'1px'} fontSize={{base: '17px', lg:'15px'}} >
+              <Text textColor='#797979' fontWeight={'400'} fontFamily={'bodyFont'} mb={4} >
+              Open Daily : 7.30 am - 11.00pm
+              </Text>
 
+            </Box>
 
-            <Box py={4}>
-              <Button fontFamily={'navBarFont'}>
+            <Box mt={6}>
+              <Button fontFamily={'bodyFont'}>
                 Call to Book
               </Button>
             </Box>
           </Box>
+{/* 
+          <Box bg={'#da3c3c'} h={'165px'} w={'153px'} zIndex={999} >
+            <Text textColor='white' fontFamily={'floatBoxFont'} fontSize='13px' textAlign='center'
+            letterSpacing='2px'
+            lineHeight='20px'
+            >
+             FIND CALM IN THE FOREST
+            </Text>
+          </Box> */}
 
-          <Box>
+          <Box rounded={'xl'} my={{lg: 24}}>
             <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg'}
+              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720634459/MG_3316-e1671369861591_v1zw6w.jpg'}
               width={1000}
-              height={666}      
+              height={666} 
             />
             </Box>
 
-        </HStack>
+            <Box rounded={'xl'} my={{lg: 24}}>
+            <Image
+              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720634466/MG_3259-e1670999426473_hj0cse.jpg'}
+              width={1000}
+              height={666} 
+            />
+            </Box>
+
+        </Stack>
         </Box>
-
-
-        <Box>
-
-        </Box>
-        
-      </Box>
-    // </Box>
+      <Box>
+    </Box>
+    </Box>
   )
 }
 

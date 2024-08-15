@@ -78,7 +78,7 @@ import {
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <NextLink href='/#' passHref>
-                  <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} width={50} height={50}/>
+                  <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} width={60} height={50}/>
             </NextLink>
 
               <Flex display={{ base: 'none', md: 'flex' }} ml={10}>

@@ -2,15 +2,16 @@ import React from 'react'
 import { Box, Center, Text, Button, HStack, Divider } from '@chakra-ui/react'
 import Image from 'next/image'
 
-const OffersComponent = () => {
+const ForestComponent2 = () => {
   return (
     <Box minH={'100vh'} >
-      <Box minH={'100vh'} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012553/IMG_8943-2_jh9wgb.jpg'} 
+      <Box minH={'100vh'} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
        >
 
-        <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
+        <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
           <Box 
           // bg={'gray.100'} 
+          bg={'blackAlpha.500'}
           border={'2px'}
           borderColor='white'
           maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
@@ -20,7 +21,7 @@ const OffersComponent = () => {
             <HStack mt={{base:6,  md:2}}>
                 <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
               <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-                OUR OFFER
+              THE FOREST
               </Text>
             </HStack>
 
@@ -32,7 +33,7 @@ const OffersComponent = () => {
             // textColor='#0e2a4e'
             
             fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-            Christmas Season Full Board Offers
+            A truly natural experience for the senses
             </Text>
 
             <Text 
@@ -40,14 +41,9 @@ const OffersComponent = () => {
             // textColor='blue.800'
 
              fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
-              Double Cottages at UGX500,000 and Family Cottages starting at UGX650,000 with all meals included.
+              For special rates please contact the front office : +256 701519853
             </Text>
-            <Text 
-            textColor='white'
-            // textColor='blue.800'
-             fontFamily={'bodyFont'} fontSize='lg'>
-              Single and Double Deluxe Rooms starting at UGX300,000 | Family Deluxe Rooms starting UGX550,000
-            </Text>
+
 
             <Box py={{base:10, md: 6}} >
               <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
@@ -70,4 +66,4 @@ const OffersComponent = () => {
   )
 }
 
-export default OffersComponent
+export default ForestComponent2

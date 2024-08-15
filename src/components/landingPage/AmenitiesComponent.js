@@ -1,5 +1,5 @@
 import React from "react";
-import { chakra, Box, Flex, Icon, Stack } from "@chakra-ui/react";
+import { chakra, Box, Flex, Icon, Stack, Text, HStack, Divider } from "@chakra-ui/react";
 import { BsPerson } from 'react-icons/bs';
 
 
@@ -50,7 +50,7 @@ export default function AmenitiesComponent(){
 
   return (
     <Flex
-      bg="blue.900"
+    bg={{base:'#ffffff' , lg:'#0e1720'}}
       _dark={{ bg: "#3e3e3e" }}
       p={20}
       w="auto"
@@ -60,26 +60,15 @@ export default function AmenitiesComponent(){
       <Box py={12} bg="white" _dark={{ bg: "gray.800" }} rounded="xl">
         <Box maxW="7xl" mx="auto" px={{ base: 4, lg: 8 }}>
           <Box textAlign={{ lg: "center" }}>
-            <chakra.h2
-              _light={{ color: "brand.600" }}
-              fontWeight="semibold"
-              textTransform="uppercase"
-              v
-              letterSpacing="wide"
-            >
-              Amenities
-            </chakra.h2>
-            <chakra.p
-              mt={2}
-              fontSize={{ base: "3xl", sm: "4xl" }}
-              fontFamily='navBarFont'
-              lineHeight="8"
-              fontWeight="extrabold"
-              letterSpacing="tight"
-              _light={{ color: "gray.900" }}
-            >
+            {/* <HStack> */}
+                {/* <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}} /> */}
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+              AMENITIES
+              </Text>
+              {/* </HStack> */}
+              <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}>
               Make Your Stay Memorable
-            </chakra.p>
+            </Text>
           </Box>
 
           <Box mt={10}>
@@ -91,7 +80,7 @@ export default function AmenitiesComponent(){
               gridRowGap={{ md: 10 }}
             >
               <Feature
-                title="Competitive exchange rates"
+                title="Feel nature"
                 icon={
                   <path
                     strokeLinecap="round"
@@ -101,13 +90,11 @@ export default function AmenitiesComponent(){
                   />
                 }
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                The resort is right in the forest, and surrounded by airy lush green spaces.
               </Feature>
 
               <Feature
-                title=" No hidden fees"
+                title="Open air spaces"
                 icon={
                   <path
                     strokeLinecap="round"
@@ -117,13 +104,11 @@ export default function AmenitiesComponent(){
                   />
                 }
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                Eat, lounge or just take a walk in the forest, smell the eucalyptus in the air.
               </Feature>
 
               <Feature
-                title="Transfers are instant"
+                title="Farm-to-plate"
                 icon={
                   <path
                     strokeLinecap="round"
@@ -133,13 +118,11 @@ export default function AmenitiesComponent(){
                   />
                 }
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                Fresh food, right from the farm prepared by an experienced chef.
               </Feature>
 
               <Feature
-                title="Mobile notifications"
+                title="Swimming Pool"
                 icon={
                   <path
                     strokeLinecap="round"
@@ -149,9 +132,35 @@ export default function AmenitiesComponent(){
                   />
                 }
               >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                Two varied sized swimming pools are up and ready for you to take a dive into.
+              </Feature>
+
+              <Feature
+                title="Pick & Drop Facility"
+                icon={
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                  />
+                }
+              >
+                For groups and individuals we can arrange your pick-up and drop off.
+              </Feature>
+
+              <Feature
+                title="Wifi"
+                icon={
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                  />
+                }
+              >
+                Limited wifi due to our remote location, you can access wifi in designated locations
               </Feature>
             </Stack>
           </Box>
