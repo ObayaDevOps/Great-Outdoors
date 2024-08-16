@@ -1,12 +1,17 @@
-import React from "react";
-import { chakra, Box, Flex, Icon, Stack, Text, HStack, Divider } from "@chakra-ui/react";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
+
+import { chakra, Box, Flex, Icon, Stack, Text, HStack, Divider, ScaleFade } from "@chakra-ui/react";
 import { BsPerson } from 'react-icons/bs';
 
 
 export default function AmenitiesComponent(){
+  const ref1 = useRef(null)
+  const isInView1 = useInView(ref1)
+
   const Feature = (props) => {
     return (
-      <Flex>
+      <Flex mb={4} >
         <Flex shrink={0}>
           <Flex
             alignItems="center"
@@ -15,7 +20,7 @@ export default function AmenitiesComponent(){
             w={12}
             rounded="md"
             _light={{ bg: "brand.500" }}
-            color="gray"
+            color="gray.900"
           >
             <Icon
               boxSize={6}
@@ -30,16 +35,21 @@ export default function AmenitiesComponent(){
         </Flex>
         <Box ml={4}>
           <chakra.dt
-            fontSize="lg"
+            fontSize={{base:"lg", lg: 'xl', xl: '2xl'}}
             fontWeight="medium"
-            lineHeight="6"
+            lineHeight="8"
             fontFamily='navBarFont'
 
             _light={{ color: "gray.900" }}
           >
             {props.title}
           </chakra.dt>
-          <chakra.dd mt={2} color="gray.500" _dark={{ color: "gray.400" }} fontFamily='navBarFont'>
+          <chakra.dd mt={2} 
+          color="gray.900" _dark={{ color: "gray.600" }} 
+          fontFamily='bodyFont'
+          fontSize={{base:"lg", lg: 'md',xl: 'lg'}}
+
+          >
             {props.children}
           </chakra.dd>
         </Box>
@@ -50,28 +60,46 @@ export default function AmenitiesComponent(){
 
   return (
     <Flex
-    bg={{base:'#ffffff' , lg:'#0e1720'}}
-      _dark={{ bg: "#3e3e3e" }}
-      p={20}
-      w="auto"
+      p={{base: 6,  lg: 16, xl: 44}}
+      w="full"
       justifyContent="center"
       alignItems="center"
+      // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
+      bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
+      bgSize="cover" bgPosition="center" bgAttachment="fixed"
+      minH={{base:' 260vh', md:'170vh'}} 
     >
-      <Box py={12} bg="white" _dark={{ bg: "gray.800" }} rounded="xl">
-        <Box maxW="7xl" mx="auto" px={{ base: 4, lg: 8 }}>
+      <ScaleFade initialScale={0.8}
+          in={isInView1}>
+
+      <Box 
+      ref={ref1}
+      py={{base: 20, lg:24}} px={{base:6, lg: 12}} bg="whiteAlpha.900" 
+
+      border={'1px'}
+      borderColor={'white'}
+      rounded="xl">
+        <Box maxW="7xl" mx="auto" px={{ base: 2, lg: 8 }}>
           <Box textAlign={{ lg: "center" }}>
-            {/* <HStack> */}
-                {/* <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}} /> */}
               <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
               AMENITIES
               </Text>
-              {/* </HStack> */}
-              <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}>
+             {/* <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}> */}
+               
+
+             <Text  fontFamily={'navBarFont'} 
+            letterSpacing={'1px'} 
+            pb={{base:6, md: 4, lg: 4, xl: 8}} 
+            lineHeight={{lg: '55px' ,xl:'55px'}} 
+            // textColor='white'
+            textColor='#0e2a4e'
+            
+            fontWeight={800} fontSize={{base:'35px' ,lg: '45px', xl:'50px'}}>
               Make Your Stay Memorable
             </Text>
           </Box>
 
-          <Box mt={10}>
+          <Box mt={{base: 4, lg: 10}}>
             <Stack
               spacing={{ base: 10, md: 0 }}
               display={{ md: "grid" }}
@@ -166,6 +194,8 @@ export default function AmenitiesComponent(){
           </Box>
         </Box>
       </Box>
+
+      </ScaleFade>
     </Flex>
   );
 };

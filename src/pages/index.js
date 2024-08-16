@@ -16,6 +16,8 @@ import OffersComponent from '../components/landingPage/OffersComponent'
 import LandingPageImageSlider from '../components/landingPage/LandingPageImageSlider'
 import Carousel from '../components/carousel'
 import ForestComponent2 from '../components/landingPage/ForestComponent2'
+import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
+
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
@@ -55,10 +57,11 @@ export default function Home() {
           {/* <LandingPageImageSlider /> */}
           <Carousel />
           {/* <FloatingReservationsComponent /> */}
-          <AboutUsComponent />
-          <EatAndDrinkComponent />
+          {/* <AboutUsComponent /> */}
+          <AboutUsComponent2 />
+          {/* <EatAndDrinkComponent /> */}
           <AmenitiesComponent />
-          <ForestComponent />
+          {/* <ForestComponent /> */}
           <ForestComponent2 />
           {/* <TestimonialsComponent /> */}
           <OffersComponent />

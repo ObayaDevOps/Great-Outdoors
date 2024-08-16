@@ -5,12 +5,14 @@ import Image from 'next/image'
 const OffersComponent = () => {
   return (
     <Box minH={'100vh'} >
-      <Box minH={'100vh'} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012553/IMG_8943-2_jh9wgb.jpg'} 
+      <Box minH={{base:' 160vh', md:'100vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012553/IMG_8943-2_jh9wgb.jpg'} 
+             bgSize="cover" bgPosition="center" bgAttachment="fixed" 
+
        >
 
         <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
           <Box 
-          // bg={'gray.100'} 
+          bg={'whiteAlpha.300'} 
           border={'2px'}
           borderColor='white'
           maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}

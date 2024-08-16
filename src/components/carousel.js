@@ -151,9 +151,10 @@ export default function App(){
 
   return (
     <Flex
-      w="full"
+      // w="full"
       // bg="#edf3f8"
-      minH={{md:'80vh'}}
+      minH={{md:'60vh'}}
+      // mt={-20}
       _dark={{ bg: "#3e3e3e" }}
       // p={10}
       alignItems="center"
@@ -161,9 +162,9 @@ export default function App(){
       style={{ cursor: dragging ? "grabbing" : "auto" }}
       onMouseLeave={handleMouseUp}
     >
-      <Flex w="full" overflow="hidden" pos="relative">
+      <Flex w="full"  overflow="hidden" pos="relative">
         <Flex
-          // h="400px"
+          h="800px"
           w="full"
           // h="full"
           onMouseUp={handleMouseUp}
@@ -172,7 +173,7 @@ export default function App(){
           {...carouselStyle}
         >
           {slides.map((slide, sid) => (
-            <Flex key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+            <Flex key={`slide-${sid}`} boxSize="full"  shadow="md" flex="none">
               <Text
                 color="white"
                 fontSize="xs"

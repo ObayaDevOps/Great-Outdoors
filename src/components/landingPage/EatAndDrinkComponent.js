@@ -6,7 +6,9 @@ import Image from 'next/image'
 
 const EatAndDrinkComponent = () => {
   return (
-    <Box minH={'100vh'} bg={{base:'#ffffff' , lg:'#0e1720'}} >
+    <Box  bg={{base:'#ffffff' ,
+     lg:'green'
+     }} >
       <Box bg={'#ffffff'} mx={{base: 0, lg: 10, xl: 10}}  p={{base: 0 ,lg: 0}}   >
 
         <Stack p={{base: 8, lg:4, xl:8}} direction={{base: 'column', lg: 'row'}}>

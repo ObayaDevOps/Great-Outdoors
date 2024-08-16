@@ -1,10 +1,7 @@
-
-
-
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import { Box, Center, Text, Button, HStack, Divider, ScaleFade } from '@chakra-ui/react'
+import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const AboutUsComponent2 = () => {
@@ -14,7 +11,7 @@ const AboutUsComponent2 = () => {
 
   return (
     <Box minH={'100vh'} >
-      <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
+      <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
              bgSize="cover" bgPosition="center" bgAttachment="fixed" 
 
        >
@@ -35,7 +32,7 @@ const AboutUsComponent2 = () => {
                 <HStack mt={{base:6,  md:2}}>
                     <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
                 <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-                THE FOREST
+                ABOUT US
                 </Text>
                 </HStack>
 
@@ -47,7 +44,7 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'
                 
                 fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-                A Truly Natural Experience for the Senses
+                Retreat. Rest. Rejuvenate
                 </Text>
 
                 <Text 
@@ -56,12 +53,24 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'
 
                 fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
-                For special rates please contact the front office : +256 701519853
+                The Great Outdoors is the ideal retreat for nature lovers, teams,
+                and people that just want to leave the metropolitan hustle & bustle behind, 
+                get a breath of fresh air, rest, and rejuvenate in the lap of nature.
+                </Text>
+                <Text 
+                // textColor='white'
+                textColor='#0e2a4e'
+
+                // textColor='blue.800'
+                fontFamily={'bodyFont'} fontSize='lg'>
+                This eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala,
+                is a place people come to for unique retreat experiences, 
+                unforgettable weekends, relaxation, corporate retreats, and reconnecting with family.
                 </Text>
 
                 <Box py={{base:10, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    See Offers and Discounts
+                    Discover More
                 </Button>
                 </Box>
                 </Box>
