@@ -26,7 +26,7 @@ const AboutUsComponent2 = () => {
             borderColor='white'
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-            pt={{base: 8, md: 44}}>
+            pt={{base: 8,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
                 <HStack mt={{base:6,  md:2}}>

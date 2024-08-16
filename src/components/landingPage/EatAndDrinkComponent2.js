@@ -1,20 +1,17 @@
-
-
-
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import { Box, Center, Text, Button, HStack, Divider, ScaleFade } from '@chakra-ui/react'
+import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
 
-const AboutUsComponent2 = () => {
+const EatAndDrinkComponent2 = () => {
   
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
 
   return (
     <Box minH={'100vh'} >
-      <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
+      <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101887/A7300820-1024x683_rh8gsj.jpg'} 
              bgSize="cover" bgPosition="center" 
 
        >
@@ -35,7 +32,7 @@ const AboutUsComponent2 = () => {
                 <HStack mt={{base:6,  md:2}}>
                     <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
                 <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-                THE FOREST
+                EAT AND DRINK
                 </Text>
                 </HStack>
 
@@ -47,7 +44,7 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'
                 
                 fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-                A Truly Natural Experience for the Senses
+                Indulge in Healthy & Fresh Food
                 </Text>
 
                 <Text 
@@ -56,12 +53,20 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'
 
                 fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
-                For special rates please contact the front office : +256 701519853
+                It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes. 
+                </Text>
+                <Text 
+                // textColor='white'
+                textColor='#0e2a4e'
+
+                // textColor='blue.800'
+                fontFamily={'bodyFont'} fontSize='lg'>
+                From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
                 </Text>
 
                 <Box py={{base:10, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    See Offers and Discounts
+                    Call to Book
                 </Button>
                 </Box>
                 </Box>
@@ -82,4 +87,4 @@ const AboutUsComponent2 = () => {
   )
 }
 
-export default AboutUsComponent2
+export default EatAndDrinkComponent2

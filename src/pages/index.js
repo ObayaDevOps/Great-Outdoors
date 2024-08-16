@@ -17,6 +17,7 @@ import LandingPageImageSlider from '../components/landingPage/LandingPageImageSl
 import Carousel from '../components/carousel'
 import ForestComponent2 from '../components/landingPage/ForestComponent2'
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
+import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 
 
 import NavBar from '../components/navbar' 
@@ -60,6 +61,7 @@ export default function Home() {
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2 />
           {/* <EatAndDrinkComponent /> */}
+          <EatAndDrinkComponent2 />
           <AmenitiesComponent />
           {/* <ForestComponent /> */}
           <ForestComponent2 />

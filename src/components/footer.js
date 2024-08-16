@@ -25,7 +25,7 @@ import Image from 'next/image'
 const Logo = (props) => {
   return (
     <Box p={4}>
-        <Image src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
+        <Image src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723819779/tgo-logo-white_rnomcw.png'} 
         width={800/6} height={529/6}/>
     </Box>
   )
@@ -91,7 +91,7 @@ export default function LargeWithNewsletter() {
               <SocialButton  label={'LinkedIn'} href={'/#'}>
                 <FaLinkedinIn />
               </SocialButton>
-              <Button as='a' href='https://www.dralegawebops.com/' size='sm' colorScheme='purple' fontSize={{base:'xs',md:'xs'}}
+              <Button as='a' href='https://www.dralegawebops.com/' size='sm' colorScheme='red' fontSize={{base:'xs',md:'xs'}}
                 variant="outline"
                 color='white'
                 fontFamily='navBarFont'
@@ -102,7 +102,7 @@ export default function LargeWithNewsletter() {
 
             </Stack>
             <Box>
-            <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>© 2024 Great Outdoors Ltd. All Rights Reserved</Text>
+            <Text fontSize={'sm'} fontFamily='bodyFont' textColor='white'>© 2024 Great Outdoors Ltd. All Rights Reserved</Text>
             </Box>
 
           </Stack>
@@ -119,13 +119,13 @@ export default function LargeWithNewsletter() {
           
           <Stack align={{base:'flex-start', md:'flex-end'}} pt={{md:4}}>
             <Box>
-                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>manager@greatoutdoorsuganda.com</Text>
+                <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>manager@greatoutdoorsuganda.com</Text>
             </Box>
             <Box>
-                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>+256 701519853</Text>
+                <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>+256 701519853</Text>
             </Box>
             <Box>
-                <Text fontSize={'sm'} fontFamily='navBarFont' textColor='white'>Kalanamu, Gayaza Rd</Text>
+                <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>Kalanamu, Gayaza Rd</Text>
             </Box>
           </Stack>
 

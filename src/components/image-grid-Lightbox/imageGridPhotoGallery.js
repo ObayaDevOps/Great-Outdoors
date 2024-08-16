@@ -18,7 +18,7 @@ export default function App(props) {
 
   return (
     <>
-      <PhotoAlbum photos={props.photos} spacing={4} layout="rows" onClick={({ index }) => setIndex(index)} />
+      <PhotoAlbum photos={props.photos} spacing={16} layout="rows" onClick={({ index }) => setIndex(index)} />
 
       <Lightbox
         slides={props.photos}
