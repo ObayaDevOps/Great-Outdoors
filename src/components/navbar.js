@@ -154,7 +154,7 @@ import {
                   <Link
                   p={2}
                   fontSize={'13px'}
-                  letterSpacing={'0.05em'}
+                  letterSpacing={'0.1em'}
                   href={navItem.href ?? '#'}
                   color={linkColor}
                   _hover={{  textColor: 'red.600'}}
@@ -173,7 +173,9 @@ import {
                   boxShadow={'xl'}
                   bg={popoverContentBgColor}
                   p={4}
-                  rounded={'none'}
+                  fontFamily={'redTopFont'}
+
+                  rounded={'lg'}
                   minW={'sm'}>
                   <Stack>
                     {navItem.children.map((child) => (
@@ -197,17 +199,17 @@ import {
         display={'block'}
         p={2}
         href={href} passHref
-        // rounded={'md'}
-        _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}
+        rounded={'md'}
+        _hover={{ bg: useColorModeValue('red.50', 'gray.900') }}
         >
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'blue.400' }}
+              _groupHover={{ color: 'red.400' }}
               fontWeight={500}
               fontFamily={'redTopFont'}
-              _hover={{ color: 'blue.400' }}
+              _hover={{ color: 'red.400' }}
               >
               {label}
             </Text>
@@ -222,7 +224,7 @@ import {
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'blue.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'red.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
