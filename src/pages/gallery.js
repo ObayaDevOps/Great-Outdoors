@@ -9,54 +9,171 @@ import ImageGridPhotoGallery from '../components/image-grid-Lightbox/imageGridPh
 const imageGridImages =[
 
   {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236519/WhatsApp_Image_2024-06-24_at_16.37.47_spjob2.jpg",
-      width: 1527,
-      height: 1080,
-      caption: "Henry Robinson Lela Pit",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg",
+      width: 1000,
+      height: 666,
+      caption: "Great Outdoors",
   },
   {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_3_h2dfyi.jpg",
-      width: 1527,
-      height: 1080,
-      caption: "Henry Robinson Lela Pit",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg",
+      width: 1000,
+      height: 666,
+      caption: "Great Outdoors",
   },
   {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.48_1_iydamo.jpg",
-      width: 1527,
-      height: 1080,
-      caption: "Henry Robinson Lela Pit",
+      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101623/IMG_9124-scaled_tvyhqg.jpg",
+      width: 1000,
+      height: 666,
+      caption: "Great Outdoors",
   },
   {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236509/WhatsApp_Image_2024-06-24_at_16.37.48_oepx0a.jpg",
-      width: 854,
-      height: 1280,
-      caption: "Henry Robinson Lela Pit",
-  },
-  {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236508/WhatsApp_Image_2024-06-24_at_16.37.49_2_hap7cd.jpg",
-      width: 1280,
-      height: 1024,
-      caption: "Henry Robinson Lela Pit",
-  },
-  {   
-      src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719236510/WhatsApp_Image_2024-06-24_at_16.37.49_pdadpr.jpg",
-      width: 1024,
-      height: 1280,
-      caption: "Henry Robinson Lela Pit",
-  },
+    src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101643/IMG_0685-scaled_hwn4m2.jpg",
+    width: 1000,
+    height: 666,
+    caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101623/IMG_9124-scaled_tvyhqg.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101654/IMG_9093-scaled_lb7gia.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101656/IMG_9127-1024x683_mtfxvr.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101663/IMG_4353-1024x683_wt2qsj.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101689/IMG_9107-scaled_cbnbbk.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101728/A7300369-1024x683_cxdn75.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104893/IMG_9060_mtrnge.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104889/A7300790-1024x683_ifl3hn.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104883/A7300768-1024x683_qlsaig.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104874/MG_2065-1024x683_khthhc.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104863/MG_1907-1024x683_agoyxy.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104854/IMG_3897-1024x683_kpibsc.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104851/IMG_3908-1024x683_suoh8v.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104842/A7300376-1024x683_uv82ns.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104810/IMG_3701-scaled_agc8bi.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101810/A7300734-1024x645_xt0ed2.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101818/A7300337-1024x683_trpffp.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720103322/A7301110-1024x665_rxooji.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
+{   
+  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720104864/A7301120-1024x683_ulqp5l.jpg",
+  width: 1000,
+  height: 666,
+  caption: "Great Outdoors",
+},
 
-{   
-  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.27_f1iavz.jpg",
-  width: 1080,
-  height: 608,
-  caption: "Henry Robinson Lela Pit",
-  },
-{   
-  src: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719235391/WhatsApp_Image_2024-06-24_at_15.23.29_hbpm28.jpg",
-  width: 1080,
-  height: 608,
-  caption: "Henry Robinson Lela Pit",
-  },
+
+
+
 
 ] 
 
@@ -91,7 +208,7 @@ export default function GalleryPage() {
         </Center>
 
 
-        <Box px={{base: 4, md: 12, lg: 64}} py={{base: 4, md: 12, lg: 2}}>
+        <Box px={{base: 4, md: 12, lg: 64}} py={{base: 4, md: 12, lg: 20}}>
                 <ImageGridPhotoGallery photos={imageGridImages} />
         </Box>
 
