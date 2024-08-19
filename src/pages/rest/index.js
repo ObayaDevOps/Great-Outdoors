@@ -280,6 +280,10 @@ const RoomsListPage = () => {
             ))}
           </SimpleGrid>
       </Container>
+
+      <Box>
+        <Footer />
+      </Box>
     </Box>
   );
 };
