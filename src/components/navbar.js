@@ -51,20 +51,21 @@ import {
     const { colorMode, toggleColorMode } = useColorMode()
   
     return (
-      <Center
+      <Box
       zIndex={9999}
-      top={'25px'}
+      top={{md:'25px'}}
       // left={'0px'}
       position={'absolute'}
       width={'100vw'}
-      // align={'center'}
+      align={'center'}
 
       >
         <Flex
         overflow='-moz-hidden-unscrollable'
-          bg={useColorModeValue('whiteAlpha.900', 'gray.800')}
+          bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
-          w={'90%'}
+          shadow={'xl'}
+          w={{base: '100%', md:'90%'}}
 
           minH={'80px'}
           py={{ base: 2 }}
@@ -130,7 +131,7 @@ import {
         <Collapse in={isOpen} animateOpacity >
           <MobileNav />
         </Collapse>
-      </Center>
+      </Box>
     );
   }
   
