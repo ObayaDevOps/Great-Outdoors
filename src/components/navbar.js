@@ -6,6 +6,7 @@ import {
     Button,
     Stack,
     Collapse,
+    Center,
     Icon,
     Link,
     Popover,
@@ -36,8 +37,8 @@ import {
   
   function ReservationsButton() {
     return (
-        <Button  size={{base:'xs', md: 'sm'}}  rounded='sm' colorScheme='red' fontFamily={'redTopFont'} py={-1}  >
-          Reservations
+        <Button  size={{base:'xs', md: 'sm'}} letterSpacing={'2px'} rounded='sm' colorScheme='red' fontFamily={'redTopFont'} py={-1}  >
+          RESERVATION
         </Button>
     )
   }
@@ -50,14 +51,25 @@ import {
     const { colorMode, toggleColorMode } = useColorMode()
   
     return (
-      <Box>
+      <Center
+      zIndex={9999}
+      top={'25px'}
+      // left={'0px'}
+      position={'absolute'}
+      width={'100vw'}
+      // align={'center'}
+
+      >
         <Flex
         overflow='-moz-hidden-unscrollable'
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('whiteAlpha.900', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
+          w={'90%'}
+
           minH={'80px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
+          rounded={{base: 'none', md: 'lg'}}
           // borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
@@ -76,19 +88,39 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
-            <NextLink href='/#' passHref>
-                  <NextImage src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} width={60} height={50}/>
-            </NextLink>
 
-              <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+
+          <Flex 
+            justify={{ base: 'center', md: 'left' }}
+            ml={8}
+            >
+              <NextLink href='/#' passHref>
+                    <NextImage 
+                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
+                    width={70} height={70}/>
+              </NextLink>
+            </Flex>
+
+          <Box flex={{ base: 1 }} justify={{ base: 'center', md: 'flex-start' }}>
+            {/* <Flex 
+            justify={{ base: 'center', md: 'left' }}
+            >
+              <NextLink href='/#' passHref>
+                    <NextImage 
+                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
+                    width={40} height={40}/>
+              </NextLink>
+            </Flex> */}
+
+              <Flex display={{ base: 'none', md: 'flex' }} justify={{ base: 'center', md: 'center' }} >
                 <DesktopNav />
               </Flex>
-          </Flex>
+          </Box>
   
           <Stack
             flex={{ base: 1, md: 0 }}
-            justify={'flex-end'}
+            justify={'right'}
+            mr={4}
             direction={'row'}
             spacing={6}>
             <ReservationsButton />
@@ -98,19 +130,21 @@ import {
         <Collapse in={isOpen} animateOpacity >
           <MobileNav />
         </Collapse>
-      </Box>
+      </Center>
     );
   }
   
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkColor = useColorModeValue('gray.800', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
     const { colorMode, toggleColorMode } = useColorMode()
 
   
     return (
-      <Stack direction={'row'} spacing={4} paddingTop={1.5}>
+      <Stack direction={'row'} spacing={4} 
+      // paddingTop={1.5}
+      >
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -118,13 +152,13 @@ import {
                 <PopoverTrigger>
                   <Link
                   p={2}
-                  fontSize={'15px'}
+                  fontSize={'13px'}
                   letterSpacing={'0.05em'}
                   href={navItem.href ?? '#'}
                   color={linkColor}
                   _hover={{  textColor: 'red.600'}}
                   fontFamily={'redTopFont'}
-                  fontWeight={700}
+                  fontWeight={600}
                   >
                     {navItem.label}
                   </Link>
@@ -226,7 +260,7 @@ import {
             textDecoration: 'none',
           }}>
           <Text
-            fontWeight={600}
+            fontWeight={400}
             color={useColorModeValue('gray.600', 'gray.200')}>
             {label}
           </Text>
@@ -270,23 +304,23 @@ import {
 
   const NAV_ITEMS = [
     {
-      label: 'Home',
+      label: 'HOME',
       href: '/#',
     },
     {
-      label: 'Gallery',
+      label: 'GALLERY',
       href: '/gallery',
     },
     {
-        label: 'Retreat',
+        label: 'RETREAT',
         href: '/retreat',
     }, 
     {
-        label: 'Rest',
+        label: 'REST',
         href: '/rest',
     },
     {
-      label: 'Rejuvenate',
+      label: 'REJUVENATE',
       children: [
         {
           label: 'Food',
@@ -296,7 +330,7 @@ import {
       ],
     }, 
     {
-        label: 'Contact',
+        label: 'CONTACT',
         href: '/contact',
     },
     

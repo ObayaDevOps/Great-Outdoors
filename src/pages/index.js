@@ -18,6 +18,7 @@ import Carousel from '../components/carousel'
 import ForestComponent2 from '../components/landingPage/ForestComponent2'
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
+import Carousel2 from '../components/carousel2'
 
 
 import NavBar from '../components/navbar' 
@@ -55,8 +56,9 @@ export default function Home() {
         // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
         <Box>
-          {/* <LandingPageImageSlider /> */}
-          <Carousel />
+          <LandingPageImageSlider />
+          {/* <Carousel /> */}
+          {/* <Carousel2 /> */}
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2 />

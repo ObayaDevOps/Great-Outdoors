@@ -24,6 +24,8 @@ const AboutUsComponent2 = () => {
             bg={'whiteAlpha.900'} 
             border={'2px'}
             borderColor='white'
+            shadow={'xl'}
+
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
             pt={{base: 8,  md: 12, xl: 24}}>

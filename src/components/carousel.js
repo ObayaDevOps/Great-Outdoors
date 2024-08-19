@@ -51,38 +51,14 @@ export default function App(){
       label: "Corporate Retreats",
     
     },
-    {   
-      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg",
-      width: 1024,
-      height: 683,
-      caption: "Great Outdoors",
-      label: "Find Serenity",
-    
-    },
-    {   
-      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101887/A7300820-1024x683_rh8gsj.jpg",
-      width: 1024,
-      height: 683,
-      caption: "Great Outdoors",
-      label: "Gourmet Food",
-    
-    },
-    {   
-      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg",
-      width: 770,
-      height: 300,
-      caption: "Great Outdoors",
-      label: "Premium Lodging",
+  // {   
+  //   img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101818/A7300337-1024x683_trpffp.jpg",
+  //   width: 770,
+  //   height: 300,
+  //   caption: "Great Outdoors",
+  //   label: "At Home in Nature",
 
-  },
-  {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101818/A7300337-1024x683_trpffp.jpg",
-    width: 770,
-    height: 300,
-    caption: "Great Outdoors",
-    label: "At Home in Nature",
-
-  },
+  // },
     
   ] 
 
@@ -162,9 +138,9 @@ export default function App(){
       style={{ cursor: dragging ? "grabbing" : "auto" }}
       onMouseLeave={handleMouseUp}
     >
-      <Flex w="full"  overflow="hidden" pos="relative">
+      <Flex w="full"  overflow="hidden"  textAlign='center' pos="relative">
         <Flex
-          h="800px"
+          h={{base: "90vh", xl:"850px"}}
           w="full"
           // h="full"
           onMouseUp={handleMouseUp}
@@ -173,7 +149,9 @@ export default function App(){
           {...carouselStyle}
         >
           {slides.map((slide, sid) => (
-            <Flex key={`slide-${sid}`} boxSize="full"  shadow="md" flex="none">
+            <Flex key={`slide-${sid}`} boxSize="full" 
+            overflow='hidden'
+             w='100%' shadow="md" flex="none">
               <Text
                 color="white"
                 fontSize="xs"
@@ -183,25 +161,32 @@ export default function App(){
               >
                 {sid + 1} / {slidesCount}
               </Text>
-              <Image
+              {/* <Image
                 src={slide.img}
                 alt="Great Outdoors Uganda carousel image"
                 boxSize="full"
                 backgroundSize="cover"
-              />
-              {/* <NextImage
+                transform={'translate(-50%,0)'}
+                position='relative'
+                left='50%'
+
+                
+
+              /> */}
+              <NextImage
                 src={slide.img}
-                height={slide.height} width={slide.width}
+                layout='fill'
+                // height={slide.height} width={slide.width}
                 alt="carousel image"
                 boxSize="full"
-                backgroundSize="cover"
-              /> */}
+                // backgroundSize="fit"
+              />
 
 
               <Stack
                 // p="8px 12px"
                 pos="absolute"
-                bottom={{base:"24px", lg: "50px"}}
+                bottom={{base:"24px", lg: "40vh"}}
                 textAlign="center"
                 w="full"
                 // mb="8"

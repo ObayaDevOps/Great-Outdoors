@@ -11,14 +11,15 @@ const EatAndDrinkComponent2 = () => {
 
   return (
     <Box minH={'100vh'} >
-      <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101887/A7300820-1024x683_rh8gsj.jpg'} 
+      <Box minH={{base:' 160vh', md:'120vh'}} 
+      bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg'} 
              bgSize="cover" bgPosition="center" 
 
        >
-        {/* <ScaleFade initialScale={0.8}
-            in={isInView1}> */}
+        <ScaleFade initialScale={0.9}
+            in={isInView1}>
 
-            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 
@@ -26,6 +27,7 @@ const EatAndDrinkComponent2 = () => {
             borderColor='white'
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+            shadow={'xl'}
             pt={{base: 8,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
@@ -74,7 +76,7 @@ const EatAndDrinkComponent2 = () => {
 
             </HStack>
 
-        {/* </ScaleFade> */}
+        </ScaleFade>
         </Box>
 
 
