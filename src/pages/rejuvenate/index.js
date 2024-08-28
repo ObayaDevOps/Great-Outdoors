@@ -62,16 +62,16 @@ import {
         </Box>
 
         <Box
-          py={{ base: 32, md: 40 }}
+          py={{ base: 28, md: 44 }}
           // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
           // bg={'#0e2a4e'}
           bg={'#0b1722'}
           // bgImage={
-          //   "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
+          //   "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170783/IMG_2432-2-scaled-e1671037067747_xsovzl.jpg"
           // }
-          // bgSize="cover"
-          // bgPosition="center"
-          // bgAttachment="fixed"
+          bgSize="cover"
+          bgPosition="center"
+          bgAttachment="fixed"
         >
           <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
             <chakra.h3
@@ -140,6 +140,37 @@ import {
           <Section3 />
 
 
+          {/* <Container
+            maxW={{ base: "80%", md: "90%" }}
+            py={4}
+            minHeight={{ md: "110vh" }}
+            // background="rgba(240,255,244,0.55)"
+            // bg="whiteAlpha.700"
+                      bgImage={
+            "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170783/IMG_2432-2-scaled-e1671037067747_xsovzl.jpg"
+          }
+          bgSize="cover"
+          bgPosition="center"
+          bgAttachment="fixed"
+            rounded="3xl"
+            shadow="2xl"
+            border={"1px"}
+            borderColor={"white"}
+            mt={{ base: "35vh", lg: "25vh" }}
+          >
+            <Flex
+              textAlign={"center"}
+              pt={0}
+              justifyContent={"center"}
+              direction={"column"}
+              width={"full"}
+              overflow={"hidden"}
+            >
+              <GetAwayAndRetreatContent />
+
+            </Flex>
+          </Container> */}
+
         </Box>
 
         <Box>
@@ -154,9 +185,9 @@ import {
 
     return (
       <Container
-      maxW={{ base: "95%", md: "90%" }}
+      maxW={{ base: "80%", md: "90%" }}
       py={4}
-      minHeight={{ base:'190vh', md: "110vh" }}
+      minHeight={{ md: "110vh" }}
       // background="rgba(240,255,244,0.55)"
       // bg="whiteAlpha.700"
       bgImage={
@@ -169,7 +200,7 @@ import {
       shadow="2xl"
       border={"1px"}
       borderColor={"white"}
-      mt={{ base: "10vh", lg: "25vh" }}
+      mt={{ base: "35vh", lg: "25vh" }}
     >
       <Flex
         textAlign={"center"}
@@ -194,9 +225,9 @@ import {
 
     return (
       <Container
-      maxW={{ base: "95%", md: "90%" }}
+      maxW={{ base: "80%", md: "90%" }}
       py={4}
-      minHeight={{ base:'190vh', md: "110vh" }}
+      minHeight={{ md: "110vh" }}
       // background="rgba(240,255,244,0.55)"
       // bg="whiteAlpha.700"
                 bgImage={
@@ -235,9 +266,9 @@ import {
 
     return (
       <Container
-      maxW={{ base: "95%", md: "90%" }}
+      maxW={{ base: "80%", md: "90%" }}
       py={4}
-      minHeight={{ base:'190vh', md: "110vh" }}
+      minHeight={{ md: "110vh" }}
       // background="rgba(240,255,244,0.55)"
       // bg="whiteAlpha.700"
                 bgImage={
@@ -272,7 +303,7 @@ import {
 
   const Section1Content = () => {
     return (
-      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+      <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
       <Box 
       bg={'whiteAlpha.900'} 
       border={'2px'}
@@ -337,11 +368,11 @@ import {
             Open Daily: 7:00pm - 11:00pm
           </Text>
 
-          <Flex py={{base:10, md: 6}} >
-          <Button fontFamily={'bodyFont'} colorScheme='red' alignSelf={'left'} textColor='white' fontSize='lg'>
+          <Box py={{base:10, md: 6}} justify={'left'}>
+          <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
               Contact to Book
           </Button>
-          </Flex>
+          </Box>
           </Box>
       </Box>
 
@@ -352,7 +383,7 @@ import {
 
   const Section2Content = () => {
     return (
-      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+      <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
       <Box 
       bg={'whiteAlpha.900'} 
       border={'2px'}
@@ -405,11 +436,11 @@ import {
             Ask about our activity list, or make a custom booking for your team.
           </Text>
 
-          <Flex py={{base:10, md: 6}} justify={'left'}>
+          <Box py={{base:10, md: 6}} justify={'left'}>
           <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
               Contact to Book
           </Button>
-          </Flex>
+          </Box>
           </Box>
       </Box>
 
@@ -420,7 +451,7 @@ import {
 
   const Section3Content = () => {
     return (
-      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+      <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
       <Box 
       bg={'whiteAlpha.900'} 
       border={'2px'}
@@ -485,11 +516,11 @@ import {
             Free Wifi, Special stay offers, Projector & Screen, refreshments on order.
           </Text>
 
-          <Flex py={{base:10, md: 6}} justify={'left'}>
+          <Box py={{base:10, md: 6}} justify={'left'}>
           <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
               Contact to Book
           </Button>
-          </Flex>
+          </Box>
           </Box>
       </Box>
 
@@ -497,80 +528,6 @@ import {
     )
   }
   
-  
-  const RejuvenateAndBondContent = () => {
-    return (
-        <Box
-        borderWidth='1px'
-         borderRadius='xl'
-        borderColor='purple.500'
-        shadow='xl'
-       //  overflow='hidden'
-       padding={8}
-       mx={{md: 10,lg:20}}
-       // paddingRight={12}
-       background="whiteAlpha.700"
-       my={{base: 16,md:20, lg: 20}}
-     >
-
-            <Box overflow='hidden' m={{base: 2, md: 6}} borderRadius={'10px'}>
-            <Image
-                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1715259596/PP1_w92zkp.jpg'}
-                    width={570*2}
-                    height={320}
-                
-                    
-                    />
-            </Box>
-
-       <Text
-           bgClip="text"
-           bgGradient='linear(to-r, blackAlpha.800, purple.500)'
-           fontWeight="extrabold"
-           textAlign='left'
-           fontSize={{ base: "xl",md: "3xl",}}
-           p={{base: 4, lg:4}}
-           fontFamily='bodyFont'
-       >
-         Services are tailor-made according to the stage and may include, but are not limited to the following:
-
-       </Text>
-  
-       <Box  >
-       <SimpleGrid columns={{base: 1, md:1, lg: 1}}  >
-         <Box  mt={2} mb={{lg:20}} >
-           <SimpleGrid columns={1} spacing={6}>
-                <SolutionsListItem text=" Formulation and alignment of the vision, mission and school motto; clarity is the most important selling point a new school can have. We will enable you to formulate your message clearly and concisely, to raise interest and ensure you attract the families who will benefit the most from what you offer." />
-                <SolutionsListItem text="Locating and/or design of school premises; working with your architects, we advise on aspects of school layout and design which support and promote the type of learning and communication you aim to achieve." />
-                <SolutionsListItem text="Marketing, website, prospectus, use of social media and other school publications" />
-                <SolutionsListItem text="Advice on legal and statutory requirements, including health, safety and emergency procedures & guidance." /> 
-                <SolutionsListItem text="Creation and alignment of school policies and procedures" />
-                <SolutionsListItem text="Financial planning and resourcing to fit your budget" />
-                <SolutionsListItem text="Organizational set up and job descriptions, including defining the type of leadership you require." />
-                <SolutionsListItem text="Curriculum design and assessment processes" />
-                <SolutionsListItem text="Staff induction, leadership mentoring and training" />
-                <SolutionsListItem text="Planning launch events and school calendar" />
-                <SolutionsListItem text="On-going professional support firmly grounded in the reality of forming and building a school culture and systems" />
-                <SolutionsListItem text="​For the owners of newly acquired schools we offer support with re-branding; renewing the vision and mission and overhaul of buildings, curriculum and teaching approaches." />
-                
-           </SimpleGrid>
-         </Box>
-       </SimpleGrid>
-       </Box>
-       
-     </Box>
-    )
-  }
-  
-  
-  const ConferencesAndTrainingsContent = () => {
-    return(
-      <Box>
-        Heyo
-      </Box>
-    )
-  }
-
   
   const SolutionsListItem = (props) => {
     return (
@@ -598,97 +555,3 @@ import {
   
   
   
-  const CallToAction = () => {
-    return (
-      <Flex
-      // bg="#edf3f8"
-      // _dark={{ bg: "#3e3e3e" }}
-      p={50}
-      w="full"
-      alignItems="center"
-      justifyContent="center"
-    >
-      {/* <Box bg="gray.50" _dark={{ bg: "gray.800" }}> */}
-      <Box>
-        <Box
-          // maxW={{md: '85vw', lg: '8xl'}}
-          w={{ md: "3xl", lg: "5xl" }}
-          mx="auto"
-          py={{ base: 12, lg: 16 }}
-          px={{ base: 4, lg: 8 }}
-          display={{ lg: "flex" }}
-          alignItems={{ lg: "center" }}
-          justifyContent={{ lg: "space-between" }}
-        >
-          <chakra.h2
-            fontSize={{ base: "3xl", sm: "4xl" }}
-            fontWeight="extrabold"
-            letterSpacing="tight"
-            lineHeight="shorter"
-            color="purple.900"
-            fontFamily='bodyFont'
-            textAlign='left'
-
-            _dark={{ color: "gray.100" }}
-          >
-            <chakra.span display="block">
-            Don&apos;t Leave it to Chance
-            </chakra.span>
-            <chakra.span
-              display="block"
-              // color="brand.600"
-              // _dark={{ color: "gray.500" }}
-              bgClip="text"
-            bgGradient="linear(to-r, purple.900, purple.300)"
-            pr={10}
-            >
-              Take your School to the Next Level!
-            </chakra.span>
-          </chakra.h2>
-          <Stack
-            direction={{ base: "column" }}
-            mt={{ base: 8, lg: 0 }}
-            flexShrink={{ lg: 0 }}
-          >
-                  <Button
-                  as="a"
-                  href="/info/contact-enquiry"
-                  colorScheme="whiteAlpha"
-                  display="inline-flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow={'lg'}
-                  border={'1px'}
-                  rounded={'6px'}
-                  borderColor='purple'
-                  textColor={useColorModeValue('purple.700', 'white')}
-  
-  
-                  w={{
-                      base: "full",
-                      sm: "auto",
-                  }}
-                  mb={{
-                      base: 2,
-                      sm: 0,
-                  }}
-                  size="lg"
-                  cursor="pointer"
-                  fontFamily='bodyFont'
-  
-                  >
-                  Talk to us Today
-                  <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-                      <path
-                      fillRule="evenodd"
-                      d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
-                      clipRule="evenodd"
-                      />
-                  </Icon>
-                  </Button>
-          </Stack>
-        </Box>
-      </Box>
-    </Flex>
-    )
-  }

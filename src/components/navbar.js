@@ -37,7 +37,7 @@ import {
   
   function ReservationsButton() {
     return (
-        <Button  size={{base:'xs', md: 'sm'}} letterSpacing={'2px'} rounded='sm' colorScheme='red' fontFamily={'redTopFont'} py={-1}  >
+        <Button  size={{base:'xs', md: 'sm'}} letterSpacing={'2px'} rounded='sm' colorScheme='red' fontFamily={'redTopFont'} >
           RESERVATION
         </Button>
     )
@@ -93,7 +93,7 @@ import {
 
           <Flex 
             justify={{ base: 'center', md: 'left' }}
-            ml={8}
+            ml={{base:24, md: 8}}
             >
               <NextLink href='/#' passHref>
                     <NextImage 
@@ -121,7 +121,7 @@ import {
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'right'}
-            mr={4}
+            mr={{base: 0, md:4}}
             direction={'row'}
             spacing={6}>
             <ReservationsButton />
@@ -250,7 +250,7 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Stack spacing={4} onClick={children && onToggle}>
+      <Stack spacing={0} onClick={children && onToggle}>
         <Flex
           py={2}
           as={Link}
@@ -280,7 +280,7 @@ import {
   
         <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
           <Stack
-            mt={2}
+            mt={0}
             pl={4}
             borderLeft={1}
             borderStyle={'solid'}
@@ -289,7 +289,7 @@ import {
             {children &&
               children.map((child) => (
                 <NextLink href={child.href} key={child.label} passHref>
-                  {/* <Link  py={2}  fontFamily="redTopFont"> */}
+                  {/* <Link  py={2}  fontFamily="redTopFont" > */}
                     {child.label}
                   {/* </Link> */}
                 </NextLink>
