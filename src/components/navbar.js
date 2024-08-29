@@ -79,7 +79,7 @@ import {
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}>
+            display={{ base: 'flex', lg: 'none' }}>
             <IconButton
               onClick={onToggle}
               icon={
@@ -113,7 +113,7 @@ import {
               </NextLink>
             </Flex> */}
 
-              <Flex display={{ base: 'none', md: 'flex' }} justify={{ base: 'center', md: 'center' }} >
+              <Flex display={{ base: 'none', md: 'none' , lg: 'flex'}} justify={{ base: 'center', md: 'center' }} >
                 <DesktopNav />
               </Flex>
           </Box>
