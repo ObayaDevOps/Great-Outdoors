@@ -59,12 +59,12 @@ import {
           // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
           // bg={'#0e2a4e'}
           bg={'#0b1722'}
-          // bgImage={
-          //   "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
-          // }
-          // bgSize="cover"
-          // bgPosition="center"
-          // bgAttachment="fixed"
+          bgImage={
+            "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
+          }
+          bgSize="cover"
+          bgPosition="center"
+          bgAttachment="fixed"
         >
 
           <HeadingSection />

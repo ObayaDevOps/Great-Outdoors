@@ -221,8 +221,8 @@ import {
             transform={'translateX(-10px)'}
             opacity={0}
             _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-            justify={'flex-end'}
-            align={'center'}
+            justify={'flex-start'}
+            align={'left'}
             flex={1}>
             <Icon color={'red.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
@@ -320,15 +320,43 @@ import {
     }, 
     {
         label: 'REST',
-        href: '/rest',
+        children: [
+          
+          {
+            label: 'Cabins',
+            // subLabel: '1-2 People',
+            href: '/rest/cabins',
+          },
+          {
+            label: 'Cottages',
+            // subLabel: '1-2 People',
+            href: '/rest/cottage',
+          },
+          {
+            label: 'Double Cottages',
+            // subLabel: '1-4 People',
+            href: '/rest/cottage-double-room',
+          },
+          {
+            label: 'Deluxe Room',
+            // subLabel: '1-2 People',
+            href: '/rest/deluxe-room',
+          },
+        ],
+          
     },
     {
       label: 'REJUVENATE',
       children: [
         {
-          label: 'Food',
+          label: 'Rejuvenate',
           subLabel: '',
           href: '/rejuvenate',
+        },
+        {
+          label: 'Food',
+          subLabel: '',
+          href: '/rejuvenate/food',
         },
       ],
     }, 
