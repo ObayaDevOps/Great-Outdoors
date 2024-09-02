@@ -55,7 +55,7 @@ export default function Home() {
     
     <Box>
       <Head>
-        <title>Reservations - Great Outdoors Kalanamu</title>
+        <title>Reservations | Great Outdoors Kalanamu</title>
         <meta name="description" content="Reservations - Retreat.Rest.Rejuvenate" />
         <meta property="og:title" content="Reservations - Great Outdoors Kalanamu" />
         <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />

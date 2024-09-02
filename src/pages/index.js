@@ -19,7 +19,7 @@ import ForestComponent2 from '../components/landingPage/ForestComponent2'
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 import Carousel2 from '../components/carousel2'
-
+import BookingsWidget from '../components/bookingsWidget'
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
@@ -57,6 +57,8 @@ export default function Home() {
       >
         <Box>
           <LandingPageImageSlider />
+
+          < BookingsWidget />
           {/* <Carousel /> */}
           {/* <Carousel2 /> */}
           {/* <FloatingReservationsComponent /> */}
