@@ -5,7 +5,7 @@ import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2';
 
-import styles from '../styles/reserveport.module.css'
+// import styles from '../styles/reserveport.module.css'
 
  
 const scripts = [
