@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 
-// import styles from '../styles/reserveportWidget.module.css'
+import styles from '../styles/reserveportWidget.module.css'
 
  
 const scripts = [
@@ -54,11 +54,12 @@ export default function Home() {
   return (
     
       <Box 
-        bgColor={'red'} 
+        bgColor={'green'} 
 
         // minHeight={'100vh'} 
-        mt={{base: 10, lg: 10}}
-        maxW={'80%'}
+        // mt={{base: 10, lg: 10}}
+        // maxW={'80%'}
+        mb={-10}
         // pt={{base: 24, lg: 32}}
         // className={styles.someClass}  // Example usage of imported styles
       >
