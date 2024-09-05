@@ -113,16 +113,6 @@ import {
             </Flex>
 
           <Box flex={{ base: 1 }} justify={{ base: 'center', md: 'flex-start' }}>
-            {/* <Flex 
-            justify={{ base: 'center', md: 'left' }}
-            >
-              <NextLink href='/#' passHref>
-                    <NextImage 
-                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
-                    width={40} height={40}/>
-              </NextLink>
-            </Flex> */}
-
               <Flex display={{ base: 'none', md: 'none' , lg: 'flex'}} justify={{ base: 'center', md: 'center' }} >
                 <DesktopNav />
               </Flex>
