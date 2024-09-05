@@ -15,8 +15,8 @@ const AboutUsComponent2 = () => {
              bgSize="cover" bgPosition="center" bgAttachment="fixed" 
 
        >
-        <ScaleFade initialScale={0.8}
-            in={isInView1}>
+        {/* <ScaleFade initialScale={0.8}
+            in={isInView1}> */}
 
             <HStack  p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
@@ -81,7 +81,7 @@ const AboutUsComponent2 = () => {
 
             </HStack>
 
-        </ScaleFade>
+        {/* </ScaleFade> */}
         </Box>
 
 
