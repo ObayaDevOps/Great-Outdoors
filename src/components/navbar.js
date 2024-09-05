@@ -38,11 +38,12 @@ import {
   function ReservationsButton() {
     return (
         <Button  size={{base:'xs', md: 'sm'}} 
-        letterSpacing={'2px'} rounded='sm' 
+        
+        letterSpacing={{base:'1px', md: '2px'}} rounded='sm' 
         colorScheme='red' fontFamily={'redTopFont'}
         // href={'/reservations'}
         >
-          <Link href='/reservations'>
+          <Link href='/reservations' fontSize={{base: '7px', md: 'sm'}} >
             RESERVATIONS
           </Link>
           

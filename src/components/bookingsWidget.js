@@ -59,7 +59,7 @@ export default function Home() {
         // minHeight={'100vh'} 
         // mt={{base: 10, lg: 10}}
         // maxW={'80%'}
-        mb={-10}
+        // mb={-10}
         // pt={{base: 24, lg: 32}}
         // className={styles.someClass}  // Example usage of imported styles
       >
