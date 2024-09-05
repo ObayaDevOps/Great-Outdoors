@@ -18,17 +18,18 @@ const AboutUsComponent2 = () => {
         <ScaleFade initialScale={0.8}
             in={isInView1}>
 
-            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+            <HStack  p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 
             border={'2px'}
             borderColor='white'
             shadow={'xl'}
+            my={'50vh'}
 
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-            pt={{base: 8,  md: 12, xl: 24}}>
+            pt={{base: 6,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
                 <HStack mt={{base:6,  md:2}}>
