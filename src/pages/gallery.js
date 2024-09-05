@@ -208,6 +208,7 @@ export default function GalleryPage() {
       'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
     }
     bgSize="cover"
+    bgRepeat='no-repeat'
     bgPosition="center"
     bgAttachment="fixed"
     overflowX='hidden'
@@ -227,10 +228,10 @@ export default function GalleryPage() {
 
       <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
     </Head>
-
+{/* 
       <Box>
         <NavBar />
-      </Box>
+      </Box> */}
 
       <Box
         pt={{ base: 32, md: 44 }}

@@ -63,7 +63,7 @@ import {
       zIndex={9999}
       top={{md:'25px'}}
       // left={'0px'}
-      position={{base:'absolute', lg: 'absolute'}}
+      position={{base:'fixed', lg: 'absolute'}}
       width={'100vw'}
       align={'center'}
 
