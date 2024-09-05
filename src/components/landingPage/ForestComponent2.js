@@ -63,8 +63,7 @@ const AboutUsComponent2 = () => {
                 </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
-                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    See Offers and Discounts
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg' href='/gallery'>
                 </Button>
                 </Box>
                 </Box>

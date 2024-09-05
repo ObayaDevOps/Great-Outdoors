@@ -236,6 +236,7 @@ export default function CottagePage() {
         bgSize="cover"
         bgPosition="center"
         bgAttachment="fixed"
+        overflowX='hidden'
       >
 
         <HeadingSection />
