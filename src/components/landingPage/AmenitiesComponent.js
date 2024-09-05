@@ -109,7 +109,7 @@ export default function AmenitiesComponent(){
 
   return (
     <Flex
-      p={{base: 6,  md: 12, lg: 16, xl: 44}}
+      p={{base: 4,  md: 12, lg: 16, xl: 44}}
       w="full"
       justifyContent="center"
       alignItems="center"

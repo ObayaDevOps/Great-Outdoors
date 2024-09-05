@@ -21,7 +21,7 @@ const AboutUsComponent2 = () => {
         {/* <ScaleFade initialScale={0.8}
             in={isInView1}> */}
 
-            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+            <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 

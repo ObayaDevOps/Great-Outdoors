@@ -10,7 +10,7 @@ const OffersComponent = () => {
 
        >
 
-        <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
+        <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
           <Box 
           bg={'whiteAlpha.300'} 
           border={'2px'}

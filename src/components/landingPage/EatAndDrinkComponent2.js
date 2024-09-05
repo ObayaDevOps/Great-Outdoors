@@ -19,7 +19,7 @@ const EatAndDrinkComponent2 = () => {
         <ScaleFade initialScale={0.9}
             in={isInView1}>
 
-            <HStack p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
+            <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'right'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 
