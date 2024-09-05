@@ -40,12 +40,16 @@ const Carousel2 =()=> {
         return (
           <Box  bgColor={'#0b1722'}
           mb={-16} >
-            <Carousel>
+            <Carousel
+            preventMovementUntilSwipeScrollTolerance={true} 
+             swipeScrollTolerance={50}
+            >
               {slides.map((slide, sid) => (                
                 <Box
                 h='85vh' 
                 w='full'
                 backgroundSize={'cover'}
+                bgPosition="center" 
                 bgRepeat={'no-repeat'}  
                 backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}   
                 backgroundImage={slide.img}  

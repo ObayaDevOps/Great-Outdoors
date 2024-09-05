@@ -25,7 +25,7 @@ const AboutUsComponent2 = () => {
             border={'2px'}
             borderColor='white'
             shadow={'xl'}
-            my={{base:'50vh', md: '0vh'}}
+            my={{base:'64', md: '0vh'}}
 
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 2, md: 6, lg:10, xl: 14}} rounded={'lg'}
