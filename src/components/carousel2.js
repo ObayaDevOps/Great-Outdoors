@@ -46,7 +46,7 @@ const Carousel2 =()=> {
             >
               {slides.map((slide, sid) => (                
                 <Box
-                h='85vh' 
+                minH='100vh' 
                 w='full'
                 backgroundSize={'cover'}
                 bgPosition="center" 

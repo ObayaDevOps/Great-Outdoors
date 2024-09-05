@@ -58,15 +58,15 @@ export default function CottagePage() {
 
         // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.900)'
         // bg={'#0e2a4e'}
-        // bg={'#0b1722'}
-        bgImage={
-          // 'linear(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
-        }
-        bgSize="cover"
-        // bgGradient={''}
-        bgPosition="center"
-        bgAttachment="fixed"
+        bg={'#0b1722'}
+        // bgImage={
+        //   // 'linear(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
+        //   "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
+        // }
+        // bgSize="cover"
+        // // bgGradient={''}
+        // bgPosition="center"
+        // bgAttachment="fixed"
       >
 
         <HeadingSection />

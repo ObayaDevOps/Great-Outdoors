@@ -28,9 +28,9 @@ const EatAndDrinkComponent2 = () => {
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
             shadow={'xl'}
-            my={{base:'50vh', md: '0vh'}}
+            my={{base:'64', md: '0vh'}}
 
-            pt={{base: 8,  md: 12, xl: 24}}>
+            pt={{base: 2,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
                 <HStack mt={{base:6,  md:2}}>
@@ -45,30 +45,28 @@ const EatAndDrinkComponent2 = () => {
                 pb={{base:8, md: 4, lg: 4, xl: 8}} 
                 lineHeight={{lg: '55px' ,xl:'55px'}} 
                 // textColor='white'
-                textColor='#0e2a4e'
-                
-                fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+                textColor='#0e2a4e'              
+                fontWeight={800} 
+                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
                 Indulge in Healthy & Fresh Food
                 </Text>
 
                 <Text 
-                // textColor='white'
-                // textColor='blue.800'
-                textColor='#0e2a4e'
-
-                fontFamily={'bodyFont'} fontSize='lg' py={4} fontWeight={400}>
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
                 It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes. 
                 </Text>
                 <Text 
-                // textColor='white'
-                textColor='#0e2a4e'
-
-                // textColor='blue.800'
-                fontFamily={'bodyFont'} fontSize='lg'>
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
                 From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
                 </Text>
 
-                <Box py={{base:10, md: 6}} >
+                <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
                     Call to Book
                 </Button>

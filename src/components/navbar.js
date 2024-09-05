@@ -101,7 +101,7 @@ import {
 
           <Flex 
             justify={{ base: 'center', md: 'left' }}
-            ml={{base:24, md: 8}}
+            ml={{base:20, md: 8}}
             >
               <NextLink href='/#' passHref>
                     <NextImage 
