@@ -11,6 +11,8 @@ const AboutUsComponent2 = () => {
 
   return (
     <Box bgColor={'#0b1722'} minH={'100vh'} >
+
+      
       <Box minH={{base:' 160%', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
              bgSize="cover" bgPosition="center" 
              bgAttachment="fixed" 

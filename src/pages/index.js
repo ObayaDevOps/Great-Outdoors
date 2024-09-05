@@ -14,6 +14,7 @@ import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
 import OffersComponent from '../components/landingPage/OffersComponent'
 import LandingPageImageSlider from '../components/landingPage/LandingPageImageSlider'
+import Carousel from '../components/carousel'
 import ForestComponent2 from '../components/landingPage/ForestComponent2'
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
@@ -57,9 +58,9 @@ export default function Home() {
       >
         <Box>
           {/* <LandingPageImageSlider /> */}
-          <Carousel2 />
 
-          {/* < BookingsWidget /> */}
+          < BookingsWidget />
+          <Carousel2 />
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2 />
