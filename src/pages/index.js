@@ -14,11 +14,11 @@ import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
 import OffersComponent from '../components/landingPage/OffersComponent'
 import LandingPageImageSlider from '../components/landingPage/LandingPageImageSlider'
-import Carousel from '../components/carousel'
 import ForestComponent2 from '../components/landingPage/ForestComponent2'
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 import Carousel2 from '../components/carousel2'
+
 import BookingsWidget from '../components/bookingsWidget'
 
 import NavBar from '../components/navbar' 
@@ -56,11 +56,10 @@ export default function Home() {
         // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
         <Box>
-          <LandingPageImageSlider />
+          {/* <LandingPageImageSlider /> */}
+          <Carousel2 />
 
-          < BookingsWidget />
-          {/* <Carousel /> */}
-          {/* <Carousel2 /> */}
+          {/* < BookingsWidget /> */}
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2 />

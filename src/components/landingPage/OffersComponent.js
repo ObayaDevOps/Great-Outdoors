@@ -16,7 +16,7 @@ const OffersComponent = () => {
           border={'2px'}
           borderColor='white'
           maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-          my={'50vh'}
+          my={{base:'50vh', md: '0vh'}}
 
            p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}>
 

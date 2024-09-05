@@ -55,7 +55,7 @@ export default function Home() {
     
       <Box 
         bgColor={'green'} 
-
+        
         // minHeight={'100vh'} 
         // mt={{base: 10, lg: 10}}
         // maxW={'80%'}

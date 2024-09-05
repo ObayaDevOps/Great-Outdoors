@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image'
+import { Box, Flex, Text} from '@chakra-ui/react'
 
 
 
@@ -33,50 +34,31 @@ const Carousel2 =()=> {
           label: "Corporate Retreats",
         
         },
-        {   
-          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg",
-          width: 1024,
-          height: 683,
-          caption: "Great Outdoors",
-          label: "Find Serenity",
         
-        },
-        {   
-          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101887/A7300820-1024x683_rh8gsj.jpg",
-          width: 1024,
-          height: 683,
-          caption: "Great Outdoors",
-          label: "Gourmet Food",
-        
-        },
-        {   
-          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg",
-          width: 770,
-          height: 300,
-          caption: "Great Outdoors",
-          label: "Premium Lodging",
-    
-      },
-      {   
-        img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101818/A7300337-1024x683_trpffp.jpg",
-        width: 770,
-        height: 300,
-        caption: "Great Outdoors",
-        label: "At Home in Nature",
-    
-      },
         
       ] 
         return (
+          <Box  bgColor={'#0b1722'}
+          mb={-16} >
             <Carousel>
-          {slides.map((slide, sid) => (                
-                <div>
-        <Image src={slide.img} 
-        width={slide.width} height={slide.height}/>
-                </div>
-                
-            ))}
+              {slides.map((slide, sid) => (                
+                <Box
+                h='100vh' 
+                w='full'
+                backgroundSize={'cover'}
+                bgRepeat={'no-repeat'}  
+                backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}   
+                backgroundImage={slide.img}  
+                 
+                >
+                  <Text fontFamily='navBarFont' textColor='white' fontSize={{base: '5xl', md:'7xl'}} pt={'45vh'} >
+                    {slide.label}
+                  </Text>
+                  <Box ></Box>
+                </Box>
+                ))}
             </Carousel>
+            </Box>
         )
 };
 

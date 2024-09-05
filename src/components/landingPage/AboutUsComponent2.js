@@ -10,7 +10,7 @@ const AboutUsComponent2 = () => {
     const isInView1 = useInView(ref1)
 
   return (
-    <Box minH={'100vh'} >
+    <Box bgColor={'#0b1722'} minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
              bgSize="cover" bgPosition="center" bgAttachment="fixed" 
 
@@ -18,17 +18,17 @@ const AboutUsComponent2 = () => {
         <ScaleFade initialScale={0.8}
             in={isInView1}>
 
-            <HStack  p={{base:8, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+            <HStack  p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
             ref={ref1}
             bg={'whiteAlpha.900'} 
             border={'2px'}
             borderColor='white'
             shadow={'xl'}
-            my={'50vh'}
+            my={{base:'50vh', md: '0vh'}}
 
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-            p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+            p={{base: 2, md: 6, lg:10, xl: 14}} rounded={'lg'}
             pt={{base: 6,  md: 12, xl: 24}}>
 
             <Box p={{base: 4, md: 4, lg: 0}}>
@@ -46,7 +46,7 @@ const AboutUsComponent2 = () => {
                 // textColor='white'
                 textColor='#0e2a4e'
                 
-                fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+                fontWeight={800} fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
                 Retreat. Rest. Rejuvenate
                 </Text>
 
