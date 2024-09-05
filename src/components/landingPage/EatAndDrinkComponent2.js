@@ -28,7 +28,7 @@ const EatAndDrinkComponent2 = () => {
             maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
             p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
             shadow={'xl'}
-            my={{base:'64', md: '0vh'}}
+            my={{base:'48', md: '0vh'}}
 
             pt={{base: 2,  md: 12, xl: 24}}>
 

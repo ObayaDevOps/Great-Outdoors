@@ -59,8 +59,9 @@ export default function Home() {
         <Box>
           {/* <LandingPageImageSlider /> */}
 
-          < BookingsWidget />
           <Carousel2 />
+          {/* < BookingsWidget /> */}
+
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2 />

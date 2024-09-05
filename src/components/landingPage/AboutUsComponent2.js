@@ -17,7 +17,8 @@ const AboutUsComponent2 = () => {
       bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
              bgSize="cover" bgPosition="center" 
              bgAttachment="fixed" 
-             overflowX='scroll'
+             overflowX='hidden'
+
 
        >
         {/* <ScaleFade initialScale={0.8}
