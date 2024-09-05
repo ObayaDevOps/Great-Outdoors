@@ -211,7 +211,7 @@ export default function GalleryPage() {
     bgPosition="center"
     bgAttachment="fixed"
     overflowX='hidden'
-    minH={'130vh'}
+    minH={'125dvh'}
     >
     <Head>
       <title>Gallery | Great Outdoors</title>
