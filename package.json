@@ -16,7 +16,6 @@
     "cloudinary-build-url": "^0.2.4",
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
-    "nuka-carousel": "^4.8.4",
     "react": "^18",
     "react-datepicker": "^7.2.0",
     "react-dom": "^18",
