@@ -207,10 +207,11 @@ export default function GalleryPage() {
     bgImage={
       'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
     }
-    bgSize="contain"
+    bgSize="cover"
     bgPosition="center"
     bgAttachment="fixed"
     overflowX='hidden'
+    minH={'130vh'}
     >
     <Head>
       <title>Gallery | Great Outdoors</title>
