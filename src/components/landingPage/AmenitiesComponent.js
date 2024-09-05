@@ -116,10 +116,12 @@ export default function AmenitiesComponent(){
       // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgSize="cover" bgPosition="center" bgAttachment="fixed"
+                   overflowX='hidden'
+
       minH={{base:' 260vh', md:'170vh'}} 
     >
-      <ScaleFade initialScale={0.8}
-          in={isInView1}>
+      {/* <ScaleFade initialScale={0.8}
+          in={isInView1}> */}
 
       <Box 
       ref={ref1}
@@ -212,7 +214,7 @@ export default function AmenitiesComponent(){
         </Box>
       </Box>
 
-      </ScaleFade>
+      {/* </ScaleFade> */}
     </Flex>
   );
 };

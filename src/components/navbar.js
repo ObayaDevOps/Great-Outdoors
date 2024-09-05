@@ -63,14 +63,16 @@ import {
       zIndex={9999}
       top={{md:'25px'}}
       // left={'0px'}
-      position={{base:'fixed', lg: 'absolute'}}
+      position={{base:'absolute', lg: 'absolute'}}
       width={'100vw'}
       align={'center'}
 
       >
         <Flex
         overflow='-moz-hidden-unscrollable'
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('whiteAlpha.800', 'gray.800')}
+        
+          
           color={useColorModeValue('gray.600', 'white')}
           shadow={'xl'}
           w={{base: '100%', md:'90%'}}
@@ -79,9 +81,9 @@ import {
           py={{ base: 2 }}
           px={{ base: 4 }}
           rounded={{base: 'none', md: 'lg'}}
-          // borderBottom={1}
+          borderBottom={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
+          borderColor={useColorModeValue('white', 'gray.900')}
           align={'center'}
           >
           <Flex
@@ -91,7 +93,7 @@ import {
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                isOpen ? <CloseIcon w={3} h={3} color='black'  /> : <HamburgerIcon w={5} h={5} color='black' />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}

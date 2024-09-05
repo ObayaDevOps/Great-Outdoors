@@ -7,6 +7,8 @@ const OffersComponent = () => {
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'100vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012553/IMG_8943-2_jh9wgb.jpg'} 
              bgSize="cover" bgPosition="center" bgAttachment="fixed" 
+             overflowX='hidden'
+
 
        >
 

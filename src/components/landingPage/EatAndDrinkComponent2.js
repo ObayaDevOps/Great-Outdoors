@@ -13,7 +13,9 @@ const EatAndDrinkComponent2 = () => {
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} 
       bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg'} 
-             bgSize="cover" bgPosition="center" 
+             bgSize="cover" bgPosition="center"
+             overflowX='hidden'
+ 
 
        >
         <ScaleFade initialScale={0.9}

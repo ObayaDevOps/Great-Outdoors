@@ -16,6 +16,8 @@ const AboutUsComponent2 = () => {
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
              bgSize="cover" bgPosition="center" 
+             overflowX='hidden'
+
 
        >
         {/* <ScaleFade initialScale={0.8}
