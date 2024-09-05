@@ -43,7 +43,7 @@ const Carousel2 =()=> {
             <Carousel>
               {slides.map((slide, sid) => (                
                 <Box
-                h='100vh' 
+                h='85vh' 
                 w='full'
                 backgroundSize={'cover'}
                 bgRepeat={'no-repeat'}  
