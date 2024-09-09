@@ -289,7 +289,7 @@ import {
             align={'start'}>
             {children &&
               children.map((child) => (
-                <NextLink href={child.href} key={child.label} passHref>
+                <NextLink href={child.href} key={child.label}  fontFamily={'navBarFont'} passHref>
                   {/* <Link  py={2}  fontFamily="redTopFont" > */}
                     {child.label}
                   {/* </Link> */}

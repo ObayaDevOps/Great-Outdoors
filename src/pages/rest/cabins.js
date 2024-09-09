@@ -23,12 +23,47 @@ import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import Head from 'next/head';
 import Image from 'next/image'
 
-import Carousel from '../../components/carousel2'
+import Carousel from '../../components/carousel3'
 
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
 
+const slides =[
+  {   
+      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104810/IMG_3701-scaled_agc8bi.jpg",
+      width: 770,
+      height: 300,
+      caption: "Great Outdoors",
+      label: "At Home in Nature",
 
+  },
+  {   
+    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101795/A7300731-1024x654_xcwntd.jpg",
+    width: 1024,
+    height: 654,
+    caption: "Great Outdoors",
+    label: "Cozy Cottages",
+  
+  },
+  {   
+    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101810/A7300734-1024x645_xt0ed2.jpg",
+    width: 1024,
+    height: 645,
+    caption: "Great Outdoors",
+    label: "Corporate Retreats",
+  
+  },
+  {   
+    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101661/IMG_4475-1024x683_t0ijli.jpg",
+    width: 1024,
+    height: 645,
+    caption: "Great Outdoors",
+    label: "Corporate Retreats",
+  
+  },
+  
+  
+] 
 
 export default function CabinsPage() {
   return (
@@ -158,7 +193,7 @@ const Section1 = () => {
     borderColor={"white"}
     mt={{ base: "10vh", lg: "25vh" }}
   >
-      <Carousel />
+      <Carousel slides={slides} />
       <Section1Content />
     </Container>
   )
