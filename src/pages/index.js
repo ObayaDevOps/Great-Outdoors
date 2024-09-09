@@ -43,11 +43,11 @@ export default function Home() {
 
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
-{/* 
+
       <Box>
         <NavBar />
       </Box>
-       */}
+      
       <Box 
       bg={'whiteAlpha'} 
         // minH={'100vh'} 

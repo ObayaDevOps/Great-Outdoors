@@ -212,7 +212,7 @@ export default function GalleryPage() {
     bgPosition="center"
     bgAttachment="fixed"
     overflowX='hidden'
-    minH={'100dvh'}
+    minH={'80dvh'}
     >
     <Head>
       <title>Gallery | Great Outdoors</title>
@@ -228,10 +228,10 @@ export default function GalleryPage() {
 
       <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
     </Head>
-{/* 
+
       <Box>
         <NavBar />
-      </Box> */}
+      </Box>
 
       <Box
         pt={{ base: 32, md: 44 }}

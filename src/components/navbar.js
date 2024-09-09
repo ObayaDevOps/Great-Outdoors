@@ -66,11 +66,12 @@ import {
       position={{base:'absolute', lg: 'absolute'}}
       width={'100vw'}
       align={'center'}
+      
 
       >
         <Flex
         overflow='-moz-hidden-unscrollable'
-          bg={useColorModeValue('whiteAlpha.800', 'gray.800')}
+          bg={useColorModeValue('white', 'gray.800')}
         
           
           color={useColorModeValue('gray.600', 'white')}
