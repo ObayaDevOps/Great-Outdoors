@@ -57,9 +57,11 @@ const Carousel2 =(props)=> {
                 backgroundImage={slide.img}  
                  
                 >
+                  <Box maxW={{base:'xl', md: 'xl'}}>
                   <Text fontFamily='navBarFont' textColor='white' fontSize={{base: '5xl', md:'7xl'}} pt={'45vh'} >
                     {slide.label}
                   </Text>
+                  </Box>
                   <Box ></Box>
                 </Box>
                 ))}

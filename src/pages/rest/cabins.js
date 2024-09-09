@@ -19,6 +19,8 @@ import {
 
 import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
+import * as Icons from "react-icons/fa";
+
 
 import Head from 'next/head';
 import Image from 'next/image'
@@ -27,6 +29,7 @@ import Carousel from '../../components/carousel3'
 
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
+import Link from 'next/link'
 
 const slides =[
   {   
@@ -200,6 +203,101 @@ const Section1 = () => {
 } 
 
 const Section1Content = () => {
+  const Feature = (props) => {
+
+    const DynamicFaIcon = ({ name }) => {
+      // console.log('ICON!!')
+      // console.log(name)
+      const IconComponent = Icons[name];
+      // console.log(IconComponent)
+  
+    
+      if (!IconComponent) { // Return a default one
+        return <Icons.FaCameraRetro size={24} />;
+        // return <Icons.FaBeer />;
+
+      }
+    
+      return <IconComponent size={24} color='#0e2a4e'  />;
+    };
+  
+
+    return (
+      <Flex mb={2} >
+        <Flex shrink={0}>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            h={{base:12, md: 24}}
+            w={{base:12, md: 10}}
+            rounded="md"
+            _light={{ bg: "brand.500" }}
+            color="gray.900"
+          >
+
+
+      
+      <Box mr="4" boxSize={{base:'1em', md:'2em'}} >
+        {/* <DynamicFaIcon name="FaCameraRetro" /> */}
+        {/* <DynamicFaIcon name="FaGlassMartini" /> */}
+        {/* <DynamicFaIcon name="FaCameraRetro" /> */}
+        {/* <DynamicFaIcon name="FaBatteryFull" /> */}
+        {/* <DynamicFaIcon name="FaLeaf" /> */}
+
+        {/* <DynamicFaIcon name="FaBusinessTime" /> */}
+        {/* <DynamicFaIcon name="FaBatteryFull" /> */}
+        {/* <DynamicFaIcon name="FaUserClock" /> */}
+        <DynamicFaIcon name={props.icon} />
+
+
+
+      </Box>
+      
+
+            
+          {/* <Icon
+            mr={{base: 4, md: 6}}
+            fontSize={{base: 18, md: 10}}
+            // fontSize="16"
+
+            boxSize={{base:'1em', md:'2em'}}
+            _groupHover={{
+              color: 'white',
+            }}
+            as={icon}
+          /> */}
+        
+
+
+          </Flex>
+        </Flex>
+        <Box ml={2}>
+        <Text
+        fontFamily={'navBarFont'} 
+        letterSpacing={'1px'} 
+        pt={{base:2, md: 2, lg: 4, xl: 4}} 
+        lineHeight={{lg: '55px' ,xl:'55px'}} 
+        // textColor='white'
+        textColor='#0e2a4e'
+        textAlign={'left'}
+        fontWeight={600} 
+        fontSize={{base:'md' ,lg: 'lg', xl:'lg'}}
+        >
+            {props.title}
+          </Text>
+          <Text 
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
+            {props.children}
+          </Text>
+        </Box>
+      </Flex>
+    );
+  };
+
+
   return (
     <Box>
 
@@ -207,7 +305,7 @@ const Section1Content = () => {
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
-        pb={{base:2, md: 2, lg: 2, xl: 2}} 
+        pb={{base:2, md: 2, lg: 4, xl: 4}} 
         lineHeight={{lg: '55px' ,xl:'55px'}} 
         // textColor='white'
         textColor='#0e2a4e'
@@ -215,21 +313,29 @@ const Section1Content = () => {
         fontWeight={800} 
         fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
         >
-          Cottages
+          Cabins
         </Text>
       </Box>
 
       <Box>
         <Text 
-        textColor='#cf2e2e' fontFamily={'navBarFont'} 
+        textColor='#cf2e2e' fontFamily={'bodyFont'} 
         fontSize={{base:'sm', md: 'xl'}}
-        pb={6}
+        pb={4}
         >
         Price from UGX 200,000 Night
         </Text>
       </Box>
 
-      <Box>
+      <Flex pb={8}>
+        <Button  colorScheme={'red'} size={{base: 'sm', md: 'lg'}} fontFamily='bodyFont'>
+          <Link href='/reservations' fontSize={{base: '7px', md: 'sm'}} >
+          Book Now
+          </Link>
+        </Button>
+      </Flex>
+
+      <Box pb={{base: 12, md: 16}}>
         <Text pb={4} textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
         The room is in a lovely brick, stone and wood cottage, surrounded by trees. 
         It has a private patio with mesh that keeps bugs out,
@@ -246,22 +352,74 @@ const Section1Content = () => {
         </Text>
       </Box>
 
-      <Box>
+      <Divider />
+
+      <Box pt={12}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 4, xl: 4}} 
+        py={{base:2, md: 2, lg: 4, xl: 4}} 
         lineHeight={{lg: '55px' ,xl:'55px'}} 
         // textColor='white'
         textColor='#0e2a4e'
         textAlign={'left'}
         fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
+        fontSize={{base:'xl' ,lg: 'xl', xl:'3xl'}}
         >
           Amenities
         </Text>
 
-        <SimpleGrid
+
+        <Box mt={{base: 4, lg: 2}}>
+            <Stack
+              spacing={{ base: 10, md: 0 }}
+              display={{ md: "grid" }}
+              gridTemplateColumns={{ base:"repeat(3,1fr)",  md: "repeat(3,1fr)" }}
+              gridColumnGap={{ md: 2 }}
+              gridRowGap={{ md: 2 }}
+            >
+              <Feature
+                title="Balcony or Terrace"
+                icon={'FaTree'}
+              >
+                
+              </Feature>
+
+              <Feature
+                title="Tea served every evening"
+                icon={
+                  'FaWind'
+                }
+              >
+              </Feature>
+
+              <Feature
+                title="Shower"
+                icon={
+                  'FaRegLemon'
+                }
+              >
+              </Feature>
+
+              <Feature
+                title="King size bed"
+                icon={
+                  'FaSwimmingPool'
+                }
+              >
+              </Feature>
+
+              <Feature
+                title="Wifi"
+                icon={
+                  'FaWifi'
+                }
+              >
+              </Feature>
+            </Stack>
+          </Box>
+
+        {/* <SimpleGrid
           columns={{ base: 1, md: 2, lg: 3 }}
           spacing={{ base: 4, md: 8, lg: 16 }}
           py={2}
@@ -292,13 +450,13 @@ const Section1Content = () => {
             High speed WiFi
             </Text>
           </Box>
-        </SimpleGrid>
+        </SimpleGrid> */}
 
 
 
       </Box>
 
-      <Box>
+      <Box py={8}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -348,7 +506,7 @@ const Section1Content = () => {
 
       </Box>
 
-      <Box>
+      <Box pb={6}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -367,7 +525,7 @@ const Section1Content = () => {
         </Text>
       </Box>
 
-      <Box>
+      <Box pb={4}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -386,7 +544,7 @@ const Section1Content = () => {
         </Text>
       </Box>
 
-      <Box>
+      <Box pb={4}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -406,7 +564,7 @@ const Section1Content = () => {
         </Text>
       </Box>
 
-      <Box>
+      <Box pb={4}>
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -427,6 +585,40 @@ const Section1Content = () => {
 
 
 
+      </Box>
+
+      <Box py={4}>
+      <Button
+        maxW={{base:'2xl', md:'6xl'}}
+        as="a"
+        colorScheme="red"
+        // variant='outline'
+        display="inline-flex"
+        alignItems="center"
+        justifyContent="center"
+        // border={'2px'}
+        rounded='lg'
+        href='/reservations'
+        fontFamily='bodyFont'
+        // shadow={'lg'}
+        // textColor={ 'white'}
+
+
+        w={{
+            base: "full",
+            sm: "full",
+        }}
+        mb={{
+            base: 2,
+            sm: 0,
+        }}
+        size="lg"
+        cursor="pointer"
+        // fontFamily="Helvetica"
+
+        >                        
+          Book Now
+        </Button>
       </Box>
 
 
