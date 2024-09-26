@@ -31,6 +31,23 @@ import NavBar from '../../components/navbar'
 import Footer from '../../components/footer' 
 import Link from 'next/link'
 
+import client from '../../../src/sanity/lib/client'
+
+
+export async function getStaticProps() {
+  const cabinPageContent = await client.fetch(`
+  *[_type == "cabinPage"]`);
+
+  return {
+    props: {
+      cabinPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
+
 const slides =[
   {   
       img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104810/IMG_3701-scaled_agc8bi.jpg",
@@ -68,7 +85,13 @@ const slides =[
   
 ] 
 
-export default function CabinsPage() {
+export default function CabinsPage(props) {
+  const cabinPageContent  = props[0] || [];
+
+  console.log('cabinPageContent')
+
+  console.log(props)
+
   return (
     <Box>
     <Head>

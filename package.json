@@ -13,15 +13,20 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.57.2",
     "cloudinary-build-url": "^0.2.4",
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
+    "next-sanity": "^9.5.0",
     "react": "^18",
     "react-datepicker": "^7.2.0",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-photo-album": "^2.4.1",
     "react-responsive-carousel": "^3.2.23",
+    "sanity": "^3.57.2",
+    "styled-components": "^6.1.13",
     "yet-another-react-lightbox": "^3.21.0"
   }
 }

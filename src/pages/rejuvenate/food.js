@@ -23,7 +23,7 @@ import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import Head from 'next/head';
 import Image from 'next/image'
 
-import Carousel from '../../components/carousel2'
+import Carousel from '../../components/carousel3'
 
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 

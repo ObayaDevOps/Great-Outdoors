@@ -25,6 +25,23 @@ import BookingsWidget from '../components/bookingsWidget'
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
 
+import client from '../../src/sanity/lib/client'
+
+
+export async function getStaticProps() {
+  const landingPageContent = await client.fetch(`
+  *[_type == "landingPage"]`);
+
+  return {
+    props: {
+      landingPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
+
 
 const slides =[
   {   
@@ -55,7 +72,10 @@ const slides =[
   
 ] 
 
-export default function Home() {
+export default function Home(props) {
+  console.log('props')
+  console.log(props)
+
   return (
     <Box>
       <Head>
@@ -93,14 +113,14 @@ export default function Home() {
 
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
-          <AboutUsComponent2 />
+          <AboutUsComponent2  pageContent={props.landingPageContent}/>
           {/* <EatAndDrinkComponent /> */}
-          <EatAndDrinkComponent2 />
-          <AmenitiesComponent />
+          <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
+          <AmenitiesComponent  pageContent={props.landingPageContent}/>
           {/* <ForestComponent /> */}
-          <ForestComponent2 />
+          <ForestComponent2  pageContent={props.landingPageContent}/>
           {/* <TestimonialsComponent /> */}
-          <OffersComponent />
+          {/* <OffersComponent /> */}
         </Box>
 
 
@@ -113,3 +133,5 @@ export default function Home() {
       
   )
 }
+
+

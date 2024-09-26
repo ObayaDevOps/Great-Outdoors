@@ -7,7 +7,9 @@ import { useInView } from "framer-motion";
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade } from '@chakra-ui/react'
 import Image from 'next/image'
 
-const AboutUsComponent2 = () => {
+const AboutUsComponent2 = (props) => {
+  const landingPageContent  = props.pageContent[0] || [];
+
   
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
@@ -51,7 +53,7 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'              
                 fontWeight={800} 
                 fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
-                A Truly Natural Experience for the Senses
+                {landingPageContent.forestTitle}
                 </Text>
 
                 <Text 
@@ -59,11 +61,13 @@ const AboutUsComponent2 = () => {
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                For special rates please contact the front office : +256 701519853
-                </Text>
+                {landingPageContent.forestParagraph1}  
+        
+                       </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg' href='/gallery'>
+                {landingPageContent.forestButtonText}
                 </Button>
                 </Box>
                 </Box>

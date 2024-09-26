@@ -4,7 +4,9 @@ import { useInView } from "framer-motion";
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
 
-const AboutUsComponent2 = () => {
+const AboutUsComponent2 = (props) => {
+  const landingPageContent  = props.pageContent[0] || [];
+
   
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
@@ -54,7 +56,7 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'              
                 fontWeight={800} 
                 fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
-                Retreat. Rest. Rejuvenate
+                {landingPageContent.aboutUsTitle}
                 </Text>
 
 
@@ -64,23 +66,19 @@ const AboutUsComponent2 = () => {
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                The Great Outdoors is the ideal retreat for nature lovers, teams,
-                and people that just want to leave the metropolitan hustle & bustle behind, 
-                get a breath of fresh air, rest, and rejuvenate in the lap of nature.
+                {landingPageContent.aboutUsParagraph1}
                 </Text>
                 <Text 
                 textColor={'gray.600'}
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                This eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala,
-                is a place people come to for unique retreat experiences, 
-                unforgettable weekends, relaxation, corporate retreats, and reconnecting with family.
+                {landingPageContent.aboutUsParagraph2}
                 </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    Discover More
+                {landingPageContent.aboutUsButtonText}
                 </Button>
                 </Box>
                 </Box>
