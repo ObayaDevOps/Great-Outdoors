@@ -33,7 +33,15 @@ import client from '../../../src/sanity/lib/client'
 
 export async function getStaticProps() {
   const cabinPageContent = await client.fetch(`
-  *[_type == "cabinPage"]`);
+  *[_type == "cabinPage"]{
+    ...,
+        images[] 
+          {
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }`);
 
   return {
     props: {
@@ -43,44 +51,6 @@ export async function getStaticProps() {
   };
 }
 
-
-
-const slides =[
-  {   
-      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724104810/IMG_3701-scaled_agc8bi.jpg",
-      width: 770,
-      height: 300,
-      caption: "Great Outdoors",
-      label: "At Home in Nature",
-
-  },
-  {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101795/A7300731-1024x654_xcwntd.jpg",
-    width: 1024,
-    height: 654,
-    caption: "Great Outdoors",
-    label: "Cozy Cottages",
-  
-  },
-  {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101810/A7300734-1024x645_xt0ed2.jpg",
-    width: 1024,
-    height: 645,
-    caption: "Great Outdoors",
-    label: "Corporate Retreats",
-  
-  },
-  {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101661/IMG_4475-1024x683_t0ijli.jpg",
-    width: 1024,
-    height: 645,
-    caption: "Great Outdoors",
-    label: "Corporate Retreats",
-  
-  },
-  
-  
-] 
 
 export default function CabinsPage(props) {
   const cabinPageContent  = props.cabinPageContent[0] || [];
@@ -92,7 +62,7 @@ export default function CabinsPage(props) {
   return (
     <Box>
     <Head>
-      <title>{cabinPageContent.roomTitle1} | Great Outdoors</title>
+      <title>Cabins | Great Outdoors</title>
       <meta name="description" content="Retreat.Rest.Rejuvenate" />
 
       <meta property="og:title" content="Great Outdoors Kalanamu" />
@@ -191,6 +161,7 @@ const Section1 = (props) => {
   console.log('Hej');
   console.log(props.content);
 
+
   return (
     <Container
     maxW={{ base: "95%", md: "90%" }}
@@ -204,7 +175,7 @@ const Section1 = (props) => {
     borderColor={"white"}
     mt={{ base: "10vh", lg: "25vh" }}
   >
-      <Carousel slides={slides} />
+      <Carousel slides={props.content.images} />
       <Section1Content content={props.content} />
     </Container>
   )
