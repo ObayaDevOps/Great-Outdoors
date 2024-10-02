@@ -8,7 +8,6 @@ import {
   Stack,
   Text,
   Button,
-  VisuallyHidden,
   Input,
   IconButton,
   useColorModeValue,
@@ -52,7 +51,6 @@ const SocialButton = ({
       _hover={{
         bg: useColorModeValue('purple.400', 'whiteAlpha.200'),
       }}>
-      <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>
   )
