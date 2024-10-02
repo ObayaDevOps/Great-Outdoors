@@ -28,36 +28,117 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+
+    //Top Section
     defineField({
-      name: 'aboutUsTitle',
-      title: 'About Us Title',
+      name: 'roomTitle1',
+      title: 'Room Title1',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'aboutUsParagraph1',
-      title: 'About Us Paragraph 1',
+      name: 'roomSubTitle1',
+      title: 'Room SubTitle1',
       type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    //Images
+    defineField({
+      name: 'images',
+      title: 'cottage Images',
+      type: 'array',
+      of: [{ type: 'image' }],
+    }),
+
+    defineField({
+      name: 'roomTitle2',
+      title: 'Room Title2',
+      type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'aboutUsParagraph2',
-      title: 'About Us Paragraph 2',
+      name: 'priceSubtitle',
+      title: 'Price Subtitle',
       type: 'string',
     }),
+
+
     defineField({
-        name: 'aboutUsButtonText',
-        title: 'About Us Button Text',
-        type: 'string',
-      }),      
+      name: 'paragraph1',
+      title: 'SummaryParagraph 1',
+      type: 'text',
+    }),
     defineField({
-        name: 'aboutUsBackgroundImage',
-        title: 'About Us Background Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
+      name: 'paragraph2',
+      title: 'SummaryParagraph 2',
+      type: 'text',
+    }),
+    defineField({
+      name: 'paragraph3',
+      title: 'SummaryParagraph 3',
+      type: 'text',
+    }),
+
+
+    //Amenities
+    defineField({
+      name: 'amenities',
+      title: 'Amenities',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Balcony or Terrace', value: 'balcony' },
+          { title: 'Evening Tea Service', value: 'tea' },
+          { title: 'Shower', value: 'shower' },
+          { title: 'King Size Bed', value: 'kingBed' },
+          { title: 'Wifi', value: 'wifi' },
+        ],
+      },
+    }),
+      
+
+    defineField({
+        name: 'houseRules',
+        title: 'House Rules',
+        type: 'object',
+        fields: [
+          {
+            name: 'checkIn',
+            title: 'Check-in Times',
+            type: 'array',
+            of: [{ type: 'string' }],
+          },
+          {
+            name: 'checkOut',
+            title: 'Check-out Times',
+            type: 'array',
+            of: [{ type: 'string' }],
+          },
+        ],
       }),
 
+    defineField({
+      name: 'specialInstructions',
+      title: 'Special Check-in Instructions',
+      type: 'text',
+    }),
+    defineField({
+      name: 'childrenAndExtraBeds',
+      title: 'Children and Extra Beds Policy',
+      type: 'text',
+    }),
+    defineField({
+      name: 'petPolicy',
+      title: 'Pet Policy',
+      type: 'string',
+    }),
+    defineField({
+      name: 'cancellationPolicy',
+      title: 'Cancellation Policy',
+      type: 'text',
+    }),
 
 
   ],

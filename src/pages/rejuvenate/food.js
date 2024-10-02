@@ -188,8 +188,6 @@ const Section1 = () => {
     borderColor={"white"}
     mt={{ base: "10vh", lg: "25vh" }}
   >
-      <Carousel slides={slides} />
-
       <Section1Content />
     </Container>
   )
@@ -200,6 +198,12 @@ const Section1Content = () => {
     <Box>
 
       <Box>
+      <HStack mt={{base:6,  md:2}}>
+          <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+            <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+            FARM TO PLATE
+            </Text>
+        </HStack>        
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
@@ -211,224 +215,826 @@ const Section1Content = () => {
         fontWeight={800} 
         fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
         >
-          Cottages
+          Freshly prepared meals enjoyed in open air spaces.
+
         </Text>
       </Box>
 
       <Box>
-        <Text 
-        textColor='#cf2e2e' fontFamily={'navBarFont'} 
-        fontSize={{base:'sm', md: 'xl'}}
-        pb={6}
-        >
-        Price from UGX 200,000 Night
-        </Text>
+      <Text 
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
+                It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes.
+                 From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
+                </Text>
+                <Text 
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
+                Open Days: Monday - Saturday
+                </Text>
+                <Text 
+                textColor={'gray.600'}
+                fontFamily={'bodyFont'}  
+                fontSize={{base:'sm', md: 'lg'}} 
+                py={2} fontWeight={400}>
+                Open Timing: 7:00am - 10:00pm
+                </Text>
       </Box>
+      <Box p={20}>
+      <Image
+              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg'}
 
-      <Box>
-        <Text pb={4} textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
-        The room is in a lovely brick, stone and wood cottage, surrounded by trees. 
-        It has a private patio with mesh that keeps bugs out,
-         so you can stay out on the patio as long as you want in the evening without being bothered by bugs!
-        </Text>
-        <Text pb={4} textColor={'gray.600'} fontFamily={'bodyFont'} fontSize={{base:'sm', md: 'lg'}} >
-        The patio looks out on a front garden with avocado and mango trees.
-         There is a common area / lobby that is beautifully decorated with paintings of common birds in the area.
-        </Text>
-        <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-        The room comes with a mosquito net as well, for extra protection. The sleeping space is separated 
-        from the showers and toilet by a door for privacy. It is close to the wide veranda with tables, 
-        which makes for good work space.
-        </Text>
-      </Box>
+              width={1024}
+              height={683}
+              borderTopRadius="xl"
+              objectFit="cover"
+              w="100%"
+              h={{ base: "200px", md: "250px", lg: "300px" }}
+            />
+            </Box>  
 
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 4, xl: 4}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          Amenities
-        </Text>
+      <FoodCards />
 
-        <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 3 }}
-          spacing={{ base: 4, md: 8, lg: 16 }}
-          py={2}
-          // mt={4}
-          mx={'auto'}>
-          <Box>
-            <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            High speed WiFi
-            </Text>
-          </Box>
-          <Box>
-            <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            High speed WiFi
-            </Text>
-          </Box>
-          <Box>
-            <Text pb={4}   textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            High speed WiFi
-            </Text>
-          </Box>
-          <Box>
-            <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            High speed WiFi
-            </Text>
-          </Box>
-          <Box>
-            <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            High speed WiFi
-            </Text>
-          </Box>
-        </SimpleGrid>
+      <BreakfastSection />
+
+
+      <SnacksSection />
+
+
+      <StartersSection />
+
+    <PastaSection />
+
+    <MainCourseSection />
+
+      <PorkKitchenSection />
+
+      <SandwichesSection />
+
+
+      <DessertsSection />
 
 
 
-      </Box>
+      <BeveragesSection />
 
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 4, xl: 4}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          House Rules
-        </Text>
-
-        <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 2 }}
-          spacing={'16'}
-          py={2}
-          // mt={4}
-          // mx={'auto'}
-          
-          >
-          <Box textColor={'gray.600'} >
-            <Text pb={4}  fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            CHECK IN
-            </Text>
-            <VStack >
-              <Text textAlign={'left'}>Check-in from 12:00 PM – anytime</Text>
-              <Text>Check-in from 12:00 PM – anytime</Text>
-              <Text>Check-in from 12:00 PM – anytime</Text>
-            </VStack>
-          </Box>
-          <Box textColor={'gray.600'}>
-            <Text pb={4}  fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
-            CHECK OUT
-            </Text>
-            <VStack>
-              <Text>Check-in from 12:00 PM – anytime</Text>
-              <Text>Check-in from 12:00 PM – anytime</Text>
-              <Text>Check-in from 12:00 PM – anytime</Text>
-            </VStack>
-          </Box>
-
-        </SimpleGrid>
-
-
-
-      </Box>
-
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:6, md: 6, lg: 6, xl: 6}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          Special Check-in Instructions
-        </Text>
-        <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
-        List any Special Check-in Instructions here
-        </Text>
-      </Box>
-
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 6, xl: 6}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          Children and Extra Beds
-        </Text>
-        <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
-        Youngsters are welcome Kids stay free! Youngsters stay free when utilizing existing sheet material; kids may not be qualified for free breakfast Rollaway/additional beds are accessible for UGX 50,000 each day
-        </Text>
-      </Box>
-
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 6, xl: 6}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          Pets
-        </Text>
-
-        <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
-        Not Allowed
-        </Text>
-      </Box>
-
-      <Box>
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pt={{base:2, md: 2, lg: 6, xl: 6}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
-        >
-          Cancellations
-        </Text>
-
-        <Text pb={4}  textColor={'gray.600'} fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}} >
-        Please email for cancellation policy
-        </Text>
-
-
-
-      </Box>
 
 
     </Box>   
   )
 }
+
+
+const foodItems = [
+  {
+    title: "Fresh fruit juices",
+    description: "If health could be blended, and served to you in a glass...this is probably what it would taste like.",
+    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    title: "Snacks & quick bites",
+    description: "Depending on how long your are staying these always come in handy.",
+    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    title: "a'la carte & continental",
+    description: "If you and the family are in the mood for some a' la carte joy, you are welcome.",
+    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    title: "Local delicacies & custom orders.",
+    description: "We usually have a buffet of local delicacies, you can also customize your menu ahead of your visit.",
+    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    width: 1920,
+    height: 1280,
+  },
+];
+
+const FoodCards = () => {
+  return (
+    <Box p={{ base: 6, md: 12, lg: 16 }} bg="white" >
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 2 }}
+        spacing={{ base: 8, md: 12, lg: 16 }}
+      >
+        {foodItems.map((item, index) => (
+          <Box
+            key={index}
+            bg="white"
+            borderRadius="xl"
+            overflow="hidden"
+            shadow="lg"
+            _hover={{ transform: "scale(1.02)", transition: "all 0.3s ease-in-out" }}
+          >
+            {/* Image */}
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={item.width}
+              height={item.height}
+              borderTopRadius="xl"
+              objectFit="cover"
+              w="100%"
+              h={{ base: "200px", md: "250px", lg: "300px" }}
+            />
+
+            {/* Content */}
+            <Box p={6}>
+              <Heading
+                fontSize={{ base: "xl", md: "2xl" }}
+                textAlign="left"
+                fontFamily="navBarFont"
+                color="#0e2a4e"
+                mb={4}
+              >
+                {item.title}
+              </Heading>
+              <Text
+                fontSize={{ base: "md", lg: "lg" }}
+                textAlign="left"
+                fontFamily="bodyFont"
+                color="gray.600"
+              >
+                {item.description}
+              </Text>
+            </Box>
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Box>
+  );
+};
+
+
+
+
+const breakfastOptions = [
+  {
+    name: "Option 1",
+    price: "40,000",
+    description:
+      "Vegetable katogo or potato wedges, eggs of your choice, toasted bread, pair of sausages, pancake or waffle, creamed spinach, baked beans, fruits, juice, coffee or tea",
+  },
+  {
+    name: "Early Riser Breakfast",
+    price: "35,000",
+    description:
+      "Eggs of your choice, pair of sausages, grilled tomatoes, home fries, juice, baked beans, coffee or tea",
+  },
+];
+
+const BreakfastSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const nameFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    fontWeight: "bold",
+  };
+
+  const descriptionFontStyles = {
+    fontFamily: "bodyFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "md", lg: "md", xl: "lg" },
+    pb: 4, // Add padding below description for spacing
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Continental Breakfast
+      </Text>
+
+      {/* Breakfast Options List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {breakfastOptions.map((item, index) => (
+          <Box key={index}>
+            {/* Item Name and Price */}
+            <Text {...nameFontStyles}>
+              ● {item.name}:- {item.price}
+            </Text>
+
+            {/* Item Description */}
+            <Text {...descriptionFontStyles}>{item.description}</Text>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+const sandwiches = [
+  {
+    name: "Your Choice Sandwiches",
+    price: "25,000",
+    description: "Beef or Chicken sandwich with lettuce and mayonnaise spread",
+  },
+  {
+    name: "Pool Club Sandwich",
+    price: "30,000",
+    description: "A triple decker of chicken, sliced cheese, tomato and onion with lettuce",
+  },
+  {
+    name: "B.E.L.T",
+    price: "30,000",
+    description: "Crispy Bacon, fried Egg, romaine Lettuce and sliced Tomato",
+  },
+  {
+    name: "Mediterranean Sandwich (VG)",
+    price: "25,000",
+    description: "Grilled aubergine, carrots, bell peppers, zucchini and tomato marinated with pesto sauce",
+  },
+];
+
+const SandwichesSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const nameFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    fontWeight: "bold",
+  };
+
+  const descriptionFontStyles = {
+    fontFamily: "bodyFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "md", lg: "md", xl: "lg" },
+    pb: 4, // Add padding below description for spacing
+  };
+
+  return (
+    <Box>
+      {/* Heading Section */}
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Sandwiches
+      </Text>
+
+      {/* Sandwiches List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {sandwiches.map((item, index) => (
+          <Box key={index}>
+            {/* Item Name and Price */}
+            <Text {...nameFontStyles}>
+              ● {item.name}:- {item.price}
+            </Text>
+
+            {/* Item Description */}
+            <Text {...descriptionFontStyles}>{item.description}</Text>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+const pastaDishes = [
+  {
+    name: "Pasta Bolognaises",
+    price: "30,000",
+    description: "Choice of pasta gently tossed in a rich meaty sauce topped with cheese",
+  },
+  {
+    name: "Pasta Arrabiata (V)",
+    price: "25,000",
+    description: "Sautéed pasta in a chili tomato and basil sauce ﬁnished with parmesan cheese",
+  },
+  {
+    name: "Pasta Al’fredo",
+    price: "30,000",
+    description: "Fettuccine pasta gently cooked in a rich chicken bechamel sauce and parmesan cheese",
+  },
+];
+
+const PastaSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const nameFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    fontWeight: "bold",
+  };
+
+  const priceFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  const descriptionFontStyles = {
+    fontFamily: "bodyFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "md", lg: "md", xl: "lg" },
+    pb: 4, // Add padding below description for spacing
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Pasta
+      </Text>
+
+      {/* Pasta Dishes List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {pastaDishes.map((item, index) => (
+          <Box key={index}>
+            {/* Item Name and Price */}
+            <Text {...nameFontStyles}>
+              ● {item.name}:- {item.price}
+            </Text>
+
+            {/* Item Description */}
+            <Text {...descriptionFontStyles}>{item.description}</Text>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+const starters = [
+  {
+    name: "Soups :- Chicken & Oyster Mushroom Broth",
+    price: "20,000",
+    description: "Sautéed chicken and mushroom diced gently simmered in a broth",
+  },
+  {
+    name: "Light Cream of Pumpkin",
+    price: "20,000",
+    description:
+      "Roasted pumpkin with coriander and ginger ﬁnished with fresh cream",
+  },
+  {
+    name: "The Chef’s Salad",
+    price: "30,000",
+    description:
+      "A collection of Chicken or Beef strips with crispy Lettuce, Onions, Cherry Tomatoes, Mozzarella, Eggs and olives served with garlic mayo",
+  },
+  {
+    name: "Garden Salad",
+    price: "25,000",
+    description:
+      "Mesclun, julienne of Mango, Carrot, Cucumber, Bell peppers, Apples, Orange segments, Beetroots, and Avocado tusks. Vinaigrette dressing",
+  },
+];
+
+const StartersSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const nameFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    fontWeight: "bold",
+  };
+
+  const priceFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  const descriptionFontStyles = {
+    fontFamily: "bodyFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "md", lg: "md", xl: "lg" },
+    pb: 4, // Add padding below description for spacing
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Starters
+      </Text>
+
+      {/* Starters List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {starters.map((item, index) => (
+          <Box key={index}>
+            {/* Item Name and Price */}
+            <Text {...nameFontStyles}>
+              ● {item.name}:- {item.price}
+            </Text>
+
+            {/* Item Description */}
+            <Text {...descriptionFontStyles}>{item.description}</Text>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+
+const snacks = [
+  { name: "Fish Fingers", price: "35,000" },
+  { name: "Chicken Drumsticks", price: "35,000" },
+  { name: "Chicken Nuggets", price: "35,000" },
+  { name: "Goat Skewers", price: "35,000" },
+  { name: "Beef Burger", price: "35,000" },
+];
+
+const SnacksSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const snacksFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  return (
+    <Box>
+      {/* Heading Section */}
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Snacks
+      </Text>
+
+      {/* Snacks List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {snacks.map((item, index) => (
+          <Text key={index} {...snacksFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+const mainCourses = [
+  { name: "Double Chicken Supreme", price: "40,000" },
+  { name: "Beef Fillet Steak", price: "45,000" },
+  { name: "Tilapia Fillets", price: "40,000" },
+  { name: "Whole Tilapia", price: "50,000" },
+  { name: "Goat Stew Navarin", price: "40,000" },
+  { name: "Mixed Grill One", price: "295,000" },
+  { name: "Mixed Grill Two", price: "295,000" },
+  { name: "Vegetable Curry(V)", price: "30,000" },
+];
+
+const MainCourseSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const mainCourseFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Main Course
+      </Text>
+
+      {/* Main Course List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {mainCourses.map((item, index) => (
+          <Text key={index} {...mainCourseFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+
+
+const porkDishes = [
+  { name: "Pork Sizzler", price: "45,000" },
+  { name: "Pork Spareribs", price: "40,000" },
+  { name: "Grilled Porkchops", price: "40,000" },
+  { name: "Pork Wrap", price: "35,000" },
+  { name: "Pork Melly", price: "95,000" },
+  { name: "Pork Molokini", price: "55,000" },
+  { name: "Whole Pork Head", price: "250,000" },
+];
+
+const PorkKitchenSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const porkFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  return (
+    <Box>
+      {/* Heading Section */}
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Pork Dishes
+      </Text>
+
+      {/* Pork Dishes List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {porkDishes.map((item, index) => (
+          <Text key={index} {...porkFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+
+
+const desserts = [
+  { name: "Kalanamu fruit delight", price: "20,000" },
+  { name: "Pineapple crumble", price: "20,000" },
+  { name: "Apple Pie", price: "20,000" },
+  { name: "Ice Cream", price: "20,000" },
+  { name: "Cream Caramel", price: "20,000" },
+];
+
+const DessertsSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const dessertFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Desserts
+      </Text>
+
+      {/* Desserts List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {desserts.map((item, index) => (
+          <Text key={index} {...dessertFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
+
+const beverages = [
+  { name: "Freshly squeezed juice", price: "10,000" },
+  { name: "Smoothie", price: "12,000" },
+  { name: "Soda", price: "2,000" },
+  { name: "Beers", price: "-6,000" },
+  { name: "Tea", price: "10,000" },
+  { name: "Green Detox", price: "12,000" },
+];
+
+const BeveragesSection = () => {
+  // Common styles
+  const textColor = "#0e2a4e";
+  const beverageFontStyles = {
+    fontFamily: "navBarFont",
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
+    pb: 2,
+  };
+
+  return (
+    <Box>
+
+
+      {/* Title */}
+      <Text
+        fontFamily="navBarFont"
+        letterSpacing="1px"
+        pt={2}
+        lineHeight={{ lg: "55px", xl: "55px" }}
+        textColor={textColor}
+        textAlign={{ base: "center", md: "left" }}
+        fontWeight={800}
+        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
+        pb={6}
+      >
+        Drinks
+      </Text>
+
+      {/* Beverages List */}
+      <Stack
+        spacing={{ base: 10, md: 8 }}
+        display={{ md: "grid" }}
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridColumnGap={{ md: 8 }}
+        gridRowGap={{ md: 10 }}
+      >
+        {beverages.map((item, index) => (
+          <Text key={index} {...beverageFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+        ))}
+      </Stack>
+    </Box>
+  );
+};
+
 
 
 
