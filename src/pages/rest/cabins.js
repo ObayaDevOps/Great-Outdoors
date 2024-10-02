@@ -159,7 +159,6 @@ export default function CabinsPage(props) {
 //Make this into a Carousel
 const Section1 = (props) => {
   console.log('Hej');
-  console.log(props.content);
 
 
   return (

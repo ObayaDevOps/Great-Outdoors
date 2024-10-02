@@ -33,7 +33,7 @@ import client from '../../../src/sanity/lib/client'
 
 export async function getStaticProps() {
   const cottageDoublePageContent = await client.fetch(`
-  *[_type == "doubleCottagePage"]{
+  *[_type == "cottageDoublePage"]{
     ...,
         images[] 
           {
