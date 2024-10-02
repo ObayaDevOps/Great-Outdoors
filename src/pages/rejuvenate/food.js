@@ -241,7 +241,7 @@ const Section1Content = () => {
                 Open Timing: 7:00am - 10:00pm
                 </Text>
       </Box>
-      <Box p={20}>
+      <Box p={{ base: 0, md: 20 }} display="flex" justifyContent="center" alignItems="center">
       <Image
               src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg'}
 
@@ -423,7 +423,7 @@ const getCommonStyles = (textColor = "#0e2a4e") => ({
 const Section = ({ title, items, renderItem }) => {
   const styles = getCommonStyles();
   return (
-    <Box>
+    <Box pt={{base: 6, md: 8, lg: 10}}>
       <Text {...styles.titleStyles}>{title}</Text>
       <Stack
         spacing={{ base: 10, md: 8 }}
