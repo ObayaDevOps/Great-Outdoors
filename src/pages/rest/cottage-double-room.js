@@ -53,7 +53,7 @@ export async function getStaticProps() {
 }
 
 
-export default function CabinsPage(props) {
+export default function cottageDoublePage(props) {
   const cottageDoublePageContent  = props.cottageDoublePageContent[0] || [];
 
   console.log('cottageDoublePageContent')
@@ -63,7 +63,7 @@ export default function CabinsPage(props) {
   return (
     <Box>
     <Head>
-      <title>Cabins | Great Outdoors</title>
+      <title>CottageDouble | Great Outdoors</title>
       <meta name="description" content="Retreat.Rest.Rejuvenate" />
 
       <meta property="og:title" content="Great Outdoors Kalanamu" />
