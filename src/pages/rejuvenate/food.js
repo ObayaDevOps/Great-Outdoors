@@ -17,9 +17,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
-
-
 import Head from 'next/head';
 import Image from 'next/image'
 
@@ -393,45 +390,41 @@ const breakfastOptions = [
   },
 ];
 
-const BreakfastSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const nameFontStyles = {
+// Common styles
+const getCommonStyles = (textColor = "#0e2a4e") => ({
+  nameFontStyles: {
     fontFamily: "navBarFont",
     textColor,
     textAlign: { base: "center", md: "left" },
     fontSize: { base: "lg", lg: "lg", xl: "2xl" },
     fontWeight: "bold",
-  };
-
-  const descriptionFontStyles = {
+  },
+  descriptionFontStyles: {
     fontFamily: "bodyFont",
     textColor,
     textAlign: { base: "center", md: "left" },
     fontSize: { base: "md", lg: "md", xl: "lg" },
-    pb: 4, // Add padding below description for spacing
-  };
+    pb: 4,
+  },
+  titleStyles: {
+    fontFamily: "navBarFont",
+    letterSpacing: "1px",
+    pt: 2,
+    lineHeight: { lg: "55px", xl: "55px" },
+    textColor,
+    textAlign: { base: "center", md: "left" },
+    fontWeight: 800,
+    fontSize: { base: "4xl", lg: "4xl", xl: "5xl" },
+    pb: 6,
+  },
+});
 
+// Common Section component
+const Section = ({ title, items, renderItem }) => {
+  const styles = getCommonStyles();
   return (
     <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Continental Breakfast
-      </Text>
-
-      {/* Breakfast Options List */}
+      <Text {...styles.titleStyles}>{title}</Text>
       <Stack
         spacing={{ base: 10, md: 8 }}
         display={{ md: "grid" }}
@@ -439,23 +432,25 @@ const BreakfastSection = () => {
         gridColumnGap={{ md: 8 }}
         gridRowGap={{ md: 10 }}
       >
-        {breakfastOptions.map((item, index) => (
-          <Box key={index}>
-            {/* Item Name and Price */}
-            <Text {...nameFontStyles}>
-              ● {item.name}:- {item.price}
-            </Text>
-
-            {/* Item Description */}
-            <Text {...descriptionFontStyles}>{item.description}</Text>
-          </Box>
-        ))}
+        {items.map((item, index) => renderItem(item, index, styles))}
       </Stack>
     </Box>
   );
 };
 
-
+// Existing components refactored to use Section
+const BreakfastSection = () => (
+  <Section
+    title="Continental Breakfast"
+    items={breakfastOptions}
+    renderItem={(item, index, styles) => (
+      <Box key={index}>
+        <Text {...styles.nameFontStyles}>● {item.name}:- {item.price}</Text>
+        <Text {...styles.descriptionFontStyles}>{item.description}</Text>
+      </Box>
+    )}
+  />
+);
 
 const sandwiches = [
   {
@@ -480,70 +475,18 @@ const sandwiches = [
   },
 ];
 
-const SandwichesSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const nameFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    fontWeight: "bold",
-  };
-
-  const descriptionFontStyles = {
-    fontFamily: "bodyFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "md", lg: "md", xl: "lg" },
-    pb: 4, // Add padding below description for spacing
-  };
-
-  return (
-    <Box>
-      {/* Heading Section */}
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Sandwiches
-      </Text>
-
-      {/* Sandwiches List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {sandwiches.map((item, index) => (
-          <Box key={index}>
-            {/* Item Name and Price */}
-            <Text {...nameFontStyles}>
-              ● {item.name}:- {item.price}
-            </Text>
-
-            {/* Item Description */}
-            <Text {...descriptionFontStyles}>{item.description}</Text>
-          </Box>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
+const SandwichesSection = () => (
+  <Section
+    title="Sandwiches"
+    items={sandwiches}
+    renderItem={(item, index, styles) => (
+      <Box key={index}>
+        <Text {...styles.nameFontStyles}>● {item.name}:- {item.price}</Text>
+        <Text {...styles.descriptionFontStyles}>{item.description}</Text>
+      </Box>
+    )}
+  />
+);
 
 const pastaDishes = [
   {
@@ -563,77 +506,18 @@ const pastaDishes = [
   },
 ];
 
-const PastaSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const nameFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    fontWeight: "bold",
-  };
-
-  const priceFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  const descriptionFontStyles = {
-    fontFamily: "bodyFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "md", lg: "md", xl: "lg" },
-    pb: 4, // Add padding below description for spacing
-  };
-
-  return (
-    <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Pasta
-      </Text>
-
-      {/* Pasta Dishes List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {pastaDishes.map((item, index) => (
-          <Box key={index}>
-            {/* Item Name and Price */}
-            <Text {...nameFontStyles}>
-              ● {item.name}:- {item.price}
-            </Text>
-
-            {/* Item Description */}
-            <Text {...descriptionFontStyles}>{item.description}</Text>
-          </Box>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
+const PastaSection = () => (
+  <Section
+    title="Pasta"
+    items={pastaDishes}
+    renderItem={(item, index, styles) => (
+      <Box key={index}>
+        <Text {...styles.nameFontStyles}>● {item.name}:- {item.price}</Text>
+        <Text {...styles.descriptionFontStyles}>{item.description}</Text>
+      </Box>
+    )}
+  />
+);
 
 const starters = [
   {
@@ -661,78 +545,29 @@ const starters = [
   },
 ];
 
-const StartersSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const nameFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    fontWeight: "bold",
-  };
+const StartersSection = () => (
+  <Section
+    title="Starters"
+    items={starters}
+    renderItem={(item, index, styles) => (
+      <Box key={index}>
+        <Text {...styles.nameFontStyles}>● {item.name}:- {item.price}</Text>
+        <Text {...styles.descriptionFontStyles}>{item.description}</Text>
+      </Box>
+    )}
+  />
+);
 
-  const priceFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  const descriptionFontStyles = {
-    fontFamily: "bodyFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "md", lg: "md", xl: "lg" },
-    pb: 4, // Add padding below description for spacing
-  };
-
-  return (
-    <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Starters
-      </Text>
-
-      {/* Starters List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {starters.map((item, index) => (
-          <Box key={index}>
-            {/* Item Name and Price */}
-            <Text {...nameFontStyles}>
-              ● {item.name}:- {item.price}
-            </Text>
-
-            {/* Item Description */}
-            <Text {...descriptionFontStyles}>{item.description}</Text>
-          </Box>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
-
+// Simplified sections for items without descriptions
+const SimpleSectionComponent = ({ title, items }) => (
+  <Section
+    title={title}
+    items={items}
+    renderItem={(item, index, styles) => (
+      <Text key={index} {...styles.nameFontStyles}>● {item.name}:- {item.price}</Text>
+    )}
+  />
+);
 
 const snacks = [
   { name: "Fish Fingers", price: "35,000" },
@@ -742,56 +577,7 @@ const snacks = [
   { name: "Beef Burger", price: "35,000" },
 ];
 
-const SnacksSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const snacksFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  return (
-    <Box>
-      {/* Heading Section */}
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Snacks
-      </Text>
-
-      {/* Snacks List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {snacks.map((item, index) => (
-          <Text key={index} {...snacksFontStyles}>
-            ● {item.name}:- {item.price}
-          </Text>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
+const SnacksSection = () => <SimpleSectionComponent title="Snacks" items={snacks} />;
 
 const mainCourses = [
   { name: "Double Chicken Supreme", price: "40,000" },
@@ -804,57 +590,7 @@ const mainCourses = [
   { name: "Vegetable Curry(V)", price: "30,000" },
 ];
 
-const MainCourseSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const mainCourseFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  return (
-    <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Main Course
-      </Text>
-
-      {/* Main Course List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {mainCourses.map((item, index) => (
-          <Text key={index} {...mainCourseFontStyles}>
-            ● {item.name}:- {item.price}
-          </Text>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
-
-
+const MainCourseSection = () => <SimpleSectionComponent title="Main Course" items={mainCourses} />;
 
 const porkDishes = [
   { name: "Pork Sizzler", price: "45,000" },
@@ -866,58 +602,7 @@ const porkDishes = [
   { name: "Whole Pork Head", price: "250,000" },
 ];
 
-const PorkKitchenSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const porkFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  return (
-    <Box>
-      {/* Heading Section */}
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Pork Dishes
-      </Text>
-
-      {/* Pork Dishes List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {porkDishes.map((item, index) => (
-          <Text key={index} {...porkFontStyles}>
-            ● {item.name}:- {item.price}
-          </Text>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
-
-
+const PorkKitchenSection = () => <SimpleSectionComponent title="Pork Dishes" items={porkDishes} />;
 
 const desserts = [
   { name: "Kalanamu fruit delight", price: "20,000" },
@@ -927,56 +612,7 @@ const desserts = [
   { name: "Cream Caramel", price: "20,000" },
 ];
 
-const DessertsSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const dessertFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
-
-  return (
-    <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Desserts
-      </Text>
-
-      {/* Desserts List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {desserts.map((item, index) => (
-          <Text key={index} {...dessertFontStyles}>
-            ● {item.name}:- {item.price}
-          </Text>
-        ))}
-      </Stack>
-    </Box>
-  );
-};
-
-
-
+const DessertsSection = () => <SimpleSectionComponent title="Desserts" items={desserts} />;
 
 const beverages = [
   { name: "Freshly squeezed juice", price: "10,000" },
@@ -987,55 +623,10 @@ const beverages = [
   { name: "Green Detox", price: "12,000" },
 ];
 
-const BeveragesSection = () => {
-  // Common styles
-  const textColor = "#0e2a4e";
-  const beverageFontStyles = {
-    fontFamily: "navBarFont",
-    textColor,
-    textAlign: { base: "center", md: "left" },
-    fontSize: { base: "lg", lg: "lg", xl: "2xl" },
-    pb: 2,
-  };
+const BeveragesSection = () => <SimpleSectionComponent title="Drinks" items={beverages} />;
 
-  return (
-    <Box>
-
-
-      {/* Title */}
-      <Text
-        fontFamily="navBarFont"
-        letterSpacing="1px"
-        pt={2}
-        lineHeight={{ lg: "55px", xl: "55px" }}
-        textColor={textColor}
-        textAlign={{ base: "center", md: "left" }}
-        fontWeight={800}
-        fontSize={{ base: "4xl", lg: "4xl", xl: "5xl" }}
-        pb={6}
-      >
-        Drinks
-      </Text>
-
-      {/* Beverages List */}
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {beverages.map((item, index) => (
-          <Text key={index} {...beverageFontStyles}>
-            ● {item.name}:- {item.price}
-          </Text>
-        ))}
-      </Stack>
-    </Box>
-  );
+// Export all components
+export {
+  FoodCards, BreakfastSection, SandwichesSection, PastaSection, StartersSection,
+  SnacksSection, MainCourseSection, PorkKitchenSection, DessertsSection, BeveragesSection
 };
-
-
-
-
-
