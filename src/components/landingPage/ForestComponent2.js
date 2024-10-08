@@ -6,6 +6,7 @@ import { useInView } from "framer-motion";
 
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from "next/link";
 
 const AboutUsComponent2 = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
