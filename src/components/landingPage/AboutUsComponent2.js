@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
-
+import Link from "next/link";
 const AboutUsComponent2 = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
 
@@ -78,7 +78,9 @@ const AboutUsComponent2 = (props) => {
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                {landingPageContent.aboutUsButtonText}
+                  <Link href='https://bookings.reserveport.com/reservations/outdoors/'>
+                  {landingPageContent.aboutUsButtonText}
+                  </Link>
                 </Button>
                 </Box>
                 </Box>

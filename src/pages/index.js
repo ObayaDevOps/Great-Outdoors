@@ -9,6 +9,7 @@ import NextLink from 'next/link'
 import FloatingReservationsComponent from '../components/landingPage/floatingReservationsComponent'
 import AboutUsComponent from '../components/landingPage/AboutUsComponent'
 import AmenitiesComponent from '../components/landingPage/AmenitiesComponent'
+import CorporateComponent from '../components/landingPage/CorporateComponent'
 import EatAndDrinkComponent from '../components/landingPage/EatAndDrinkComponent'
 import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
@@ -30,7 +31,15 @@ import client from '../../src/sanity/lib/client'
 
 export async function getStaticProps() {
   const landingPageContent = await client.fetch(`
-  *[_type == "landingPage"]`);
+  *[_type == "landingPage"]{
+    ...,
+        images[] 
+          {
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }`);
 
   return {
     props: {
@@ -114,6 +123,7 @@ export default function Home(props) {
           {/* <FloatingReservationsComponent /> */}
           {/* <AboutUsComponent /> */}
           <AboutUsComponent2  pageContent={props.landingPageContent}/>
+          <CorporateComponent  pageContent={props.landingPageContent}/>
           {/* <EatAndDrinkComponent /> */}
           <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
           <AmenitiesComponent  pageContent={props.landingPageContent}/>

@@ -60,6 +60,37 @@ export default defineType({
         },
       }),
 
+          //About Us
+    defineField({
+      name: 'corporateTitle',
+      title: 'Corporate Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'corporateParagraph1',
+      title: 'Corporate Paragraph 1',
+      type: 'string',
+    }),
+    defineField({
+      name: 'corporateParagraph2',
+      title: 'Corporate Paragraph 2',
+      type: 'string',
+    }),
+    defineField({
+        name: 'corporateButtonText',
+        title: 'Corporate Button Text',
+        type: 'string',
+      }),      
+    defineField({
+        name: 'corporateBackgroundImage',
+        title: 'Corporate Background Image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
+
     //EatAndDrink
     defineField({
       name: 'eatAndDrinkTitle',
