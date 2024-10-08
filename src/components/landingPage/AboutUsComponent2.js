@@ -78,7 +78,7 @@ const AboutUsComponent2 = (props) => {
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                  <Link href='https://bookings.reserveport.com/reservations/outdoors/'>
+                  <Link href='/reservations'>
                   {landingPageContent.aboutUsButtonText}
                   </Link>
                 </Button>

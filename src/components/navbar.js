@@ -43,7 +43,7 @@ import {
         colorScheme='red' fontFamily={'redTopFont'}
         // href={'/reservations'}
         >
-          <Link href='https://bookings.reserveport.com/reservations/outdoors/' fontSize={{base: '7px', md: 'sm'}} >
+          <Link href='/reservations' fontSize={{base: '7px', md: 'sm'}} >
             RESERVATIONS
           </Link>
           

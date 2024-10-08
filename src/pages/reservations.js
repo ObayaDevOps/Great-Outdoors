@@ -1,20 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Box } from '@chakra-ui/react';
+import { Box, Text, Spinner, Center } from '@chakra-ui/react';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2';
 
 // import styles from '../styles/reserveport.module.css'
 
- 
 const scripts = [
-  "https://reservations.reserveport.com/static/js/manifest.js",
-  "https://reservations.reserveport.com/static/js/vendor.js",
-  "https://reservations.reserveport.com/static/js/app.js",
   "https://www.reserveport.com/media/api5/jquery.min.js",
   "https://www.reserveport.com/media/api5/popper.min.js",
-  "https://www.reserveport.com/media/api5/bootstrap.min.js"
+  "https://www.reserveport.com/media/api5/bootstrap.min.js",
+  "https://reservations.reserveport.com/static/js/manifest.js",
+  "https://reservations.reserveport.com/static/js/vendor.js",
+  "https://reservations.reserveport.com/static/js/app.js"
 ];
 
 const stylesheets = [
@@ -24,35 +23,67 @@ const stylesheets = [
 ];
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    // Function to dynamically load external scripts
-    const loadScripts = () => {
-      scripts.forEach(src => {
+    const loadScript = (src) => {
+      return new Promise((resolve, reject) => {
         const script = document.createElement("script");
         script.src = src;
-        script.async = true;
+        script.async = false; // Changed to false to maintain order
+        script.onload = resolve;
+        script.onerror = reject;
         document.body.appendChild(script);
       });
     };
 
-    // Function to dynamically load external stylesheets
-    const loadStylesheets = () => {
-      stylesheets.forEach(href => {
+    const loadStylesheet = (href) => {
+      return new Promise((resolve, reject) => {
         const link = document.createElement("link");
         link.href = href;
-        link.rel = "stylesheet";  // Correctly set the rel attribute to "stylesheet"
-        document.head.appendChild(link); // Append to head, not body
+        link.rel = "stylesheet";
+        link.onload = resolve;
+        link.onerror = reject;
+        document.head.appendChild(link);
       });
     };
 
-    // Load custom script
-    loadScripts();  // Load the external scripts when component mounts
-    loadStylesheets();   // Load the external styles when component mounts
-  }, []);  // Empty dependency array ensures this runs once on component mount
+    const loadAllResources = async () => {
+      try {
+        // Load scripts sequentially
+        for (const script of scripts) {
+          await loadScript(script);
+          console.log(`Loaded script: ${script}`);
+        }
 
-  
+        // Load stylesheets
+        await Promise.all(stylesheets.map(loadStylesheet));
+        console.log("All stylesheets loaded");
+
+        // Wait longer to ensure everything is initialized
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Check for jQuery and initialize the booking widget
+        if (window.jQuery && window.BookingWidget) {
+          window.jQuery(document).ready(() => {
+            window.BookingWidget.init();
+            console.log("BookingWidget initialized");
+          });
+        } else {
+          console.error("jQuery or BookingWidget not found");
+        }
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading resources:", error);
+        setIsLoading(false);
+      }
+    };
+
+    loadAllResources();
+  }, []);
+
   return (
-    
     <Box>
       <Head>
         <title>Reservations | Great Outdoors Kalanamu</title>
@@ -76,13 +107,20 @@ export default function Home() {
         backgroundSize={'cover'}
         bgRepeat={'no-repeat'}
         minHeight={'100vh'} 
-        // mt={{base: 20, lg: 44}}
         pt={{base: 24, lg: 32}}
-        // className={styles.someClass}  // Example usage of imported styles
       >
-        <Box >
-          <booking-widget id="1687"></booking-widget>
-        </Box>
+        {isLoading ? (
+          <Center h="50vh">
+            <Spinner size="xl" />
+            <Text ml={4}>Loading booking widget...</Text>
+          </Center>
+        ) : (
+          <Box>
+            <Box>
+              <booking-widget id="1687"></booking-widget>
+            </Box>
+          </Box>
+        )}
       </Box>
 
       <Box>

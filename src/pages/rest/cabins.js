@@ -423,19 +423,20 @@ const Section1Content = (props) => {
 
       <Box py={4}>
       <Button
-        maxW={{base:'2xl', md:'6xl'}}
+        maxW={{base:'2xl', md:'6xl', lg:'8xl'}}
         as="a"
         colorScheme="red"
         display="inline-flex"
         alignItems="center"
         justifyContent="center"
         rounded='lg'
-        href='/reservations'
+        href='https://bookings.reserveport.com/reservations/outdoors/'
         fontFamily='bodyFont'
 
         w={{
             base: "full",
             sm: "full",
+            
         }}
         mb={{
             base: 2,
