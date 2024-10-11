@@ -123,7 +123,7 @@ export default function LargeWithNewsletter() {
                 <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>+256 701519853</Text>
             </Box>
             <Box>
-                <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>Kalanamu, Gayaza Rd</Text>
+                <Text fontSize={'lg'} fontFamily='navBarFont' textColor='white'>Kalanamu,Gayaza - Zirobwe Rd</Text>
             </Box>
           </Stack>
 
