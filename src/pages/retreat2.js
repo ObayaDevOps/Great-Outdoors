@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Image, Button, VStack, HStack, useColorModeValue, Grid, GridItem } from '@chakra-ui/react';
 import NavBar from '../components/navbar';  // Import the NavBar component
 import Footer from '../components/footer' 
-
+import Head from 'next/head';
 
 export const Card = ({ children, ...props }) => {
     const bgColor = useColorModeValue('white', 'gray.700');
