@@ -12,11 +12,23 @@ const AboutUsComponent2 = (props) => {
   const isInView1 = useInView(ref1)
 
   return (
-    <Box bgColor={'#0b1722'} minH={'100vh'} >
-      <Box minH={{base:' 160%', md:'120vh'}} 
+    <Box bgColor={'#0b1722'} minH={'100vh'} position="relative">
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
         bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
-        bgSize="cover" bgPosition="center" 
-        bgAttachment="fixed" 
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        zIndex={1}
+      />
+      <Box
+        position="relative"
+        zIndex={2}
+        minH={{base:'160%', md:'120vh'}}
         overflowX='hidden'
       >
         <ScaleFade initialScale={0.9} in={isInView1}>
@@ -79,9 +91,6 @@ const AboutUsComponent2 = (props) => {
             </Box>
           </HStack>
         </ScaleFade>
-      </Box>
-
-      <Box>
       </Box>
     </Box>
   )
