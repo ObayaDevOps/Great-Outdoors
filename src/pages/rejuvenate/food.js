@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Avatar,
   Box,
@@ -25,7 +26,9 @@ import Carousel from '../../components/carousel3'
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
 
-
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
 
 export default function FoodPage() {
   return (
@@ -78,65 +81,85 @@ export default function FoodPage() {
 
 const HeadingSection = () => {
   return (
-    <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
-    <chakra.h3
-      fontWeight={"bold"}
-      fontSize={20}
-      textTransform={"uppercase"}
-      color={"white"}
-      fontFamily="bodyFont"
-      align="center"
+    <MotionBox
+      width={{ base: "full", sm: "lg", lg: "xl" }}
+      margin={"auto"}
+      p={{base:8}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
     >
-      FARM TO PLATE
-    </chakra.h3>
-    <Heading
-      as={"h1"}
-      mb={{ base: 2, md: 10 }}
-      fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
-      minHeight={"1vh"}
-      fontWeight="bold"
-      lineHeight="none"
-      letterSpacing={{ base: "normal", md: "tight" }}
-      color="purple.900"
-      textAlign="center"
-      fontFamily={'navBarFont'}             >
-      <Text
-        display={{
-          base: "block",
-          // lg: "inline",
-        }}
-        w="full"
-        bgClip="text"
+      <MotionText
+        as={chakra.h3}
+        fontWeight={"bold"}
+        fontSize={20}
+        textTransform={"uppercase"}
+        color={"white"}
+        fontFamily="bodyFont"
+        align="center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        FARM TO PLATE
+      </MotionText>
+      <MotionHeading
+        as={"h1"}
+        mb={{ base: 2, md: 10 }}
+        fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
+        minHeight={"1vh"}
+        fontWeight="bold"
+        lineHeight="none"
+        letterSpacing={{ base: "normal", md: "tight" }}
+        color="purple.900"
+        textAlign="center"
+        fontFamily={'navBarFont'}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.6 }}
+      >
+        <MotionText
+          display={{
+            base: "block",
+            // lg: "inline",
+          }}
+          w="full"
+          bgClip="text"
+          color={"white"}
+
+          // bgGradient="linear(to-r, blackAlpha.800, #0e2a4e)"
+          fontWeight="extrabold"
+          _hover={{
+            transform: "scale(1.005)",
+            filter: "brightness(120%)",
+          }}
+          py={6}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+        >
+          Restaurant
+        </MotionText>
+      </MotionHeading>
+      <MotionText
+        as={chakra.h2}
+        margin={"auto"}
+        width={"100%"}
+        fontWeight={"medium"}
+        fontSize={"lg"}
+        mt={{ base: -2, md: -8, lg: -8 }}
+        fontFamily={"bodyFont"}
         color={"white"}
 
-        // bgGradient="linear(to-r, blackAlpha.800, #0e2a4e)"
-        fontWeight="extrabold"
-        transition="all .65s ease"
-        _hover={{
-          transform: "scale(1.005)",
-          filter: "brightness(120%)",
-        }}
-        py={6}
+        align="center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
       >
-        Restaurant
-      </Text>
-    </Heading>
-    <chakra.h2
-      margin={"auto"}
-      width={"100%"}
-      fontWeight={"medium"}
-      fontSize={"lg"}
-      color={useColorModeValue("gray.900", "gray.400")}
-      mt={{ base: -2, md: -8, lg: -8 }}
-      fontFamily={"bodyFont"}
-      color={"white"}
-
-      align="center"
-    >
-      Freshly prepared meals enjoyed in open air spaces.
+        Freshly prepared meals enjoyed in open air spaces.
  
-    </chakra.h2>
-  </Box>
+      </MotionText>
+    </MotionBox>
   )
 }
 
@@ -172,116 +195,117 @@ const HeadingSection = () => {
 //Make this into a Carousel
 const Section1 = () => {
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    // py={4}
-    p={{base: 6, md: 12, lg: 16}}
-    minHeight={{ base:'100vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    bg="white"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "10vh", lg: "25vh" }}
-  >
-      <Section1Content />
-    </Container>
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1.5 }}
+    >
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        // py={4}
+        p={{base: 6, md: 12, lg: 16}}
+        minHeight={{ base:'100vh', md: "110vh" }}
+        // background="rgba(240,255,244,0.55)"
+        bg="white"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "10vh", lg: "25vh" }}
+      >
+        <Section1Content />
+      </Container>
+    </MotionBox>
   )
 } 
 
 const Section1Content = () => {
   return (
-    <Box>
-
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 2 }}
+    >
       <Box>
-      <HStack mt={{base:6,  md:2}}>
-          <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-            <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-            FARM TO PLATE
-            </Text>
-        </HStack>        
-        <Text
-        fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:2, md: 2, lg: 2, xl: 2}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} 
-        fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
-        >
-          Freshly prepared meals enjoyed in open air spaces.
 
-        </Text>
-      </Box>
+        <Box>
+        <HStack mt={{base:6,  md:2}}>
+            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+              FARM TO PLATE
+              </Text>
+          </HStack>        
+          <Text
+          fontFamily={'navBarFont'} 
+          letterSpacing={'1px'} 
+          pb={{base:2, md: 2, lg: 2, xl: 2}} 
+          lineHeight={{lg: '55px' ,xl:'55px'}} 
+          // textColor='white'
+          textColor='#0e2a4e'
+          textAlign={'left'}
+          fontWeight={800} 
+          fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
+          >
+            Freshly prepared meals enjoyed in open air spaces.
 
-      <Box>
-      <Text 
-                textColor={'gray.600'}
-                fontFamily={'bodyFont'}  
-                fontSize={{base:'sm', md: 'lg'}} 
-                py={2} fontWeight={400}>
-                It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes.
-                 From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
-                </Text>
-                <Text 
-                textColor={'gray.600'}
-                fontFamily={'bodyFont'}  
-                fontSize={{base:'sm', md: 'lg'}} 
-                py={2} fontWeight={400}>
-                Open Days: Monday - Saturday
-                </Text>
-                <Text 
-                textColor={'gray.600'}
-                fontFamily={'bodyFont'}  
-                fontSize={{base:'sm', md: 'lg'}} 
-                py={2} fontWeight={400}>
-                Open Timing: 7:00am - 10:00pm
-                </Text>
-      </Box>
-      <Box p={{ base: 0, md: 20 }} display="flex" justifyContent="center" alignItems="center">
-      <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg'}
+          </Text>
+        </Box>
 
-              width={1024}
-              height={683}
-              borderTopRadius="xl"
-              objectFit="cover"
-              w="100%"
-              h={{ base: "200px", md: "250px", lg: "300px" }}
-            />
-            </Box>  
-
-      <FoodCards />
-
-      <BreakfastSection />
+        <Box>
+        <Text 
+                  textColor={'gray.600'}
+                  fontFamily={'bodyFont'}  
+                  fontSize={{base:'sm', md: 'lg'}} 
+                  py={2} fontWeight={400}>
+                  It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes.
+                   From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
+                  </Text>
+                  <Text 
+                  textColor={'gray.600'}
+                  fontFamily={'bodyFont'}  
+                  fontSize={{base:'sm', md: 'lg'}} 
+                  py={2} fontWeight={400}>
+                  Open Days: Monday - Saturday
+                  </Text>
+                  <Text 
+                  textColor={'gray.600'}
+                  fontFamily={'bodyFont'}  
+                  fontSize={{base:'sm', md: 'lg'}} 
+                  py={2} fontWeight={400}>
+                  Open Timing: 7:00am - 10:00pm
+                  </Text>
+        </Box>
 
 
-      <SnacksSection />
+        <FoodCards />
+
+        <BreakfastSection />
 
 
-      <StartersSection />
-
-    <PastaSection />
-
-    <MainCourseSection />
-
-      <PorkKitchenSection />
-
-      <SandwichesSection />
+        <SnacksSection />
 
 
-      <DessertsSection />
+        <StartersSection />
+
+      <PastaSection />
+
+      <MainCourseSection />
+
+        <PorkKitchenSection />
+
+        <SandwichesSection />
+
+
+        <DessertsSection />
 
 
 
-      <BeveragesSection />
+        <BeveragesSection />
 
 
 
-    </Box>   
+      </Box>   
+    </MotionBox>
   )
 }
 
@@ -319,56 +343,62 @@ const foodItems = [
 
 const FoodCards = () => {
   return (
-    <Box p={{ base: 6, md: 12, lg: 16 }} bg="white" >
-      <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 2 }}
-        spacing={{ base: 8, md: 12, lg: 16 }}
-      >
-        {foodItems.map((item, index) => (
-          <Box
-            key={index}
-            bg="white"
-            borderRadius="xl"
-            overflow="hidden"
-            shadow="lg"
-            _hover={{ transform: "scale(1.02)", transition: "all 0.3s ease-in-out" }}
-          >
-            {/* Image */}
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={item.width}
-              height={item.height}
-              borderTopRadius="xl"
-              objectFit="cover"
-              w="100%"
-              h={{ base: "200px", md: "250px", lg: "300px" }}
-            />
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 2.5 }}
+    >
+      <Box p={{ base: 6, md: 12, lg: 16 }} bg="white" >
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 2 }}
+          spacing={{ base: 8, md: 12, lg: 16 }}
+        >
+          {foodItems.map((item, index) => (
+            <Box
+              key={index}
+              bg="white"
+              borderRadius="xl"
+              overflow="hidden"
+              shadow="lg"
+              _hover={{ transform: "scale(1.02)", transition: "all 0.3s ease-in-out" }}
+            >
+              {/* Image */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={item.width}
+                height={item.height}
+                borderTopRadius="xl"
+                objectFit="cover"
+                w="100%"
+                h={{ base: "200px", md: "250px", lg: "300px" }}
+              />
 
-            {/* Content */}
-            <Box p={6}>
-              <Heading
-                fontSize={{ base: "xl", md: "2xl" }}
-                textAlign="left"
-                fontFamily="navBarFont"
-                color="#0e2a4e"
-                mb={4}
-              >
-                {item.title}
-              </Heading>
-              <Text
-                fontSize={{ base: "md", lg: "lg" }}
-                textAlign="left"
-                fontFamily="bodyFont"
-                color="gray.600"
-              >
-                {item.description}
-              </Text>
+              {/* Content */}
+              <Box p={6}>
+                <Heading
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  textAlign="left"
+                  fontFamily="navBarFont"
+                  color="#0e2a4e"
+                  mb={4}
+                >
+                  {item.title}
+                </Heading>
+                <Text
+                  fontSize={{ base: "md", lg: "lg" }}
+                  textAlign="left"
+                  fontFamily="bodyFont"
+                  color="gray.600"
+                >
+                  {item.description}
+                </Text>
+              </Box>
             </Box>
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Box>
+          ))}
+        </SimpleGrid>
+      </Box>
+    </MotionBox>
   );
 };
 
@@ -423,18 +453,24 @@ const getCommonStyles = (textColor = "#0e2a4e") => ({
 const Section = ({ title, items, renderItem }) => {
   const styles = getCommonStyles();
   return (
-    <Box pt={{base: 6, md: 8, lg: 10}}>
-      <Text {...styles.titleStyles}>{title}</Text>
-      <Stack
-        spacing={{ base: 10, md: 8 }}
-        display={{ md: "grid" }}
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridColumnGap={{ md: 8 }}
-        gridRowGap={{ md: 10 }}
-      >
-        {items.map((item, index) => renderItem(item, index, styles))}
-      </Stack>
-    </Box>
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 3 }} // Adjust delay as needed
+    >
+      <Box pt={{base: 6, md: 8, lg: 10}}>
+        <Text {...styles.titleStyles}>{title}</Text>
+        <Stack
+          spacing={{ base: 10, md: 8 }}
+          display={{ md: "grid" }}
+          gridTemplateColumns="repeat(3, 1fr)"
+          gridColumnGap={{ md: 8 }}
+          gridRowGap={{ md: 10 }}
+        >
+          {items.map((item, index) => renderItem(item, index, styles))}
+        </Stack>
+      </Box>
+    </MotionBox>
   );
 };
 

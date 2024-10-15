@@ -28,7 +28,7 @@ const AboutUsComponent2 = (props) => {
       <Box
         position="relative"
         zIndex={2}
-        minH={{base:'160%', md:'120vh'}}
+        minH={{base:'160vh', md:'120vh'}}
         overflowX='hidden'
       >
         <ScaleFade initialScale={0.9} in={isInView1}>
@@ -39,7 +39,7 @@ const AboutUsComponent2 = (props) => {
               border={'2px'}
               borderColor='white'
               shadow={'xl'}
-              my={{base:'64', md: '0vh'}}
+              my={{base:'12', md: '0vh'}}
               maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
               p={{base: 2, md: 6, lg:10, xl: 14}} rounded={'lg'}
               pt={{base: 2,  md: 12, xl: 24}}

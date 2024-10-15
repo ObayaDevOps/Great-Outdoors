@@ -132,7 +132,6 @@ export default function cottagesPage(props) {
               bgClip="text"
               color={"white"}
               fontWeight="extrabold"
-              transition="all .65s ease"
               _hover={{
                 transform: "scale(1.005)",
                 filter: "brightness(120%)",
@@ -151,7 +150,6 @@ export default function cottagesPage(props) {
             width={"100%"}
             fontWeight={"medium"}
             fontSize={"lg"}
-            color={useColorModeValue("gray.900", "gray.400")}
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}
@@ -191,7 +189,7 @@ const Section1 = (props) => {
     shadow="2xl"
     border={"1px"}
     borderColor={"white"}
-    mt={{ base: "10vh", lg: "25vh" }}
+    mt={{ base: "10vh", lg: "10vh" }}
   >
       <Carousel slides={props.content.images} />
       <Section1Content content={props.content} />

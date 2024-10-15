@@ -197,7 +197,7 @@ const Section1 = (props) => {
     shadow="2xl"
     border={"1px"}
     borderColor={"white"}
-    mt={{ base: "10vh", lg: "25vh" }}
+    mt={{ base: "10vh", lg: "10vh" }}
   >
       <Carousel slides={props.content.images} />
       <Section1Content content={props.content} />

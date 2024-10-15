@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Box, Container, Heading, Text, SimpleGrid, Image, 
   Button, VStack, HStack, useColorModeValue, Grid, GridItem,
      Flex } from '@chakra-ui/react';
@@ -8,6 +9,11 @@ import client from '../../src/sanity/lib/client';
 
 import ImageGridPhotoGallery from '../components/image-grid-Lightbox/imageGridPhotoGallery'
 
+const MotionBox = motion(Box);
+const MotionHeading = motion(Heading);
+const MotionText = motion(Text);
+const MotionImage = motion(Image);
+const MotionButton = motion(Button);
 
 export async function getStaticProps() {
   const retreatPageContent = await client.fetch(`
@@ -60,7 +66,7 @@ const Card = ({ children, ...props }) => {
   const borderColor = useColorModeValue('gray.200', 'gray.600');
 
   return (
-    <Box
+    <MotionBox
       bg={bgColor}
       borderWidth="1px"
       borderColor={borderColor}
@@ -68,10 +74,13 @@ const Card = ({ children, ...props }) => {
       shadow="md"
       transition="all 0.3s"
       _hover={{ shadow: 'lg' }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       {...props}
     >
       {children}
-    </Box>
+    </MotionBox>
   );
 };
 
@@ -84,15 +93,25 @@ const CorporateRetreats = ({ retreatPageContent }) => {
   return (
     <Box bg={bgColor} color={textColor}>
       <NavBar />
-      <Box width="100vw" position="relative" left="50%" right="50%" marginLeft="-50vw" marginRight="-50vw">
-        <Image
+      <MotionBox
+        width="100vw"
+        position="relative"
+        left="50%"
+        right="50%"
+        marginLeft="-50vw"
+        marginRight="-50vw"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <MotionImage
           src={heroImage.url}
           alt="Corporate Retreat"
           objectFit="cover"
           w="100%"
           h="800px"
         />
-        <Box
+        <MotionBox
           position="absolute"
           bottom={4}
           left={4}
@@ -100,45 +119,48 @@ const CorporateRetreats = ({ retreatPageContent }) => {
           color="white"
           px={4}
           py={2}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <Heading size="lg" fontFamily={'navBarFont'}>{heroTitle}</Heading>
-        </Box>
-      </Box>
+          <MotionHeading size="lg" fontFamily={'navBarFont'}>{heroTitle}</MotionHeading>
+        </MotionBox>
+      </MotionBox>
       <Container maxW="container.xl" py={32}>
         <VStack spacing={12} align="stretch">
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center" my={8}>
-            <Box>
-              <Heading size="xl" fontFamily={'navBarFont'} mb={4}>
-                {corporateSpace.title}
-              </Heading>
-              <Text textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
-                {corporateSpace.description}
-              </Text>
-              <Button colorScheme="orange" size="lg">
-                Enquire Now
-              </Button>
-            </Box>
-            <Image
-              src={corporateSpace.image.url}
-              alt="Corporate Space"
-            />
-          </SimpleGrid>
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center" my={8}>
+              <Box>
+                <MotionHeading size="xl" fontFamily={'navBarFont'} mb={4}>
+                  {corporateSpace.title}
+                </MotionHeading>
+                <MotionText textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
+                  {corporateSpace.description}
+                </MotionText>
+                <MotionButton colorScheme="orange" size="lg">
+                  Enquire Now
+                </MotionButton>
+              </Box>
+              <MotionImage
+                src={corporateSpace.image.url}
+                alt="Corporate Space"
+              />
+            </SimpleGrid>
+          </MotionBox>
 
-          <Box my={8}>
-            <Heading size="xl" fontFamily={'navBarFont'} mb={6}>
+          <MotionBox
+            my={8}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+          >
+            <MotionHeading size="xl" fontFamily={'navBarFont'} mb={6}>
               Our Group Activities
-            </Heading>
-{/* 
-            <Box py={{base: 10, lg: 12}}>
-              <ImageGridPhotoGallery photos={activities.map(activity => ({
-                src: activity.image.url,
-                height: activity.image.height,
-                width: activity.image.width,
-                alt: activity.name
-              }))} />
-            </Box> */}
-
-
+            </MotionHeading>
             <Grid templateColumns={{ base: '1fr', md: '2fr 1fr' }} gap={4}>
               <GridItem colSpan={1}>
                 <Card position="relative">
@@ -205,43 +227,57 @@ const CorporateRetreats = ({ retreatPageContent }) => {
                 </Grid>
               </GridItem>
             </Grid>
-          </Box>
+          </MotionBox>
 
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center" my={8}>
-            <Image
-              src={accommodation.image.url}
-              alt="Accommodation"
-            />
-            <Box>
-              <Heading size="xl" fontFamily={'navBarFont'} mb={4}>
-                {accommodation.title}
-              </Heading>
-              <Text textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
-                {accommodation.description}
-              </Text>
-              <Button colorScheme="orange" size="lg">
-                Book Now
-              </Button>
-            </Box>
-          </SimpleGrid>
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+          >
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center" my={8}>
+              <MotionImage
+                src={accommodation.image.url}
+                alt="Accommodation"
+              />
+              <Box>
+                <MotionHeading size="xl" fontFamily={'navBarFont'} mb={4}>
+                  {accommodation.title}
+                </MotionHeading>
+                <MotionText textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
+                  {accommodation.description}
+                </MotionText>
+                <MotionButton colorScheme="orange" size="lg">
+                  Book Now
+                </MotionButton>
+              </Box>
+            </SimpleGrid>
+          </MotionBox>
 
-          <Box my={8}>
-            <Heading size="xl" fontFamily={'navBarFont'} mb={6}>
+          <MotionBox
+            my={8}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+          >
+            <MotionHeading size="xl" fontFamily={'navBarFont'} mb={6}>
               {gallery.title}
-            </Heading>
-            <Text textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
+            </MotionHeading>
+            <MotionText textColor='#797979' fontWeight={'400'} fontSize="lg" mb={4} fontFamily={'bodyFont'}>
               {gallery.description}
-            </Text>
+            </MotionText>
             <SimpleGrid columns={{ base: 2, md: 3 }} spacing={6}>
               {gallery.images.map((image, index) => (
-                <Image
+                <MotionImage
                   key={index}
                   src={image.url}
                   alt={`Gallery Image ${index + 1}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 + index * 0.1 }}
                 />
               ))}
             </SimpleGrid>
-          </Box>
+          </MotionBox>
         </VStack>
       </Container>
 
