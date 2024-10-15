@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Box,
   chakra,
@@ -18,7 +19,6 @@ import {
 
 import * as Icons from "react-icons/fa";
 
-
 import Head from 'next/head';
 import Image from 'next/image'
 
@@ -30,6 +30,9 @@ import Link from 'next/link'
 
 import client from '../../../src/sanity/lib/client'
 
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
 
 export async function getStaticProps() {
   const cottageDoublePageContent = await client.fetch(`
@@ -52,30 +55,28 @@ export async function getStaticProps() {
   };
 }
 
-
 export default function cottageDoublePage(props) {
   const cottageDoublePageContent  = props.cottageDoublePageContent[0] || [];
 
   console.log('cottageDoublePageContent')
-
   console.log(props)
 
   return (
     <Box>
-    <Head>
-      <title>CottageDouble | Great Outdoors</title>
-      <meta name="description" content="Retreat.Rest.Rejuvenate" />
+      <Head>
+        <title>CottageDouble | Great Outdoors</title>
+        <meta name="description" content="Retreat.Rest.Rejuvenate" />
 
-      <meta property="og:title" content="Great Outdoors Kalanamu" />
-      <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-      <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
-      <meta property="og:type" content="website" />
+        <meta property="og:title" content="Great Outdoors Kalanamu" />
+        <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
+        <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
+        <meta property="og:type" content="website" />
 
 
-      <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-    </Head>
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      </Head>
 
       <Box>
         <NavBar />
@@ -85,19 +86,29 @@ export default function cottageDoublePage(props) {
         pt={{ base: 32, md: 44 }}
         bg={'#0b1722'}
       >
-
-        <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
-          <chakra.h3
+        <MotionBox
+          width={{ base: "full", sm: "lg", lg: "xl" }}
+          margin={"auto"}
+          p={{base:8}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <MotionText
+            as={chakra.h3}
             fontWeight={"bold"}
             fontSize={20}
             textTransform={"uppercase"}
             color={"white"}
             fontFamily="bodyFont"
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             ACCOMMODATION
-          </chakra.h3>
-          <Heading
+          </MotionText>
+          <MotionHeading
             as={"h1"}
             mb={{ base: 2, md: 10 }}
             fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
@@ -107,11 +118,14 @@ export default function cottageDoublePage(props) {
             letterSpacing={{ base: "normal", md: "tight" }}
             color="purple.900"
             textAlign="center"
-            fontFamily={'navBarFont'}             >
-            <Text
+            fontFamily={'navBarFont'}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            <MotionText
               display={{
                 base: "block",
-                // lg: "inline",
               }}
               w="full"
               bgClip="text"
@@ -123,12 +137,15 @@ export default function cottageDoublePage(props) {
                 filter: "brightness(120%)",
               }}
               py={6}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.9 }}
             >
-              
               {cottageDoublePageContent.roomTitle1}
-            </Text>
-          </Heading>
-          <chakra.h2
+            </MotionText>
+          </MotionHeading>
+          <MotionText
+            as={chakra.h2}
             margin={"auto"}
             width={"100%"}
             fontWeight={"medium"}
@@ -137,14 +154,14 @@ export default function cottageDoublePage(props) {
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}
-
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
           >
             {cottageDoublePageContent.roomSubTitle1}
-            
-          </chakra.h2>
-        </Box>
-
+          </MotionText>
+        </MotionBox>
 
         <Section1 content={cottageDoublePageContent} />
       </Box>
@@ -155,7 +172,6 @@ export default function cottageDoublePage(props) {
     </Box>
   );
 }
-
 
 //Make this into a Carousel
 const Section1 = (props) => {
@@ -452,7 +468,3 @@ const Section1Content = (props) => {
     </Box>   
   )
 }
-
-
-
-

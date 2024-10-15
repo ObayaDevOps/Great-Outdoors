@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Box,
   chakra,
@@ -29,6 +30,11 @@ import Footer from '../../components/footer'
 import Link from 'next/link'
 
 import client from '../../../src/sanity/lib/client'
+
+
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
 
 
 export async function getStaticProps() {
@@ -84,19 +90,29 @@ export default function CabinsPage(props) {
         pt={{ base: 32, md: 44 }}
         bg={'#0b1722'}
       >
-
-        <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
-          <chakra.h3
+        <MotionBox
+          width={{ base: "full", sm: "lg", lg: "xl" }}
+          margin={"auto"}
+          p={{base:8}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <MotionText
+            as={chakra.h3}
             fontWeight={"bold"}
             fontSize={20}
             textTransform={"uppercase"}
             color={"white"}
             fontFamily="bodyFont"
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             ACCOMMODATION
-          </chakra.h3>
-          <Heading
+          </MotionText>
+          <MotionHeading
             as={"h1"}
             mb={{ base: 2, md: 10 }}
             fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
@@ -106,8 +122,12 @@ export default function CabinsPage(props) {
             letterSpacing={{ base: "normal", md: "tight" }}
             color="purple.900"
             textAlign="center"
-            fontFamily={'navBarFont'}             >
-            <Text
+            fontFamily={'navBarFont'}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            <MotionText
               display={{
                 base: "block",
                 // lg: "inline",
@@ -122,12 +142,15 @@ export default function CabinsPage(props) {
                 filter: "brightness(120%)",
               }}
               py={6}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.9 }}
             >
-              
               {cabinPageContent.roomTitle1}
-            </Text>
-          </Heading>
-          <chakra.h2
+            </MotionText>
+          </MotionHeading>
+          <MotionText
+            as={chakra.h2}
             margin={"auto"}
             width={"100%"}
             fontWeight={"medium"}
@@ -136,13 +159,15 @@ export default function CabinsPage(props) {
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}
-
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
           >
             {cabinPageContent.roomSubTitle1}
             
-          </chakra.h2>
-        </Box>
+          </MotionText>
+        </MotionBox>
 
 
         <Section1 content={cabinPageContent} />

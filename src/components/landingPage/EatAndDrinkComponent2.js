@@ -73,9 +73,15 @@ const EatAndDrinkComponent2 = (props) => {
                 </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
-                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                {landingPageContent.eatAndDrinkButtonText}
-
+                <Button 
+                  fontFamily={'bodyFont'} 
+                  colorScheme='red' 
+                  textColor='white' 
+                  fontSize='lg'
+                  as="a"
+                  href="/rejuvenate/food"
+                >
+                  {landingPageContent.eatAndDrinkButtonText}
                 </Button>
                 </Box>
                 </Box>

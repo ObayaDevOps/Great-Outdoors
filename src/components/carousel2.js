@@ -28,13 +28,14 @@ const Carousel2 = ({ slides }) => {
               maxW={{base:'xl', md: 'xl'}}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 1, delay: 0.3 }}
             >
               <Heading
-                pt={'45vh'}
+                  pt={{ base: '35vh', md: '45vh' }}
+                pl={{ base: 0, md: '10vw' }}
                 as="h1"
                 mb={{ base: 2, md: 10 }}
-                fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
+                fontSize={{ base: "5xl", md: "6xl", lg: "7xl" }}
                 minHeight="1vh"
                 fontWeight="bold"
                 lineHeight="none"
@@ -49,7 +50,6 @@ const Carousel2 = ({ slides }) => {
                   bgClip="text"
                   color="white"
                   fontWeight="extrabold"
-                  transition="all .65s ease"
                   _hover={{
                     transform: "scale(1.005)",
                     filter: "brightness(120%)",
