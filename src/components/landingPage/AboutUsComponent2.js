@@ -3,47 +3,53 @@ import { useInView } from "framer-motion";
 
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from "next/link";
 
-const AboutUsComponent2 = () => {
-  
-    const ref1 = useRef(null)
-    const isInView1 = useInView(ref1)
+const AboutUsComponent2 = (props) => {
+  const landingPageContent  = props.pageContent[0] || [];
+
+  const ref1 = useRef(null)
+  const isInView1 = useInView(ref1)
 
   return (
-    <Box bgColor={'#0b1722'} minH={'100vh'} >
-
-      
-      <Box minH={{base:' 160%', md:'120vh'}} 
-      bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
-             bgSize="cover" bgPosition="center" 
-             bgAttachment="fixed" 
-             overflowX='hidden'
-
-
-       >
-        {/* <ScaleFade initialScale={0.8}
-            in={isInView1}> */}
-
-
-            <HStack  p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+    <Box bgColor={'#0b1722'} minH={'100vh'} position="relative">
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        zIndex={1}
+      />
+      <Box
+        position="relative"
+        zIndex={2}
+        minH={{base:'160vh', md:'120vh'}}
+        overflowX='hidden'
+      >
+        <ScaleFade initialScale={0.9} in={isInView1}>
+          <HStack p={{base:4, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
             <Box 
-            ref={ref1}
-            bg={'whiteAlpha.900'} 
-            border={'2px'}
-            borderColor='white'
-            shadow={'xl'}
-            my={{base:'64', md: '0vh'}}
-
-            maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-            p={{base: 2, md: 6, lg:10, xl: 14}} rounded={'lg'}
-            pt={{base: 2,  md: 12, xl: 24}}>
-
-            <Box p={{base: 4, md: 4, lg: 0}}>
+              ref={ref1}
+              bg={'whiteAlpha.900'} 
+              border={'2px'}
+              borderColor='white'
+              shadow={'xl'}
+              my={{base:'12', md: '0vh'}}
+              maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+              p={{base: 2, md: 6, lg:10, xl: 14}} rounded={'lg'}
+              pt={{base: 2,  md: 12, xl: 24}}
+            >
+              <Box p={{base: 4, md: 4, lg: 0}}>
                 <HStack mt={{base:6,  md:2}}>
-                    <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-                <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-                ABOUT US
-                </Text>
+                  <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+                  <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                  ABOUT US
+                  </Text>
                 </HStack>
 
                 <Text  fontFamily={'navBarFont'} 
@@ -54,7 +60,7 @@ const AboutUsComponent2 = () => {
                 textColor='#0e2a4e'              
                 fontWeight={800} 
                 fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
-                Retreat. Rest. Rejuvenate
+                {landingPageContent.aboutUsTitle}
                 </Text>
 
 
@@ -64,40 +70,29 @@ const AboutUsComponent2 = () => {
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                The Great Outdoors is the ideal retreat for nature lovers, teams,
-                and people that just want to leave the metropolitan hustle & bustle behind, 
-                get a breath of fresh air, rest, and rejuvenate in the lap of nature.
+                {landingPageContent.aboutUsParagraph1}
                 </Text>
                 <Text 
                 textColor={'gray.600'}
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                This eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala,
-                is a place people come to for unique retreat experiences, 
-                unforgettable weekends, relaxation, corporate retreats, and reconnecting with family.
+                {landingPageContent.aboutUsParagraph2}
                 </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
                 <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    Discover More
+                  <Link href='/reservations'>
+                  {landingPageContent.aboutUsButtonText}
+                  </Link>
                 </Button>
                 </Box>
-                </Box>
+              </Box>
             </Box>
-
-            </HStack>
-
-        {/* </ScaleFade> */}
-        </Box>
-
-
-        <Box>
-
-        </Box>
-        
+          </HStack>
+        </ScaleFade>
       </Box>
-    // </Box>
+    </Box>
   )
 }
 

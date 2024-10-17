@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Avatar,
   Box,
@@ -19,15 +20,17 @@ import {
 
 import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
-
 import Head from 'next/head';
 import Image from 'next/image'
-
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
 
 import ImageGridPhotoGallery from '../components/image-grid-Lightbox/imageGridPhotoGallery'
+
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
 
 const imageGridImages =[
 
@@ -263,87 +266,109 @@ export default function GalleryPage() {
 
 const HeadingSection = () => {
   return (
-    <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
-    <chakra.h3
-      fontWeight={"bold"}
-      fontSize={20}
-      textTransform={"uppercase"}
-      color={"white"}
-      fontFamily="bodyFont"
-      align="center"
+    <MotionBox 
+      width={{ base: "full", sm: "lg", lg: "xl" }} 
+      margin={"auto"} 
+      p={{base:8}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
     >
-      ABOUT
-    </chakra.h3>
-    <Heading
-      as={"h1"}
-      mb={{ base: 2, md: 10 }}
-      fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
-      minHeight={"1vh"}
-      fontWeight="bold"
-      lineHeight="none"
-      letterSpacing={{ base: "normal", md: "tight" }}
-      color="purple.900"
-      textAlign="center"
-      fontFamily={'navBarFont'}             >
-      <Text
-        display={{
-          base: "block",
-          // lg: "inline",
-        }}
-        w="full"
-        bgClip="text"
+      <MotionText
+        as={chakra.h3}
+        fontWeight={"bold"}
+        fontSize={20}
+        textTransform={"uppercase"}
         color={"white"}
-
-        // bgGradient="linear(to-r, blackAlpha.800, #0e2a4e)"
-        fontWeight="extrabold"
-        transition="all .65s ease"
-        _hover={{
-          transform: "scale(1.005)",
-          filter: "brightness(120%)",
-        }}
-        py={6}
+        fontFamily="bodyFont"
+        align="center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
-        Gallery
-      </Text>
-    </Heading>
-    <chakra.h2
-      margin={"auto"}
-      width={"100%"}
-      fontWeight={"medium"}
-      fontSize={"lg"}
-      color={useColorModeValue("gray.900", "gray.400")}
-      mt={{ base: -2, md: -8, lg: -8 }}
-      fontFamily={"bodyFont"}
-      color={"white"}
-
-      align="center"
-    >
-      See scenes from around our expansive grounds 
-    </chakra.h2>
-  </Box>
+        ABOUT
+      </MotionText>
+      <MotionHeading
+        as={"h1"}
+        mb={{ base: 2, md: 10 }}
+        fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
+        minHeight={"1vh"}
+        fontWeight="bold"
+        lineHeight="none"
+        letterSpacing={{ base: "normal", md: "tight" }}
+        color="purple.900"
+        textAlign="center"
+        fontFamily={'navBarFont'}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.6 }}
+      >
+        <MotionText
+          display={{
+            base: "block",
+          }}
+          w="full"
+          bgClip="text"
+          color={"white"}
+          fontWeight="extrabold"
+          transition="all .65s ease"
+          _hover={{
+            transform: "scale(1.005)",
+            filter: "brightness(120%)",
+          }}
+          py={6}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+        >
+          Gallery
+        </MotionText>
+      </MotionHeading>
+      <MotionText
+        as={chakra.h2}
+        margin={"auto"}
+        width={"100%"}
+        fontWeight={"medium"}
+        fontSize={"lg"}
+        color={useColorModeValue("gray.900", "gray.400")}
+        mt={{ base: -2, md: -8, lg: -8 }}
+        fontFamily={"bodyFont"}
+        color={"white"}
+        align="center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        See scenes from around our expansive grounds 
+      </MotionText>
+    </MotionBox>
   )
 }
 
 //Make this into a Carousel
 const Section1 = () => {
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    // py={4}
-    p={{base: 6, md: 12, lg: 16}}
-    minHeight={{ base:'100vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    bg="white"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "10vh", lg: "25vh" }}
-  >
-      <Box >
-              <ImageGridPhotoGallery photos={imageGridImages} />
-      </Box>
-    </Container>
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1.5 }}
+    >
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        p={{base: 6, md: 12, lg: 16}}
+        minHeight={{ base:'100vh', md: "110vh" }}
+        bg="white"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "10vh", lg: "25vh" }}
+      >
+        <Box>
+          <ImageGridPhotoGallery photos={imageGridImages} />
+        </Box>
+      </Container>
+    </MotionBox>
   )
 } 
 
@@ -469,7 +494,7 @@ const Section1Content = () => {
           // mx={'auto'}
           
           >
-          <Box textColor={'gray.600'} >
+          <Box textColor={'gray.600'}>
             <Text pb={4}  fontFamily={'bodyFont'}  fontSize={{base:'sm', md: 'lg'}}>
             CHECK IN
             </Text>

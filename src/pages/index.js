@@ -9,6 +9,7 @@ import NextLink from 'next/link'
 import FloatingReservationsComponent from '../components/landingPage/floatingReservationsComponent'
 import AboutUsComponent from '../components/landingPage/AboutUsComponent'
 import AmenitiesComponent from '../components/landingPage/AmenitiesComponent'
+import CorporateComponent from '../components/landingPage/CorporateComponent'
 import EatAndDrinkComponent from '../components/landingPage/EatAndDrinkComponent'
 import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
@@ -24,6 +25,31 @@ import BookingsWidget from '../components/bookingsWidget'
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
+
+import client from '../../src/sanity/lib/client'
+
+
+export async function getStaticProps() {
+  const landingPageContent = await client.fetch(`
+  *[_type == "landingPage"]{
+    ...,
+        images[] 
+          {
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }`);
+
+  return {
+    props: {
+      landingPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
 
 
 const slides =[
@@ -55,21 +81,21 @@ const slides =[
   
 ] 
 
-export default function Home() {
+export default function Home(props) {
+  console.log('props')
+  console.log(props)
+
   return (
     <Box>
       <Head>
         <title>Great Outdoors Kalanamu - Retreat.Rest.Rejuvenate</title>
         <meta name="description" content="Retreat.Rest.Rejuvenate" />
-
         <meta property="og:title" content="Great Outdoors Kalanamu" />
         <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
         <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
         <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
-
-
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
       </Head>
 
@@ -79,30 +105,17 @@ export default function Home() {
       
       <Box 
       bg={'whiteAlpha'} 
-        // minH={'100vh'} 
-        // backgroundSize={'100%'}
         backgroundSize={'cover'}
         bgRepeat={'no-repeat'}
-        // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
         <Box>
-          {/* <LandingPageImageSlider /> */}
-
           <Carousel2  slides={slides}/>
-          {/* < BookingsWidget /> */}
-
-          {/* <FloatingReservationsComponent /> */}
-          {/* <AboutUsComponent /> */}
-          <AboutUsComponent2 />
-          {/* <EatAndDrinkComponent /> */}
-          <EatAndDrinkComponent2 />
-          <AmenitiesComponent />
-          {/* <ForestComponent /> */}
-          <ForestComponent2 />
-          {/* <TestimonialsComponent /> */}
-          <OffersComponent />
+          <AboutUsComponent2  pageContent={props.landingPageContent}/>
+          <CorporateComponent  pageContent={props.landingPageContent}/>
+          <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
+          <AmenitiesComponent  pageContent={props.landingPageContent}/>
+          <ForestComponent2  pageContent={props.landingPageContent}/>
         </Box>
-
 
               
       </Box>
@@ -113,3 +126,5 @@ export default function Home() {
       
   )
 }
+
+

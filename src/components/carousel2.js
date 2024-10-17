@@ -1,74 +1,73 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Image from 'next/image'
-import { Box, Flex, Text} from '@chakra-ui/react'
+import { Box, Text, Heading } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
 
-
-const Carousel2 =(props)=> {
-
-  const slides = props.slides;
-
-    // const slides =[
-    //     {   
-    //         img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg",
-    //         width: 770,
-    //         height: 300,
-    //         caption: "Great Outdoors",
-    //         label: "At Home in Nature",
-    
-    //     },
-    //     {   
-    //       img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg",
-    //       width: 1024,
-    //       height: 683,
-    //       caption: "Great Outdoors",
-    //       label: "Cozy Cottages",
-        
-    //     },
-    //     {   
-    //       img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-    //       width: 1024,
-    //       height: 683,
-    //       caption: "Great Outdoors",
-    //       label: "Corporate Retreats",
-        
-    //     },
-        
-        
-    //   ] 
-        return (
-          <Box  bgColor={'#0b1722'}
-          mb={-16} >
-            <Carousel
-            preventMovementUntilSwipeScrollTolerance={true} 
-             swipeScrollTolerance={50}
+const Carousel2 = ({ slides }) => {
+  return (
+    <Box bgColor={'#0b1722'} mb={-16}>
+      <Carousel
+        preventMovementUntilSwipeScrollTolerance={true}
+        swipeScrollTolerance={50}
+      >
+        {slides.map((slide, sid) => (
+          <Box
+            key={sid}
+            minH='100vh'
+            w='full'
+            backgroundSize={'cover'}
+            bgPosition="center"
+            bgRepeat={'no-repeat'}
+            backgroundImage={slide.img}
+          >
+            <MotionBox
+              maxW={{base:'xl', md: 'xl'}}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
             >
-              {slides.map((slide, sid) => (                
-                <Box
-                minH='100vh' 
-                w='full'
-                backgroundSize={'cover'}
-                bgPosition="center" 
-                bgRepeat={'no-repeat'}  
-                // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}   
-                backgroundImage={slide.img}  
-                 
+              <Heading
+                  pt={{ base: '35vh', md: '45vh' }}
+                pl={{ base: 0, md: '10vw' }}
+                as="h1"
+                mb={{ base: 2, md: 10 }}
+                fontSize={{ base: "5xl", md: "6xl", lg: "7xl" }}
+                minHeight="1vh"
+                fontWeight="bold"
+                lineHeight="none"
+                letterSpacing={{ base: "normal", md: "tight" }}
+                color="purple.900"
+                textAlign="center"
+                fontFamily={'navBarFont'}
+              >
+                <MotionText
+                  display={{ base: "block" }}
+                  w="full"
+                  bgClip="text"
+                  color="white"
+                  fontWeight="extrabold"
+                  _hover={{
+                    transform: "scale(1.005)",
+                    filter: "brightness(120%)",
+                  }}
+                  py={6}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1 }}
                 >
-                  <Box maxW={{base:'xl', md: 'xl'}}>
-                  <Text fontFamily='navBarFont' textColor='white' fontSize={{base: '5xl', md:'7xl'}} pt={'45vh'} >
-                    {slide.label}
-                  </Text>
-                  </Box>
-                  <Box ></Box>
-                </Box>
-                ))}
-            </Carousel>
-            </Box>
-        )
+                  {slide.label}
+                </MotionText>
+              </Heading>
+            </MotionBox>
+          </Box>
+        ))}
+      </Carousel>
+    </Box>
+  );
 };
 
-
-export default Carousel2
+export default Carousel2;
