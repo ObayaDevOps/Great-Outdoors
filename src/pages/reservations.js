@@ -5,8 +5,6 @@ import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2';
 
-// import styles from '../styles/reserveport.module.css'
-
 const scripts = [
   "https://www.reserveport.com/media/api5/jquery.min.js",
   "https://www.reserveport.com/media/api5/popper.min.js",
@@ -95,7 +93,7 @@ export default function Home() {
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
         <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-        {/* <link rel='stylesheet' href='../styles/reserveport.module.css'/> */}
+
       </Head>
 
       <Box>
