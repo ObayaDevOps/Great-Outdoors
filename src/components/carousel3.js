@@ -62,7 +62,7 @@ const Carousel3 =(props)=> {
 
                   <Box >
                     <Image
-                      src={slide.img}
+                      src={slide.url}
                       height={slide.height}
                       width={slide.width}
 

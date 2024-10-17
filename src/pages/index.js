@@ -9,6 +9,7 @@ import NextLink from 'next/link'
 import FloatingReservationsComponent from '../components/landingPage/floatingReservationsComponent'
 import AboutUsComponent from '../components/landingPage/AboutUsComponent'
 import AmenitiesComponent from '../components/landingPage/AmenitiesComponent'
+import CorporateComponent from '../components/landingPage/CorporateComponent'
 import EatAndDrinkComponent from '../components/landingPage/EatAndDrinkComponent'
 import ForestComponent from '../components/landingPage/ForestComponent'
 import TestimonialsComponent from '../components/landingPage/TestimonialsComponent'
@@ -22,6 +23,31 @@ import Carousel2 from '../components/carousel2'
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
+
+import client from '../../src/sanity/lib/client'
+
+
+export async function getStaticProps() {
+  const landingPageContent = await client.fetch(`
+  *[_type == "landingPage"]{
+    ...,
+        images[] 
+          {
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }`);
+
+  return {
+    props: {
+      landingPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
 
 
 const slides =[
@@ -53,8 +79,11 @@ const slides =[
   
 ] 
 
-export default function Home() {
-  return (
+export default function Home(props) {
+  console.log('props')
+  console.log(props)
+
+ return (
     <Box>
       <Head>
         <title>Great Outdoors Kalanamu - Retreat.Rest.Rejuvenate</title>
@@ -88,31 +117,18 @@ export default function Home() {
       
       <Box 
       bg={'whiteAlpha'} 
-        // minH={'100vh'} 
-        // backgroundSize={'100%'}
         backgroundSize={'cover'}
         bgRepeat={'no-repeat'}
-        // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}        
       >
         <Box>
-          {/* <LandingPageImageSlider /> */}
-
           <Carousel2  slides={slides}/>
-          
           <search-availability id="1687" clientemail="true"></search-availability>
-
-          {/* <FloatingReservationsComponent /> */}
-          {/* <AboutUsComponent /> */}
-          <AboutUsComponent2 />
-          {/* <EatAndDrinkComponent /> */}
-          <EatAndDrinkComponent2 />
-          <AmenitiesComponent />
-          {/* <ForestComponent /> */}
-          <ForestComponent2 />
-          {/* <TestimonialsComponent /> */}
-          <OffersComponent />
+          <AboutUsComponent2  pageContent={props.landingPageContent}/>
+          <CorporateComponent  pageContent={props.landingPageContent}/>
+          <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
+          <AmenitiesComponent  pageContent={props.landingPageContent}/>
+          <ForestComponent2  pageContent={props.landingPageContent}/>
         </Box>
-
 
               
       </Box>

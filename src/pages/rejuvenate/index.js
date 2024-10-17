@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Avatar,
   Box,
@@ -19,14 +20,15 @@ import {
 
 import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
-
 import Head from 'next/head';
 import Image from 'next/image'
 
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
 
-
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
+const MotionHeading = motion(Heading);
 
 export default function RejuvenatePage() {
   return (
@@ -63,30 +65,31 @@ export default function RejuvenatePage() {
 
       <Box
         pt={{ base: 32, md: 44 }}
-        // pb={{ base: 32, md: 0 }}
-
-        // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
-        // bg={'#0e2a4e'}
         bg={'#0b1722'}
-        // bgImage={
-        //   "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
-        // }
-        // bgSize="cover"
-        // bgPosition="center"
-        // bgAttachment="fixed"
       >
-        <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"} p={{base:8}}>
-          <chakra.h3
+        <MotionBox
+          width={{ base: "full", sm: "lg", lg: "xl" }}
+          margin={"auto"}
+          p={{base:8}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <MotionText
+            as={chakra.h3}
             fontWeight={"bold"}
             fontSize={20}
             textTransform={"uppercase"}
             color={"white"}
             fontFamily="bodyFont"
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             GET BACK IN TOUCH WITH YOURSELF
-          </chakra.h3>
-          <Heading
+          </MotionText>
+          <MotionHeading
             as={"h1"}
             mb={{ base: 2, md: 10 }}
             fontSize={{ base: "5xl", md: "6xl", lg: "8xl" }}
@@ -96,56 +99,54 @@ export default function RejuvenatePage() {
             letterSpacing={{ base: "normal", md: "tight" }}
             color="purple.900"
             textAlign="center"
-            fontFamily={'navBarFont'}             >
-            <Text
+            fontFamily={'navBarFont'}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            <MotionText
               display={{
                 base: "block",
-                // lg: "inline",
               }}
               w="full"
               bgClip="text"
               color={"white"}
-
-              // bgGradient="linear(to-r, blackAlpha.800, #0e2a4e)"
               fontWeight="extrabold"
-              transition="all .65s ease"
               _hover={{
                 transform: "scale(1.005)",
                 filter: "brightness(120%)",
               }}
               py={6}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.9 }}
             >
               Rejuvenate
-            </Text>
-          </Heading>
-          <chakra.h2
+            </MotionText>
+          </MotionHeading>
+          <MotionText
+            as={chakra.h2}
             margin={"auto"}
             width={"100%"}
             fontWeight={"medium"}
             fontSize={"lg"}
-            color={useColorModeValue("gray.900", "gray.400")}
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}
-
             align="center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
           >
             Relax, breathe in deep, and bask in the freshness of the Great Outdoors!
-
-          </chakra.h2>
-        </Box>
+          </MotionText>
+        </MotionBox>
 
         <Section1 />
-
         <Section2 />
-
         <Section3 />
-
         <Section4 />
-
         <Section5 />
-
-
       </Box>
 
       <Box>
@@ -156,565 +157,515 @@ export default function RejuvenatePage() {
 }
 
 const Section1 = () => {
-
-
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    py={4}
-    minHeight={{ base:'190vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    // bg="whiteAlpha.700"
-    bgImage={
-    "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943928/IMG_9060-2_hbfqd4.jpg"
-  }
-  bgSize="cover"
-  bgPosition="center"
-  bgAttachment="fixed"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "10vh", lg: "25vh" }}
-  >
-    <Flex
-      textAlign={"center"}
-      pt={0}
-      justifyContent={"right"}
-      direction={"column"}
-      width={"full"}
-      overflow={"hidden"}
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1.5 }}
     >
-      <Section1Content />
-
-    </Flex>
-  </Container>
-
-
-
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        py={4}
+        minHeight={{ base:'190vh', md: "110vh" }}
+        bgImage={
+          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943928/IMG_9060-2_hbfqd4.jpg"
+        }
+        bgSize="cover"
+        bgPosition="center"
+        bgAttachment="fixed"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "10vh", lg: "25vh" }}
+      >
+        <Flex
+          textAlign={"center"}
+          pt={0}
+          justifyContent={"right"}
+          direction={"column"}
+          width={"full"}
+          overflow={"hidden"}
+        >
+          <Section1Content />
+        </Flex>
+      </Container>
+    </MotionBox>
   )
 } 
 
 const Section1Content = () => {
   return (
-    <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
-    <Box 
-    bg={'whiteAlpha.900'} 
-    border={'2px'}
-    borderColor='white'
-    shadow={'xl'}
+    <MotionBox
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 2 }}
+    >
+      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+        <Box 
+          bg={'whiteAlpha.900'} 
+          border={'2px'}
+          borderColor='white'
+          shadow={'xl'}
+          maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+          p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+          pt={{base: 8,  md: 12, xl: 24}}
+        >
+          <Box p={{base: 4, md: 4, lg: 0}}>
+            <HStack mt={{base:6,  md:2}}>
+              <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                GET-AWAY & RETREAT
+              </Text>
+            </HStack>
 
-    maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-    p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-    pt={{base: 8,  md: 12, xl: 24}}>
+            <Text  fontFamily={'navBarFont'} 
+              letterSpacing={'1px'} 
+              pb={{base:8, md: 4, lg: 4, xl: 8}} 
+              lineHeight={{lg: '55px' ,xl:'55px'}} 
+              textColor='#0e2a4e'
+              textAlign={'left'}
+              fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+              Take a dip
+            </Text>
 
-    <Box p={{base: 4, md: 4, lg: 0}}>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-        <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-        GET-AWAY & RETREAT
-        </Text>
-        </HStack>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Let your muscles relax as you ease into the water, surrounded 
+              by beautiful forest and open skies. Breathe deeply, de-stress, and enjoy the wonders of a 
+              different kind of forest bath.
+            </Text>
 
-        <Text  fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:8, md: 4, lg: 4, xl: 8}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-        Take a dip
-        </Text>
+            <Text 
+              textColor='#cf2e2e'
+              textAlign={'left'}
+              pt={6}
+              fontFamily={'bodyFont'} fontSize='lg'>
+              Open Daily: 7:00pm - 11:00pm
+            </Text>
 
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Let your muscles relax as you ease into the water, surrounded 
-          by beautiful forest and open skies. Breathe deeply, de-stress, and enjoy the wonders of a 
-          different kind of forest bath.
-        </Text>
-
-        <Text 
-        textColor='#cf2e2e'
-        // textColor='#0e2a4e'
-
-        // textColor='blue.800'
-        textAlign={'left'}
-        pt={6}
-
-        fontFamily={'bodyFont'} fontSize='lg'>
-          Open Daily: 7:00pm - 11:00pm
-        </Text>
-
-        <Flex py={{base:10, md: 6}} >
-        <Button fontFamily={'bodyFont'} colorScheme='red' alignSelf={'left'} textColor='white' fontSize='lg'>
-            Reserve Now
-        </Button>
-        </Flex>
+            <Flex py={{base:10, md: 6}} >
+              <Button fontFamily={'bodyFont'} colorScheme='red' alignSelf={'left'} textColor='white' fontSize='lg'>
+                Reserve Now
+              </Button>
+            </Flex>
+          </Box>
         </Box>
-    </Box>
-
-    </HStack>      
+      </HStack>
+    </MotionBox>
   )
 }
 
-
 const Section2 = () => {
-
-
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    py={4}
-    minHeight={{ base:'190vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    // bg="whiteAlpha.700"
-              bgImage={
-    "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG-20211216-WA0012-e1671046591860_zmxnir.jpg"
-  }
-  bgSize="cover"
-  bgPosition="center"
-  bgAttachment="fixed"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "35vh", lg: "25vh" }}
-  >
-    <Flex
-      textAlign={"center"}
-      pt={0}
-      justifyContent={"center"}
-      direction={"column"}
-      width={"full"}
-      overflow={"hidden"}
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 2.5 }}
     >
-      <Section2Content />
-
-
-    </Flex>
-  </Container>
-
-
-
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        py={4}
+        minHeight={{ base:'190vh', md: "110vh" }}
+        bgImage={
+          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG-20211216-WA0012-e1671046591860_zmxnir.jpg"
+        }
+        bgSize="cover"
+        bgPosition="center"
+        bgAttachment="fixed"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "35vh", lg: "25vh" }}
+      >
+        <Flex
+          textAlign={"center"}
+          pt={0}
+          justifyContent={"center"}
+          direction={"column"}
+          width={"full"}
+          overflow={"hidden"}
+        >
+          <Section2Content />
+        </Flex>
+      </Container>
+    </MotionBox>
   )
 } 
 
 const Section2Content = () => {
   return (
-    <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
-    <Box 
-    bg={'whiteAlpha.900'} 
-    border={'2px'}
-    borderColor='white'
-    shadow={'xl'}
+    <MotionBox
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 3 }}
+    >
+      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+        <Box 
+          bg={'whiteAlpha.900'} 
+          border={'2px'}
+          borderColor='white'
+          shadow={'xl'}
+          maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+          p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+          pt={{base: 8,  md: 12, xl: 24}}
+        >
+          <Box p={{base: 4, md: 4, lg: 0}}>
+            <HStack mt={{base:6,  md:2}}>
+              <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                FOREST BATHING
+              </Text>
+            </HStack>
 
-    maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-    p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-    pt={{base: 8,  md: 12, xl: 24}}>
+            <Text  fontFamily={'navBarFont'} 
+              letterSpacing={'1px'} 
+              pb={{base:8, md: 4, lg: 4, xl: 8}} 
+              lineHeight={{lg: '55px' ,xl:'55px'}} 
+              textColor='#0e2a4e'
+              textAlign={'left'}
+              fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+              Revitalize your spirit.
+            </Text>
 
-    <Box p={{base: 4, md: 4, lg: 0}}>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-        <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-        FOREST BATHING
-        </Text>
-        </HStack>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Originating from Japan, Forest Bathing is a powerful antidote to the pressures of the modern world,
+              proven to deliver lasting benefits to your physical and mental wellbeing, and creating within you a
+              profound connection to nature.
+            </Text>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Our forest guides will lead you through a series of fun group activities and show you some great spots
+              and fresh fruit trees when in season. Come and enjoy this goodness.
+            </Text>
 
-        <Text  fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:8, md: 4, lg: 4, xl: 8}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-        Revitalize your spirit.
-        </Text>
+            <Text 
+              textColor='#cf2e2e'
+              textAlign={'left'}
+              pt={6}
+              fontFamily={'bodyFont'} fontSize='lg'>
+              Just take to the forest, immerse yourself and wonder among the trees.
+            </Text>
 
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Originating from Japan, Forest Bathing is a powerful antidote to the pressures of the modern world,
-           proven to deliver lasting benefits to your physical and mental wellbeing, and creating within you a
-            profound connection to nature.
-        </Text>
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Our forest guides will lead you through a series of fun group activities and show you some great spots
-           and fresh fruit trees when in season. Come and enjoy this goodness.
-        </Text>
-
-        <Text 
-        textColor='#cf2e2e'
-        // textColor='#0e2a4e'
-
-        // textColor='blue.800'
-        textAlign={'left'}
-        pt={6}
-
-        fontFamily={'bodyFont'} fontSize='lg'>
-          Just take to the forest, immerse yourself and wonder among the trees.
-        </Text>
-
-        <Flex py={{base:10, md: 6}} justify={'left'}>
-        <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-            Contact to Book
-        </Button>
-        </Flex>
+            <Flex py={{base:10, md: 6}} justify={'left'}>
+              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
+                Contact to Book
+              </Button>
+            </Flex>
+          </Box>
         </Box>
-    </Box>
-
-    </HStack>      
+      </HStack>
+    </MotionBox>
   )
 }
 
-
 const Section3 = () => {
-
-
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    py={4}
-    minHeight={{ base:'190vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    // bg="whiteAlpha.700"
-              bgImage={
-    "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943925/IMG-20211216-WA0060_ubzh0b.jpg"
-  }
-  bgSize="cover"
-  bgPosition="center"
-  bgAttachment="fixed"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "35vh", lg: "25vh" }}
-  >
-    <Flex
-      textAlign={"center"}
-      pt={0}
-      justifyContent={"center"}
-      direction={"column"}
-      width={"full"}
-      overflow={"hidden"}
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 3.5 }}
     >
-      <Section3Content />
-
-    </Flex>
-  </Container>
-
-
-
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        py={4}
+        minHeight={{ base:'190vh', md: "110vh" }}
+        bgImage={
+          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943925/IMG-20211216-WA0060_ubzh0b.jpg"
+        }
+        bgSize="cover"
+        bgPosition="center"
+        bgAttachment="fixed"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "35vh", lg: "25vh" }}
+      >
+        <Flex
+          textAlign={"center"}
+          pt={0}
+          justifyContent={"center"}
+          direction={"column"}
+          width={"full"}
+          overflow={"hidden"}
+        >
+          <Section3Content />
+        </Flex>
+      </Container>
+    </MotionBox>
   )
 } 
 
-
-
 const Section3Content = () => {
   return (
-    <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
-    <Box 
-    bg={'whiteAlpha.900'} 
-    border={'2px'}
-    borderColor='white'
-    shadow={'xl'}
+    <MotionBox
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 4 }}
+    >
+      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+        <Box 
+          bg={'whiteAlpha.900'} 
+          border={'2px'}
+          borderColor='white'
+          shadow={'xl'}
+          maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+          p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+          pt={{base: 8,  md: 12, xl: 24}}
+        >
+          <Box p={{base: 4, md: 4, lg: 0}}>
+            <HStack mt={{base:6,  md:2}}>
+              <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                BIKE TRAILS
+              </Text>
+            </HStack>
 
-    maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-    p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-    pt={{base: 8,  md: 12, xl: 24}}>
+            <Text  fontFamily={'navBarFont'} 
+              letterSpacing={'1px'} 
+              pb={{base:8, md: 4, lg: 4, xl: 8}} 
+              lineHeight={{lg: '55px' ,xl:'55px'}} 
+              textColor='#0e2a4e'
+              textAlign={'left'}
+              fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+              Your body & mind
+            </Text>
 
-    <Box p={{base: 4, md: 4, lg: 0}}>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-        <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-        BIKE TRAILS
-        </Text>
-        </HStack>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Unwind with a leisurely bike ride though the forest.
+              Discover Shinrin-Yoku, the ancient art of "forest bathing" and bask in the fresh eucalyptus breeze.
+            </Text>
 
-        <Text  fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:8, md: 4, lg: 4, xl: 8}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-        Your body & mind
-        </Text>
+            <Text 
+              textColor='#cf2e2e'
+              textAlign={'left'}
+              pt={6}
+              fontFamily={'bodyFont'} fontSize='lg'>
+              This and many more nature based activities at the tips of your fingers
+            </Text>
 
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Unwind with a leisurely bike ride though the forest.
-           Discover Shinrin-Yoku, the ancient art of "forest bathing" and bask in the fresh eucalyptus breeze.
-
-        </Text>
-
-
-        <Text 
-        textColor='#cf2e2e'
-        // textColor='#0e2a4e'
-
-        // textColor='blue.800'
-        textAlign={'left'}
-        pt={6}
-
-        fontFamily={'bodyFont'} fontSize='lg'>
-This and many more nature based activities at the tips of your fingers        </Text>
-
-        <Flex py={{base:10, md: 6}} justify={'left'}>
-        <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-            Contact to Book
-        </Button>
-        </Flex>
+            <Flex py={{base:10, md: 6}} justify={'left'}>
+              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
+                Contact to Book
+              </Button>
+            </Flex>
+          </Box>
         </Box>
-    </Box>
-
-    </HStack>      
+      </HStack>
+    </MotionBox>
   )
 }
 
 const Section4 = () => {
-
-
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    py={4}
-    minHeight={{ base:'190vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    // bg="whiteAlpha.700"
-              bgImage={
-    "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943927/IMG_8943-2_gdlxkq.jpg"
-  }
-  bgSize="cover"
-  bgPosition="center"
-  bgAttachment="fixed"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "35vh", lg: "25vh" }}
-  >
-    <Flex
-      textAlign={"center"}
-      pt={0}
-      justifyContent={"center"}
-      direction={"column"}
-      width={"full"}
-      overflow={"hidden"}
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 4.5 }}
     >
-      <Section4Content />
-
-    </Flex>
-  </Container>
-
-
-
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        py={4}
+        minHeight={{ base:'190vh', md: "110vh" }}
+        bgImage={
+          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943927/IMG_8943-2_gdlxkq.jpg"
+        }
+        bgSize="cover"
+        bgPosition="center"
+        bgAttachment="fixed"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "35vh", lg: "25vh" }}
+      >
+        <Flex
+          textAlign={"center"}
+          pt={0}
+          justifyContent={"center"}
+          direction={"column"}
+          width={"full"}
+          overflow={"hidden"}
+        >
+          <Section4Content />
+        </Flex>
+      </Container>
+    </MotionBox>
   )
 } 
-
-
 
 const Section4Content = () => {
   return (
-    <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
-    <Box 
-    bg={'whiteAlpha.900'} 
-    border={'2px'}
-    borderColor='white'
-    shadow={'xl'}
+    <MotionBox
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 5 }}
+    >
+      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+        <Box 
+          bg={'whiteAlpha.900'} 
+          border={'2px'}
+          borderColor='white'
+          shadow={'xl'}
+          maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+          p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+          pt={{base: 8,  md: 12, xl: 24}}
+        >
+          <Box p={{base: 4, md: 4, lg: 0}}>
+            <HStack mt={{base:6,  md:2}}>
+              <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                CAMP FIRES
+              </Text>
+            </HStack>
 
-    maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-    p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-    pt={{base: 8,  md: 12, xl: 24}}>
+            <Text  fontFamily={'navBarFont'} 
+              letterSpacing={'1px'} 
+              pb={{base:8, md: 4, lg: 4, xl: 8}} 
+              lineHeight={{lg: '55px' ,xl:'55px'}} 
+              textColor='#0e2a4e'
+              textAlign={'left'}
+              fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+              Watch the sparks fly...
+            </Text>
 
-    <Box p={{base: 4, md: 4, lg: 0}}>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-        <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-        CAMP FIRES
-        </Text>
-        </HStack>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Bring your friends and family and cuddle up around a campfire. 
+              Some of the best memories are made this way. Tell stories, roast some marshmallows, 
+              reflect on the day you just had, and plan your next trip back. We'll keep the fire lit for you.
+            </Text>
 
-        <Text  fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:8, md: 4, lg: 4, xl: 8}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
-        Watch the sparks fly...
-        </Text>
+            <Text 
+              textColor='#cf2e2e'
+              textAlign={'left'}
+              pt={6}
+              fontFamily={'bodyFont'} fontSize='lg'>
+              Let story time be one to remember.
+            </Text>
 
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Bring your friends and family and cuddle up around a campfire. 
-          Some of the best memories are made this way. Tell stories, roast some marshmallows, 
-          reflect on the day you just had, and plan your next trip back. We'll keep the fire lit for you.
-
-        </Text>
-
-
-        <Text 
-        textColor='#cf2e2e'
-        // textColor='#0e2a4e'
-
-        // textColor='blue.800'
-        textAlign={'left'}
-        pt={6}
-
-        fontFamily={'bodyFont'} fontSize='lg'>
-          Let story time be one to remember.
-        </Text>
-
-        <Flex py={{base:10, md: 6}} justify={'left'}>
-        <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-            Contact to Book
-        </Button>
-        </Flex>
+            <Flex py={{base:10, md: 6}} justify={'left'}>
+              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
+                Contact to Book
+              </Button>
+            </Flex>
+          </Box>
         </Box>
-    </Box>
-
-    </HStack>      
+      </HStack>
+    </MotionBox>
   )
 }
 
-
 const Section5 = () => {
-
-
   return (
-    <Container
-    maxW={{ base: "95%", md: "90%" }}
-    py={4}
-    minHeight={{ base:'190vh', md: "110vh" }}
-    // background="rgba(240,255,244,0.55)"
-    // bg="whiteAlpha.700"
-              bgImage={
-    "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG_3184-1024x683-1-e1671047429238_ucl3jf.jpg"
-  }
-  bgSize="cover"
-  bgPosition="center"
-  bgAttachment="fixed"
-    rounded="3xl"
-    shadow="2xl"
-    border={"1px"}
-    borderColor={"white"}
-    mt={{ base: "35vh", lg: "25vh" }}
-  >
-    <Flex
-      textAlign={"center"}
-      pt={0}
-      justifyContent={"center"}
-      direction={"column"}
-      width={"full"}
-      overflow={"hidden"}
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 5.5 }}
     >
-      <Section5Content />
-
-    </Flex>
-  </Container>
-
-
-
+      <Container
+        maxW={{ base: "95%", md: "90%" }}
+        py={4}
+        minHeight={{ base:'190vh', md: "110vh" }}
+        bgImage={
+          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG_3184-1024x683-1-e1671047429238_ucl3jf.jpg"
+        }
+        bgSize="cover"
+        bgPosition="center"
+        bgAttachment="fixed"
+        rounded="3xl"
+        shadow="2xl"
+        border={"1px"}
+        borderColor={"white"}
+        mt={{ base: "35vh", lg: "25vh" }}
+      >
+        <Flex
+          textAlign={"center"}
+          pt={0}
+          justifyContent={"center"}
+          direction={"column"}
+          width={"full"}
+          overflow={"hidden"}
+        >
+          <Section5Content />
+        </Flex>
+      </Container>
+    </MotionBox>
   )
 } 
 
-
-
 const Section5Content = () => {
   return (
-    <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
-    <Box 
-    bg={'whiteAlpha.900'} 
-    border={'2px'}
-    borderColor='white'
-    shadow={'xl'}
+    <MotionBox
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 6 }}
+    >
+      <HStack p={{base:2, md: 4,lg:8, xl: 20}} float={{base: 'none', md:'left'}}>
+        <Box 
+          bg={'whiteAlpha.900'} 
+          border={'2px'}
+          borderColor='white'
+          shadow={'xl'}
+          maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
+          p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
+          pt={{base: 8,  md: 12, xl: 24}}
+        >
+          <Box p={{base: 4, md: 4, lg: 0}}>
+            <HStack mt={{base:6,  md:2}}>
+              <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
+              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+                FAMILY EXPERIENCE
+              </Text>
+            </HStack>
 
-    maxW={{base: '6xl', md: 'lg', lg: 'md',  xl:'xl'}}
-    p={{base: 3, md: 6, lg:10, xl: 14}} rounded={'lg'}
-    pt={{base: 8,  md: 12, xl: 24}}>
+            <Text  fontFamily={'navBarFont'} 
+              letterSpacing={'1px'} 
+              pb={{base:8, md: 4, lg: 4, xl: 8}} 
+              lineHeight={{lg: '55px' ,xl:'55px'}} 
+              textColor='#0e2a4e'
+              textAlign={'left'}
+              fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+              Something for everyone.
+            </Text>
 
-    <Box p={{base: 4, md: 4, lg: 0}}>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-        <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-        FAMILY EXPERIENCE
-        </Text>
-        </HStack>
+            <Text 
+              textColor='#0e2a4e'
+              fontFamily={'bodyFont'}           textAlign={'left'}
+              fontSize='lg' py={4} fontWeight={400}>
+              Sometimes the Great Outdoors is better with the people you love.
+            </Text>
 
-        <Text  fontFamily={'navBarFont'} 
-        letterSpacing={'1px'} 
-        pb={{base:8, md: 4, lg: 4, xl: 8}} 
-        lineHeight={{lg: '55px' ,xl:'55px'}} 
-        // textColor='white'
-        textColor='#0e2a4e'
-        textAlign={'left'}
-        fontWeight={800} fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}>
+            <Text 
+              textColor='#cf2e2e'
+              textAlign={'left'}
+              pt={6}
+              fontFamily={'bodyFont'} fontSize='lg'>
+              This and many more nature based activities at the tips of your fingers
+            </Text>
 
-          Something for everyone.
-        </Text>
-
-        <Text 
-        // textColor='white'
-        // textColor='blue.800'
-        textColor='#0e2a4e'
-
-        fontFamily={'bodyFont'}           textAlign={'left'}
-        fontSize='lg' py={4} fontWeight={400}>
-          Sometimes the Great Outdoors is better with the people you love.
-        </Text>
-
-
-        <Text 
-        textColor='#cf2e2e'
-        // textColor='#0e2a4e'
-
-        // textColor='blue.800'
-        textAlign={'left'}
-        pt={6}
-
-        fontFamily={'bodyFont'} fontSize='lg'>
-This and many more nature based activities at the tips of your fingers        </Text>
-
-        <Flex py={{base:10, md: 6}} justify={'left'}>
-        <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-            Contact to Book
-        </Button>
-        </Flex>
+            <Flex py={{base:10, md: 6}} justify={'left'}>
+              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
+                Contact to Book
+              </Button>
+            </Flex>
+          </Box>
         </Box>
-    </Box>
-
-    </HStack>      
+      </HStack>
+    </MotionBox>
   )
 }
-
-
-

@@ -4,8 +4,9 @@ import { useInView } from "framer-motion";
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
 
-const EatAndDrinkComponent2 = () => {
-  
+const EatAndDrinkComponent2 = (props) => {
+  const landingPageContent  = props.pageContent[0] || [];
+
     const ref1 = useRef(null)
     const isInView1 = useInView(ref1)
 
@@ -50,7 +51,7 @@ const EatAndDrinkComponent2 = () => {
                 textColor='#0e2a4e'              
                 fontWeight={800} 
                 fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
-                Indulge in Healthy & Fresh Food
+                {landingPageContent.eatAndDrinkTitle}
                 </Text>
 
                 <Text 
@@ -58,19 +59,29 @@ const EatAndDrinkComponent2 = () => {
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes. 
+                  {landingPageContent.eatAndDrinkParagraph1}
+
+                  
                 </Text>
                 <Text 
                 textColor={'gray.600'}
                 fontFamily={'bodyFont'}  
                 fontSize={{base:'sm', md: 'lg'}} 
                 py={2} fontWeight={400}>
-                From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
+                  {landingPageContent.eatAndDrinkParagraph2}
+
                 </Text>
 
                 <Box pt={{base:10, md: 6}} pb={{base:2, md: 6}} >
-                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
-                    Call to Book
+                <Button 
+                  fontFamily={'bodyFont'} 
+                  colorScheme='red' 
+                  textColor='white' 
+                  fontSize='lg'
+                  as="a"
+                  href="/rejuvenate/food"
+                >
+                  {landingPageContent.eatAndDrinkButtonText}
                 </Button>
                 </Box>
                 </Box>

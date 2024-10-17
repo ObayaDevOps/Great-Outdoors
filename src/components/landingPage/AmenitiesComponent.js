@@ -113,108 +113,101 @@ export default function AmenitiesComponent(){
       w="full"
       justifyContent="center"
       alignItems="center"
-      // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
       bgSize="cover" bgPosition="center" bgAttachment="fixed"
-                   overflowX='hidden'
-
+      overflowX='hidden'
       minH={{base:' 260vh', md:'170vh'}} 
     >
-      {/* <ScaleFade initialScale={0.8}
-          in={isInView1}> */}
-
-      <Box 
-      ref={ref1}
-      py={{base: 20, lg:24}} px={{base:6, lg: 12}} bg="whiteAlpha.900" 
-
-      border={'1px'}
-      borderColor={'white'}
-      rounded="xl">
-        <Box maxW="7xl" mx="auto" px={{ base: 2, lg: 8 }}>
-          <Box textAlign={{ lg: "center" }}>
+      <ScaleFade initialScale={0.9} in={isInView1}>
+        <Box 
+          ref={ref1}
+          py={{base: 20, lg:24}} px={{base:6, lg: 12}} bg="whiteAlpha.900" 
+          border={'1px'}
+          borderColor={'white'}
+          rounded="xl"
+        >
+          <Box maxW="7xl" mx="auto" px={{ base: 2, lg: 8 }}>
+            <Box textAlign={{ lg: "center" }}>
               <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-              AMENITIES
+                AMENITIES
               </Text>
-             {/* <Text textColor='#0e2a4e' fontFamily={'navBarFont'} letterSpacing={'1px'} lineHeight={{lg: '55px' ,xl:'55px'}} fontWeight={800} fontSize={{base:'45px' ,lg: '45px', xl:'50px'}}> */}
-               
-
-             <Text  fontFamily={'navBarFont'} 
+              <Text  
+                fontFamily={'navBarFont'} 
                 letterSpacing={'1px'} 
                 pb={{base:8, md: 4, lg: 4, xl: 8}} 
                 lineHeight={{lg: '55px' ,xl:'55px'}} 
-                // textColor='white'
                 textColor='#0e2a4e'              
                 fontWeight={800} 
-                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}>
-              Make Your Stay Memorable
-            </Text>
-          </Box>
-
-          <Box mt={{base: 4, lg: 10}}>
-            <Stack
-              spacing={{ base: 10, md: 0 }}
-              display={{ md: "grid" }}
-              gridTemplateColumns={{ base:"repeat(3,1fr)",  md: "repeat(3,1fr)" }}
-              gridColumnGap={{ md: 8 }}
-              gridRowGap={{ md: 10 }}
-            >
-              <Feature
-                title="Feel nature"
-                icon={'FaTree'}
+                fontSize={{base:'30px' ,lg: '35px', xl:'50px'}}
               >
-                The resort is right in the forest, and surrounded by airy lush green spaces.
-              </Feature>
+                Make Your Stay Memorable
+              </Text>
+            </Box>
 
-              <Feature
-                title="Open air spaces"
-                icon={
-                  'FaWind'
-                }
+            <Box mt={{base: 4, lg: 10}}>
+              <Stack
+                spacing={{ base: 10, md: 0 }}
+                display={{ md: "grid" }}
+                gridTemplateColumns={{ base:"repeat(3,1fr)",  md: "repeat(3,1fr)" }}
+                gridColumnGap={{ md: 8 }}
+                gridRowGap={{ md: 10 }}
               >
-                Eat, lounge or just take a walk in the forest, smell the eucalyptus in the air.
-              </Feature>
+                <Feature
+                  title="Feel nature"
+                  icon={'FaTree'}
+                >
+                  The resort is right in the forest, and surrounded by airy lush green spaces.
+                </Feature>
 
-              <Feature
-                title="Farm-to-plate"
-                icon={
-                  'FaRegLemon'
-                }
-              >
-                Fresh food, right from the farm prepared by an experienced chef.
-              </Feature>
+                <Feature
+                  title="Open air spaces"
+                  icon={
+                    'FaWind'
+                  }
+                >
+                  Eat, lounge or just take a walk in the forest, smell the eucalyptus in the air.
+                </Feature>
 
-              <Feature
-                title="Swimming Pool"
-                icon={
-                  'FaSwimmingPool'
-                }
-              >
-                Two varied sized swimming pools are up and ready for you to take a dive into.
-              </Feature>
+                <Feature
+                  title="Farm-to-plate"
+                  icon={
+                    'FaRegLemon'
+                  }
+                >
+                  Fresh food, right from the farm prepared by an experienced chef.
+                </Feature>
 
-              <Feature
-                title="Pick & Drop Facility"
-                icon={
-                  'FaCar'
-                }
-              >
-                For groups and individuals we can arrange your pick-up and drop off.
-              </Feature>
+                <Feature
+                  title="Swimming Pool"
+                  icon={
+                    'FaSwimmingPool'
+                  }
+                >
+                  Two varied sized swimming pools are up and ready for you to take a dive into.
+                </Feature>
 
-              <Feature
-                title="Wifi"
-                icon={
-                  'FaWifi'
-                }
-              >
-                Limited wifi due to our remote location, you can access wifi in designated locations
-              </Feature>
-            </Stack>
+                <Feature
+                  title="Pick & Drop Facility"
+                  icon={
+                    'FaCar'
+                  }
+                >
+                  For groups and individuals we can arrange your pick-up and drop off.
+                </Feature>
+
+                <Feature
+                  title="Wifi"
+                  icon={
+                    'FaWifi'
+                  }
+                >
+                  Limited wifi due to our remote location, you can access wifi in designated locations
+                </Feature>
+              </Stack>
+            </Box>
           </Box>
         </Box>
-      </Box>
-
-      {/* </ScaleFade> */}
+      </ScaleFade>
     </Flex>
   );
 };
