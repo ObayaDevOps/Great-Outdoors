@@ -22,6 +22,7 @@ import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 
 import Head from 'next/head';
 import Image from 'next/image'
+import Link from 'next/link'
 
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
@@ -247,9 +248,11 @@ const Section1Content = () => {
             </Text>
 
             <Flex py={{base:10, md: 6}} >
-              <Button fontFamily={'bodyFont'} colorScheme='red' alignSelf={'left'} textColor='white' fontSize='lg'>
-                Reserve Now
-              </Button>
+              <Link href="/reservations">
+                <Button fontFamily={'bodyFont'} colorScheme='red' alignSelf={'left'} textColor='white' fontSize='lg'>
+                  Reserve Now
+                </Button>
+              </Link>
             </Flex>
           </Box>
         </Box>
@@ -356,9 +359,11 @@ const Section2Content = () => {
             </Text>
 
             <Flex py={{base:10, md: 6}} justify={'left'}>
-              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-                Contact to Book
-              </Button>
+            <Link href="/gallery">
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
+                  See More in Gallery
+                </Button>
+              </Link>
             </Flex>
           </Box>
         </Box>
@@ -457,9 +462,11 @@ const Section3Content = () => {
             </Text>
 
             <Flex py={{base:10, md: 6}} justify={'left'}>
-              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-                Contact to Book
-              </Button>
+            <Link href="/gallery">
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
+                  See More in Gallery
+                </Button>
+              </Link>
             </Flex>
           </Box>
         </Box>
@@ -559,9 +566,11 @@ const Section4Content = () => {
             </Text>
 
             <Flex py={{base:10, md: 6}} justify={'left'}>
-              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-                Contact to Book
-              </Button>
+            <Link href="/gallery">
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
+                  See More in Gallery
+                </Button>
+              </Link>
             </Flex>
           </Box>
         </Box>
@@ -659,9 +668,11 @@ const Section5Content = () => {
             </Text>
 
             <Flex py={{base:10, md: 6}} justify={'left'}>
-              <Button fontFamily={'bodyFont'} colorScheme='red'  textColor='white' fontSize='lg'>
-                Contact to Book
-              </Button>
+              <Link href="/gallery">
+                <Button fontFamily={'bodyFont'} colorScheme='red' textColor='white' fontSize='lg'>
+                  See More in Gallery
+                </Button>
+              </Link>
             </Flex>
           </Box>
         </Box>
