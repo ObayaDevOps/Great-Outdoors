@@ -13,8 +13,13 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 
-export default function App(props) {
+
+
+export default function ImageGridPhotoGallery(props) {
   const [index, setIndex] = useState(-1);
+
+
+  console.log('props ImageGridPhotoGallery', props.photos)
 
   return (
     <>

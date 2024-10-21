@@ -136,7 +136,6 @@ export default function CabinsPage(props) {
               bgClip="text"
               color={"white"}
               fontWeight="extrabold"
-              transition="all .65s ease"
               _hover={{
                 transform: "scale(1.005)",
                 filter: "brightness(120%)",
@@ -155,7 +154,6 @@ export default function CabinsPage(props) {
             width={"100%"}
             fontWeight={"medium"}
             fontSize={"lg"}
-            color={useColorModeValue("gray.900", "gray.400")}
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}

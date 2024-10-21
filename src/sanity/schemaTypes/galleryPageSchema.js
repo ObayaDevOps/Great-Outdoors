@@ -29,34 +29,12 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'aboutUsTitle',
-      title: 'About Us Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
+      name: 'galleryImages',
+      title: 'Gallery Images',
+      type: 'array',
+      of: [{ type: 'image' }],
+      validation: (rule) => rule.required().min(1),
     }),
-    defineField({
-      name: 'aboutUsParagraph1',
-      title: 'About Us Paragraph 1',
-      type: 'string',
-    }),
-    defineField({
-      name: 'aboutUsParagraph2',
-      title: 'About Us Paragraph 2',
-      type: 'string',
-    }),
-    defineField({
-        name: 'aboutUsButtonText',
-        title: 'About Us Button Text',
-        type: 'string',
-      }),      
-    defineField({
-        name: 'aboutUsBackgroundImage',
-        title: 'About Us Background Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
 
 
 
