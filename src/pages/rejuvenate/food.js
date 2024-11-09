@@ -26,27 +26,77 @@ import Carousel from '../../components/carousel3'
 import NavBar from '../../components/navbar' 
 import Footer from '../../components/footer' 
 
+import client from '../../../src/sanity/lib/client'
+import { groq } from 'next-sanity'
+
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 const MotionHeading = motion(Heading);
 
-export default function FoodPage() {
+export async function getStaticProps() {
+  const query = groq`*[_type == "foodPage"][0]{
+    heroSection{
+      ...,
+      ogImage{
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    },
+    mainContent,
+    foodCards[]{
+      ...,
+      image{
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    },
+    menuSections[]{
+      sectionTitle,
+      items[]{
+        name,
+        price,
+        description
+      }
+    },
+    seo{
+      ...,
+      ogImage{
+        "url": asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }
+  }`
+  
+  const data = await client.fetch(query)
+  
+  return {
+    props: {
+      data,
+    },
+    revalidate: 60,
+  }
+}
+
+export default function FoodPage({ data }) {
+  const { heroSection, mainContent, foodCards, menuSections, seo } = data
+
   return (
     <Box>
-    <Head>
-      <title>Restaurant | Great Outdoors</title>
-      <meta name="description" content="Retreat.Rest.Rejuvenate" />
+      <Head>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo?.ogImage?.asset?.url} />
+        <meta property="og:image:secure_url" content={seo?.ogImage?.asset?.url} />
+        <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
+        <meta property="og:type" content="website" />
 
-      <meta property="og:title" content="Great Outdoors Kalanamu" />
-      <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-      <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
-      <meta property="og:type" content="website" />
-
-
-      <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-    </Head>
+        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      </Head>
 
       <Box>
         <NavBar />
@@ -67,9 +117,9 @@ export default function FoodPage() {
         bgAttachment="fixed"
       >
 
-        <HeadingSection />
+        <HeadingSection heroSection={heroSection} />
 
-        <Section1 />
+        <Section1 mainContent={mainContent} foodCards={foodCards} menuSections={menuSections} />
       </Box>
 
       <Box>
@@ -79,7 +129,7 @@ export default function FoodPage() {
   );
 }
 
-const HeadingSection = () => {
+const HeadingSection = ({ heroSection }) => {
   return (
     <MotionBox
       width={{ base: "full", sm: "lg", lg: "xl" }}
@@ -101,7 +151,7 @@ const HeadingSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        FARM TO PLATE
+        {heroSection.subtitle}
       </MotionText>
       <MotionHeading
         as={"h1"}
@@ -138,7 +188,7 @@ const HeadingSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}
         >
-          Restaurant
+          {heroSection.title}
         </MotionText>
       </MotionHeading>
       <MotionText
@@ -156,44 +206,13 @@ const HeadingSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
       >
-        Freshly prepared meals enjoyed in open air spaces.
- 
+        {heroSection.description}
       </MotionText>
     </MotionBox>
   )
 }
 
-    const slides =[
-        {   
-            img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg",
-            width: 770,
-            height: 300,
-            caption: "Great Outdoors",
-            label: "At Home in Nature",
-    
-        },
-        {   
-          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg",
-          width: 1024,
-          height: 683,
-          caption: "Great Outdoors",
-          label: "Cozy Cottages",
-        
-        },
-        {   
-          img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-          width: 1024,
-          height: 683,
-          caption: "Great Outdoors",
-          label: "Corporate Retreats",
-        
-        },
-        
-        
-      ] 
-
-//Make this into a Carousel
-const Section1 = () => {
+const Section1 = ({ mainContent, foodCards, menuSections }) => {
   return (
     <MotionBox
       initial={{ opacity: 0, y: 20 }}
@@ -213,183 +232,150 @@ const Section1 = () => {
         borderColor={"white"}
         mt={{ base: "10vh", lg: "25vh" }}
       >
-        <Section1Content />
+        <Section1Content mainContent={mainContent} foodCards={foodCards} menuSections={menuSections} />
       </Container>
     </MotionBox>
   )
-} 
+}
 
-const Section1Content = () => {
+const Section1Content = ({ mainContent, foodCards, menuSections }) => {
   return (
     <MotionBox
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 2 }}
     >
-      <Box>
-
+      <Box p={{base: 2, md: 12, lg: 16}}>
         <Box>
-        <HStack mt={{base:6,  md:2}}>
-            <Divider borderColor='#cf2e2e'  w={{base: '35px', lg: '45px'}}  />
-              <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
-              FARM TO PLATE
-              </Text>
+          <HStack>
+            <Divider borderColor='#cf2e2e' w={{base: '35px', lg: '45px'}} />
+            <Text textColor='#cf2e2e' fontFamily={'redTopFont'} fontSize={'sm'}>
+              {mainContent.subtitle}
+            </Text>
           </HStack>        
           <Text
-          fontFamily={'navBarFont'} 
-          letterSpacing={'1px'} 
-          pb={{base:2, md: 2, lg: 2, xl: 2}} 
-          lineHeight={{lg: '55px' ,xl:'55px'}} 
-          // textColor='white'
-          textColor='#0e2a4e'
-          textAlign={'left'}
-          fontWeight={800} 
-          fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
-          >
-            Freshly prepared meals enjoyed in open air spaces.
+            fontFamily={'navBarFont'} 
+            letterSpacing={'1px'} 
+            pb={{base:2, md: 2, lg: 2, xl: 2}} 
+            lineHeight={{lg: '55px' ,xl:'55px'}} 
+            // textColor='white'
+            textColor='#0e2a4e'
+            textAlign={'left'}
+            fontWeight={800} 
+            fontSize={{base:'35px' ,lg: '35px', xl:'50px'}}
+            >
+              {mainContent.title}
+            </Text>
+        </Box>
 
+        <Box>
+          <Text 
+                    textColor={'gray.600'}
+                    fontFamily={'bodyFont'}  
+                    fontSize={{base:'sm', md: 'lg'}} 
+                    py={2} fontWeight={400}>
+                    {mainContent.description}
+                  </Text>
+                  <Text 
+                    textColor={'gray.600'}
+                    fontFamily={'bodyFont'}  
+                    fontSize={{base:'sm', md: 'lg'}} 
+                    py={2} fontWeight={400}>
+                    Open Days: {mainContent.openingDays}
+                  </Text>
+                  <Text 
+                    textColor={'gray.600'}
+                    fontFamily={'bodyFont'}  
+                    fontSize={{base:'sm', md: 'lg'}} 
+                    py={2} fontWeight={400}>
+                    Open Timing: {mainContent.openingHours}
+                  </Text>
+        </Box>
+
+        <FoodCards items={foodCards} />
+
+        <Box py={10} textAlign="center">
+          <Text 
+            fontFamily={'navBarFont'} 
+            fontSize={{ base: '60px', lg: '65px' }} 
+            fontWeight={700} 
+            color="#0e2a4e"
+          >
+            Menu
           </Text>
         </Box>
 
-        <Box>
-        <Text 
-                  textColor={'gray.600'}
-                  fontFamily={'bodyFont'}  
-                  fontSize={{base:'sm', md: 'lg'}} 
-                  py={2} fontWeight={400}>
-                  It is said that food is symbolic of love when words are inadequate. To that end, our meals are prepared and served with love, and our expert chefs make sure to prepare a range of dishes.
-                   From continental dishes, to local Ugandan foods, your tastebuds will experience a full range of culinary delights. Get ready to indulge!
-                  </Text>
-                  <Text 
-                  textColor={'gray.600'}
-                  fontFamily={'bodyFont'}  
-                  fontSize={{base:'sm', md: 'lg'}} 
-                  py={2} fontWeight={400}>
-                  Open Days: Monday - Saturday
-                  </Text>
-                  <Text 
-                  textColor={'gray.600'}
-                  fontFamily={'bodyFont'}  
-                  fontSize={{base:'sm', md: 'lg'}} 
-                  py={2} fontWeight={400}>
-                  Open Timing: 7:00am - 10:00pm
-                  </Text>
-        </Box>
-
-
-        <FoodCards />
-
-        <BreakfastSection />
-
-
-        <SnacksSection />
-
-
-        <StartersSection />
-
-      <PastaSection />
-
-      <MainCourseSection />
-
-        <PorkKitchenSection />
-
-        <SandwichesSection />
-
-
-        <DessertsSection />
-
-
-
-        <BeveragesSection />
-
-
-
+        {menuSections.map((section, index) => (
+          <MenuSection 
+            key={index}
+            title={section.sectionTitle}
+            items={section.items}
+          />
+        ))}
       </Box>   
     </MotionBox>
   )
 }
 
-
-const foodItems = [
-  {
-    title: "Fresh fruit juices",
-    description: "If health could be blended, and served to you in a glass...this is probably what it would taste like.",
-    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-    width: 1920,
-    height: 1280,
-  },
-  {
-    title: "Snacks & quick bites",
-    description: "Depending on how long your are staying these always come in handy.",
-    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-    width: 1920,
-    height: 1280,
-  },
-  {
-    title: "a'la carte & continental",
-    description: "If you and the family are in the mood for some a' la carte joy, you are welcome.",
-    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-    width: 1920,
-    height: 1280,
-  },
-  {
-    title: "Local delicacies & custom orders.",
-    description: "We usually have a buffet of local delicacies, you can also customize your menu ahead of your visit.",
-    image: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
-    width: 1920,
-    height: 1280,
-  },
-];
-
-const FoodCards = () => {
+const FoodCards = ({ items }) => {
   return (
-    <MotionBox
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 2.5 }}
-    >
-      <Box p={{ base: 6, md: 12, lg: 16 }} bg="white" >
+    <MotionBox>
+      <Box p={{ base: 2, md: 0, lg: 0 }} mt={{base: 10, md: 8, lg: 12}} bg="white">
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 2 }}
           spacing={{ base: 8, md: 12, lg: 16 }}
         >
-          {foodItems.map((item, index) => (
-            <Box
+          {items.map((item, index) => (
+            <Box 
               key={index}
-              bg="white"
-              borderRadius="xl"
+              height={{ base: "400px", md: "500px", lg: "550px" }}
+              display="flex"
+              flexDirection="column"
               overflow="hidden"
-              shadow="lg"
-              _hover={{ transform: "scale(1.02)", transition: "all 0.3s ease-in-out" }}
+              borderRadius="8px"
+              boxShadow="lg"
             >
-              {/* Image */}
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={item.width}
-                height={item.height}
-                borderTopRadius="xl"
-                objectFit="cover"
-                w="100%"
-                h={{ base: "200px", md: "250px", lg: "300px" }}
-              />
-
-              {/* Content */}
-              <Box p={6}>
-                <Heading
-                  fontSize={{ base: "xl", md: "2xl" }}
-                  textAlign="left"
-                  fontFamily="navBarFont"
-                  color="#0e2a4e"
-                  mb={4}
+              <Box 
+                position="relative"
+                height={{ base: "300px", md: "350px", lg: "400px" }}
+                width="100%"
+              >
+                <Image
+                  src={item.image.url}
+                  alt={item.title}
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    borderTopLeftRadius: '8px',
+                    borderTopRightRadius: '8px'
+                  }}
+                  priority
+                />
+              </Box>
+              <Box 
+                p={6}
+                flex="1"
+                bg="white"
+              >
+                <Text
+                  fontFamily={'navBarFont'} 
+                  letterSpacing={'1px'} 
+                  pb={{base:2, md: 2, lg: 2, xl: 2}} 
+                  lineHeight={{lg: '55px' ,xl:'55px'}} 
+                  textColor='#0e2a4e'
+                  textAlign={'left'}
+                  fontWeight={800} 
+                  fontSize={{base:'25px' ,lg: '35px', xl:'40px'}}
                 >
                   {item.title}
-                </Heading>
-                <Text
-                  fontSize={{ base: "md", lg: "lg" }}
-                  textAlign="left"
-                  fontFamily="bodyFont"
-                  color="gray.600"
+                </Text>
+                <Text 
+                  textColor={'gray.600'}
+                  fontFamily={'bodyFont'}  
+                  fontSize={{base:'sm', md: 'lg'}} 
+                  py={2} 
+                  fontWeight={400}
                 >
                   {item.description}
                 </Text>
@@ -399,26 +385,31 @@ const FoodCards = () => {
         </SimpleGrid>
       </Box>
     </MotionBox>
-  );
-};
+  )
+}
 
-
-
-
-const breakfastOptions = [
-  {
-    name: "Option 1",
-    price: "40,000",
-    description:
-      "Vegetable katogo or potato wedges, eggs of your choice, toasted bread, pair of sausages, pancake or waffle, creamed spinach, baked beans, fruits, juice, coffee or tea",
-  },
-  {
-    name: "Early Riser Breakfast",
-    price: "35,000",
-    description:
-      "Eggs of your choice, pair of sausages, grilled tomatoes, home fries, juice, baked beans, coffee or tea",
-  },
-];
+const MenuSection = ({ title, items }) => {
+  const styles = getCommonStyles()
+  
+  return (
+    <Section
+      title={title}
+      items={items}
+      renderItem={(item, index, styles) => (
+        <Box key={index}>
+          <Text {...styles.nameFontStyles}>
+            ● {item.name}:- {item.price}
+          </Text>
+          {item.description && (
+            <Text {...styles.descriptionFontStyles}>
+              {item.description}
+            </Text>
+          )}
+        </Box>
+      )}
+    />
+  )
+}
 
 // Common styles
 const getCommonStyles = (textColor = "#0e2a4e") => ({

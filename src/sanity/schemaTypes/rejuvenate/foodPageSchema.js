@@ -1,20 +1,5 @@
-import { PackageIcon, LemonIcon } from '@sanity/icons'
-import { format, parseISO } from 'date-fns'
-import { defineField, defineType, defineConfig } from 'sanity'
-// import { muxInput } from 'sanity-plugin-mux-input'
-
-/**
- *
- * Here you'll be able to edit the different fields that appear when you 
- * create or edit a post in the studio.
- * 
- * Here you can see the different schema types that are available:
-
-  https://www.sanity.io/docs/schema-types
-
- */
-
-
+import { LemonIcon } from '@sanity/icons'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'foodPage',
@@ -22,59 +7,181 @@ export default defineType({
   icon: LemonIcon,
   type: 'document',
   fields: [
+    // Hero Section
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
+      name: 'heroSection',
+      title: 'Hero Section',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+          initialValue: 'FARM TO PLATE'
+        }),
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          initialValue: 'Restaurant'
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'string',
+          initialValue: 'Freshly prepared meals enjoyed in open air spaces.'
+        })
+      ]
     }),
-    defineField({
-      name: 'aboutUsTitle',
-      title: 'About Us Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'aboutUsParagraph1',
-      title: 'About Us Paragraph 1',
-      type: 'string',
-    }),
-    defineField({
-      name: 'aboutUsParagraph2',
-      title: 'About Us Paragraph 2',
-      type: 'string',
-    }),
-    defineField({
-        name: 'aboutUsButtonText',
-        title: 'About Us Button Text',
-        type: 'string',
-      }),      
-    defineField({
-        name: 'aboutUsBackgroundImage',
-        title: 'About Us Background Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
 
+    // Main Content
+    defineField({
+      name: 'mainContent',
+      title: 'Main Content',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+          initialValue: 'FARM TO PLATE'
+        }),
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          initialValue: 'Freshly prepared meals enjoyed in open air spaces.'
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text'
+        }),
+        defineField({
+          name: 'openingHours',
+          title: 'Opening Hours',
+          type: 'string'
+        }),
+        defineField({
+          name: 'openingDays',
+          title: 'Opening Days',
+          type: 'string'
+        })
+      ]
+    }),
 
+    // Food Cards
+    defineField({
+      name: 'foodCards',
+      title: 'Food Cards',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string'
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text'
+            }),
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: { hotspot: true }
+            })
+          ]
+        }
+      ]
+    }),
 
+    // Menu Sections
+    defineField({
+      name: 'menuSections',
+      title: 'Menu Sections',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'sectionTitle',
+              title: 'Section Title',
+              type: 'string'
+            }),
+            defineField({
+              name: 'items',
+              title: 'Menu Items',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    defineField({
+                      name: 'name',
+                      title: 'Item Name',
+                      type: 'string'
+                    }),
+                    defineField({
+                      name: 'price',
+                      title: 'Price',
+                      type: 'string'
+                    }),
+                    defineField({
+                      name: 'description',
+                      title: 'Description',
+                      type: 'text'
+                    })
+                  ]
+                }
+              ]
+            })
+          ]
+        }
+      ]
+    }),
+
+    // SEO Fields
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          initialValue: 'Restaurant | Great Outdoors'
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          initialValue: 'Retreat.Rest.Rejuvenate'
+        }),
+        defineField({
+          name: 'ogImage',
+          title: 'Open Graph Image',
+          type: 'image',
+          options: { hotspot: true }
+        })
+      ]
+    })
   ],
+
   preview: {
     select: {
-      title: 'title',
-      author: 'author.name',
-      date: 'date',
-      media: 'coverImage',
+      title: 'heroSection.title'
     },
-    prepare({ title, media, author, date }) {
-      const subtitles = [
-        author && `by ${author}`,
-        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
-      ].filter(Boolean)
-
-      return { title, media, subtitle: subtitles.join(' ') }
-    },
-  },
+    prepare({ title }) {
+      return {
+        title: title || 'Restaurant Page'
+      }
+    }
+  }
 })

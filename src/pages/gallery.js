@@ -252,11 +252,6 @@ export default function GalleryPage(props) {
   });
 
 
-
-  console.log('galleryPageContent')
-
-  console.log(imageUrls)
-
   return (
     <Box 
     bgImage={
