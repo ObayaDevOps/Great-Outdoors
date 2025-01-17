@@ -62,6 +62,11 @@ export default defineType({
       title: 'Price Subtitle',
       type: 'string',
     }),
+    defineField({
+      name: 'taxSubtitle',
+      title: 'Tax Subtitle',
+      type: 'string',
+    }),
 
 
     defineField({

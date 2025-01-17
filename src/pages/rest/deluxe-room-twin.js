@@ -35,8 +35,8 @@ const MotionText = motion(Text);
 const MotionHeading = motion(Heading);
 
 export async function getStaticProps() {
-  const deluxeRoomPageContent = await client.fetch(`
-  *[_type == "deluxeRoomPage"]{
+  const deluxeRoomTwinPageContent = await client.fetch(`
+  *[_type == "deluxeRoomTwinPage"]{
     ...,
         images[] 
           {
@@ -48,16 +48,16 @@ export async function getStaticProps() {
 
   return {
     props: {
-      deluxeRoomPageContent,
+      deluxeRoomTwinPageContent,
     },
     revalidate: 10, //In seconds
   };
 }
 
 export default function DeluxeRoomsPage(props) {
-  const deluxeRoomPageContent  = props.deluxeRoomPageContent[0] || [];
+  const deluxeRoomTwinPageContent  = props.deluxeRoomTwinPageContent[0] || [];
 
-  console.log('deluxeRoomPageContent')
+  console.log('deluxeRoomTwinPageContent')
   console.log(props)
 
   return (
@@ -138,7 +138,7 @@ export default function DeluxeRoomsPage(props) {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
             >
-              {deluxeRoomPageContent.roomTitle1}
+              {deluxeRoomTwinPageContent.roomTitle1}
             </MotionText>
           </MotionHeading>
           <MotionText
@@ -155,11 +155,11 @@ export default function DeluxeRoomsPage(props) {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
           >
-            {deluxeRoomPageContent.roomSubTitle1}
+            {deluxeRoomTwinPageContent.roomSubTitle1}
           </MotionText>
         </MotionBox>
 
-        <Section1 content={deluxeRoomPageContent} />
+        <Section1 content={deluxeRoomTwinPageContent} />
       </Box>
 
       <Box>
@@ -345,7 +345,7 @@ const Section1Content = (props) => {
             fontWeight={800} 
             fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
             >            
-          Check Out
+        Check Out
             </Text>
 
             <ul>              

@@ -334,14 +334,19 @@ import {
             href: '/rest/cottage',
           },
           {
-            label: 'Double Cottages',
+            label: 'Twin Cottages',
             // subLabel: '1-4 People',
             href: '/rest/cottage-double-room',
           },
           {
-            label: 'Deluxe Room',
+            label: 'Deluxe Rooms',
             // subLabel: '1-2 People',
             href: '/rest/deluxe-room',
+          },
+          {
+            label: 'Twin Deluxe Room',
+            // subLabel: '1-2 People',
+            href: '/rest/deluxe-room-twin',
           },
         ],
           

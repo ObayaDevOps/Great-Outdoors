@@ -17,8 +17,8 @@ import { defineField, defineType, defineConfig } from 'sanity'
 
 
 export default defineType({
-  name: 'cottagePage',
-  title: 'Cottage Page',
+  name: 'deluxeRoomTwinPage',
+  title: 'DeluxeRoom Twin Page',
   icon: HomeIcon,
   type: 'document',
   fields: [
@@ -46,7 +46,7 @@ export default defineType({
     //Images
     defineField({
       name: 'images',
-      title: 'cottage Images',
+      title: 'deluxeRoom Images',
       type: 'array',
       of: [{ type: 'image' }],
     }),
@@ -95,11 +95,11 @@ export default defineType({
       of: [{ type: 'string' }],
       options: {
         list: [
-          { title: 'Balcony or Terrace', value: 'balcony' },
-          { title: 'Evening Tea Service', value: 'tea' },
-          { title: 'Shower', value: 'shower' },
-          { title: 'King Size Bed', value: 'kingBed' },
-          { title: 'Wifi', value: 'wifi' },
+          { title: 'Balcony or Terrace', value: 'Balcony or Terrace' },
+          { title: 'Evening Tea Service', value: 'Evening Tea Service' },
+          { title: 'Shower', value: 'Shower' },
+          { title: 'King Size Bed', value: 'King Size Bed' },
+          { title: 'Wifi', value: 'Wifi' },
         ],
       },
     }),
