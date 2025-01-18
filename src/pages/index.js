@@ -110,6 +110,7 @@ export default function Home(props) {
       >
         <Box>
           <Carousel2  slides={slides}/>
+          <BookingsWidget />
           <AboutUsComponent2  pageContent={props.landingPageContent}/>
           <CorporateComponent  pageContent={props.landingPageContent}/>
           <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>
