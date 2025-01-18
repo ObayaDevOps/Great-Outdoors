@@ -17,8 +17,8 @@ import { defineField, defineType, defineConfig } from 'sanity'
 
 
 export default defineType({
-  name: 'deluxeRoomPage',
-  title: 'DeluxeRoom Page',
+  name: 'deluxeRoomTwinPage',
+  title: 'DeluxeRoom Twin Page',
   icon: HomeIcon,
   type: 'document',
   fields: [
@@ -103,7 +103,6 @@ export default defineType({
         ],
       },
     }),
-      
       
 
     defineField({

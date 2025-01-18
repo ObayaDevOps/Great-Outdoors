@@ -221,11 +221,18 @@ const Section1Content = (props) => {
       <Box>
         <Text 
         textColor='#cf2e2e' fontFamily={'bodyFont'} 
-        fontSize={{base:'sm', md: 'xl'}}
-        pb={4}
+        fontSize={{base:'sm', md: 'lg'}}
+        pb={1}
         >
         
         {props.content.priceSubtitle}
+        </Text>
+        <Text 
+        textColor='gray.600' fontFamily={'bodyFont'} 
+        fontSize={{base:'xs', md: 'sm'}}
+        pb={{base: 4, md: 6}}
+        >
+        {props.content.taxSubtitle}
         </Text>
       </Box>
 
@@ -318,7 +325,7 @@ const Section1Content = (props) => {
             fontWeight={800} 
             fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
         >   
-              CHECK IN
+              Check In
             </Text>
             <ul>
               {props.content.houseRules.checkIn.map((rule, index) => (
@@ -342,7 +349,7 @@ const Section1Content = (props) => {
             fontWeight={800} 
             fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
             >            
-        CHECK OUT
+        Check Out
             </Text>
 
             <ul>              

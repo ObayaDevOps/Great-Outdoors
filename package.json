@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@sanity/asset-utils": "^2.0.6",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.57.2",
     "cloudinary-build-url": "^0.2.4",

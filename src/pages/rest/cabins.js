@@ -136,7 +136,6 @@ export default function CabinsPage(props) {
               bgClip="text"
               color={"white"}
               fontWeight="extrabold"
-              transition="all .65s ease"
               _hover={{
                 transform: "scale(1.005)",
                 filter: "brightness(120%)",
@@ -155,7 +154,6 @@ export default function CabinsPage(props) {
             width={"100%"}
             fontWeight={"medium"}
             fontSize={"lg"}
-            color={useColorModeValue("gray.900", "gray.400")}
             mt={{ base: -2, md: -8, lg: -8 }}
             fontFamily={"bodyFont"}
             color={"white"}
@@ -213,7 +211,7 @@ const Section1Content = (props) => {
         <Text
         fontFamily={'navBarFont'} 
         letterSpacing={'1px'} 
-        pb={{base:2, md: 2, lg: 4, xl: 4}} 
+        pb={{base:1, md: 2, lg: 4, xl: 4}} 
         lineHeight={{lg: '55px' ,xl:'55px'}} 
         // textColor='white'
         textColor='#0e2a4e'
@@ -229,11 +227,18 @@ const Section1Content = (props) => {
       <Box>
         <Text 
         textColor='#cf2e2e' fontFamily={'bodyFont'} 
-        fontSize={{base:'sm', md: 'xl'}}
-        pb={4}
+        fontSize={{base:'sm', md: 'lg'}}
+        pb={1}
         >
         
         {props.content.priceSubtitle}
+        </Text>
+        <Text 
+        textColor='gray.600' fontFamily={'bodyFont'} 
+        fontSize={{base:'xs', md: 'sm'}}
+        pb={{base: 4, md: 6}}
+        >
+        {props.content.taxSubtitle}
         </Text>
       </Box>
 
@@ -326,8 +331,10 @@ const Section1Content = (props) => {
             fontWeight={800} 
             fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
         >   
-              CHECK IN
+              Check In
             </Text>
+
+          <Box ml={4} textColor={'#0e2a4e'}>
             <ul>
               {props.content.houseRules.checkIn.map((rule, index) => (
                 <li key={index}>
@@ -337,6 +344,7 @@ const Section1Content = (props) => {
                   </li>
               ))}
             </ul>
+          </Box>
           </Box>
           <Box textColor={'gray.600'}>
           <Text
@@ -350,9 +358,10 @@ const Section1Content = (props) => {
             fontWeight={800} 
             fontSize={{base:'lg' ,lg: 'xl', xl:'3xl'}}
             >            
-        CHECK OUT
+              Check Out
             </Text>
 
+          <Box ml={4} textColor={'#0e2a4e'}>
             <ul>              
               {props.content.houseRules.checkOut.map((rule, index) => (
                 <li key={index}>
@@ -362,6 +371,7 @@ const Section1Content = (props) => {
                   </li>
               ))}
             </ul>
+            </Box>
           </Box>
         </SimpleGrid>
       </Box>

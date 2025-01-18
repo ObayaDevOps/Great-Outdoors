@@ -62,6 +62,11 @@ export default defineType({
       title: 'Price Subtitle',
       type: 'string',
     }),
+    defineField({
+      name: 'taxSubtitle',
+      title: 'Tax Subtitle',
+      type: 'string',
+    }),
 
 
     defineField({
@@ -89,14 +94,15 @@ export default defineType({
       of: [{ type: 'string' }],
       options: {
         list: [
-          { title: 'Balcony or Terrace', value: 'balcony' },
-          { title: 'Evening Tea Service', value: 'tea' },
-          { title: 'Shower', value: 'shower' },
-          { title: 'King Size Bed', value: 'kingBed' },
-          { title: 'Wifi', value: 'wifi' },
+          { title: 'Balcony or Terrace', value: 'Balcony or Terrace' },
+          { title: 'Evening Tea Service', value: 'Evening Tea Service' },
+          { title: 'Shower', value: 'Shower' },
+          { title: 'King Size Bed', value: 'King Size Bed' },
+          { title: 'Wifi', value: 'Wifi' },
         ],
       },
     }),
+      
       
 
     defineField({

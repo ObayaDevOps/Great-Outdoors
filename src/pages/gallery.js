@@ -23,6 +23,13 @@ import { CheckIcon, ChatIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import Head from 'next/head';
 import Image from 'next/image'
 
+import client from '../sanity/lib/client.js'
+import imageUrlBuilder from '@sanity/image-url';
+import {getImageDimensions} from '@sanity/asset-utils'
+
+
+
+
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
 
@@ -203,8 +210,48 @@ const imageGridImages =[
 
 ] 
 
+export async function getStaticProps() {
+  const galleryPageContent = await client.fetch(`
+  *[_type == "galleryPage"]{
+    ...,
+        images[] 
+          {
+        "url": image.asset->url,
+        "height": asset->metadata.dimensions.height,
+        "width": asset->metadata.dimensions.width
+      }
+    }`);
 
-export default function GalleryPage() {
+  return {
+    props: {
+      galleryPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+  return builder.image(source)
+}
+
+
+
+export default function GalleryPage(props) {
+  const galleryPageContent  = props.galleryPageContent[0] || [];
+  
+  const imageUrls = galleryPageContent.galleryImages.map((image) => {
+    const { width, height } = getImageDimensions(image);
+    return {
+      src: urlFor(image).url(),
+      width: width,
+      height: height,
+      caption: image.caption || "Great Outdoors"
+    };
+  });
+
+
   return (
     <Box 
     bgImage={
@@ -238,23 +285,12 @@ export default function GalleryPage() {
 
       <Box
         pt={{ base: 32, md: 44 }}
-        // pb={{ base: 32, md: 0 }}
 
-        // bgGradient='linear(to-br, #0e2a4e, whiteAlpha.100)'
-        // bg={'#0e2a4e'}
-      //   bg={'#0b1722'}
-        // bgImage={
-        //   'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720099212/IMG_844443-2_lvd6bz.jpg'
-        // }
-        // bgSize="cover"
-        // bgPosition="center"
-        // bgAttachment="fixed"
-        // overflowX='hidden'
       >
 
         <HeadingSection />
 
-        <Section1 />
+        <Section1 content={imageUrls} />
       </Box>
 
       <Box>
@@ -311,7 +347,6 @@ const HeadingSection = () => {
           bgClip="text"
           color={"white"}
           fontWeight="extrabold"
-          transition="all .65s ease"
           _hover={{
             transform: "scale(1.005)",
             filter: "brightness(120%)",
@@ -330,7 +365,6 @@ const HeadingSection = () => {
         width={"100%"}
         fontWeight={"medium"}
         fontSize={"lg"}
-        color={useColorModeValue("gray.900", "gray.400")}
         mt={{ base: -2, md: -8, lg: -8 }}
         fontFamily={"bodyFont"}
         color={"white"}
@@ -346,7 +380,8 @@ const HeadingSection = () => {
 }
 
 //Make this into a Carousel
-const Section1 = () => {
+const Section1 = (props) => {
+  console.log('props section 1', props)
   return (
     <MotionBox
       initial={{ opacity: 0, y: 20 }}
@@ -365,7 +400,7 @@ const Section1 = () => {
         mt={{ base: "10vh", lg: "25vh" }}
       >
         <Box>
-          <ImageGridPhotoGallery photos={imageGridImages} />
+          <ImageGridPhotoGallery photos={props.content} />
         </Box>
       </Container>
     </MotionBox>
@@ -606,6 +641,7 @@ const Section1Content = () => {
     </Box>   
   )
 }
+
 
 
 
