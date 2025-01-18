@@ -5,21 +5,21 @@ import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2';
 
-// import styles from '../styles/reserveport.module.css'
-
 const scripts = [
   "https://www.reserveport.com/media/api5/jquery.min.js",
   "https://www.reserveport.com/media/api5/popper.min.js",
   "https://www.reserveport.com/media/api5/bootstrap.min.js",
   "https://reservations.reserveport.com/static/js/manifest.js",
   "https://reservations.reserveport.com/static/js/vendor.js",
-  "https://reservations.reserveport.com/static/js/app.js"
+  "https://reservations.reserveport.com/static/js/app.js",
+  "https://bookings.reserveport.com/reservations/greatoutdoors/script.js"
 ];
 
 const stylesheets = [
   "https://reservations.reserveport.com/static/css/app.css",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css",
   "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
+  "https://bookings.reserveport.com/reservations/greatoutdoors/book.css"
 ];
 
 export default function Home() {

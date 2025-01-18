@@ -3,9 +3,6 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
-
-import styles from '../styles/reserveportWidget.module.css'
-
  
 const scripts = [
   "https://reservations.reserveport.com/checkavailability/static/js/manifest.js",
@@ -14,13 +11,15 @@ const scripts = [
   "https://reservations.reserveport.com/checkavailability/static/css/app.css",
   "https://www.reserveport.com/media/api5/jquery.min.js",
   "https://www.reserveport.com/media/api5/popper.min.js",
-  "https://www.reserveport.com/media/api5/bootstrap.min.js"
+  "https://www.reserveport.com/media/api5/bootstrap.min.js",
+  "https://bookings.reserveport.com/reservations/greatoutdoors/script.js"
 ];
 
 const stylesheets = [
   "https://reservations.reserveport.com/static/css/app.css",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css",
   "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
+  "https://bookings.reserveport.com/reservations/greatoutdoors/search.css"
 ];
 
 export default function Home() {
@@ -64,7 +63,7 @@ export default function Home() {
         // className={styles.someClass}  // Example usage of imported styles
       >
 
-          <search-availability id="1687"></search-availability>
+          <search-availability id="1687" clientemail="true"></search-availability>
       </Box>
   );
 }
