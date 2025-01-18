@@ -11,7 +11,7 @@ const scripts = [
   "https://reservations.reserveport.com/checkavailability/static/css/app.css",
   "https://www.reserveport.com/media/api5/jquery.min.js",
   "https://www.reserveport.com/media/api5/popper.min.js",
-  "https://www.reserveport.com/media/api5/bootstrap.min.js",
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
   "https://bookings.reserveport.com/reservations/greatoutdoors/script.js"
 ];
 
