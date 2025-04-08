@@ -5,6 +5,9 @@ import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@c
 import Image from 'next/image'
 import Link from "next/link";
 
+import  { urlFor } from '../../sanity/lib/image'
+
+
 const CorporateComponent = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
 
@@ -15,7 +18,10 @@ const CorporateComponent = (props) => {
   return (
     <Box bgColor={'#0b1722'} minH={'100vh'} >
       <Box minH={{base:' 160%', md:'120vh'}} 
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170785/IMG_2498-2-scaled-e1671048069683_vfr5dv.jpg'}
+        // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170785/IMG_2498-2-scaled-e1671048069683_vfr5dv.jpg'}
+        bgImage={urlFor(landingPageContent.corporateBackgroundImage).url()}
+
+        
         bgSize="cover" bgPosition="center" 
         bgAttachment="fixed" 
         overflowX='hidden'

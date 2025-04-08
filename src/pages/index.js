@@ -125,6 +125,20 @@ export default function Home(props) {
           <Carousel2  slides={slides}/>
           {/* <search-availability id="1687"></search-availability> */}
           <BookingsWidget />
+          {/* <Box
+            width={{ base: '80%', md: '76%' }} // Responsive width
+            margin="0 auto"
+            marginTop={{ base: '0rem', md: '-10rem' }} // Responsive margin
+            position="absolute"
+            left="0"
+            right="0"
+            background="none"
+            display="block"
+            rounded={'xl'}
+          >
+          <search-availability id="1687" clientemail="true"></search-availability>
+        </Box>         */}
+
           <AboutUsComponent2  pageContent={props.landingPageContent}/>         
           <CorporateComponent  pageContent={props.landingPageContent}/>
           <EatAndDrinkComponent2 pageContent={props.landingPageContent}/>

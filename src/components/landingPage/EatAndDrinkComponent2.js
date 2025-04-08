@@ -4,6 +4,9 @@ import { useInView } from "framer-motion";
 import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@chakra-ui/react'
 import Image from 'next/image'
 
+import  { urlFor } from '../../sanity/lib/image'
+
+
 const EatAndDrinkComponent2 = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
 
@@ -13,7 +16,9 @@ const EatAndDrinkComponent2 = (props) => {
   return (
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} 
-      bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg'} 
+      bgImage={urlFor(landingPageContent.eatAndDrinkBackgroundImage).url()}
+
+      // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg'} 
              bgSize="cover" bgPosition="center"
              overflowX='hidden'
  

@@ -31,7 +31,7 @@ const Carousel2 = ({ slides }) => {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <Heading
-                  pt={{ base: '35vh', md: '45vh' }}
+                  pt={{ base: '45vh', md: '45vh' }}
                 pl={{ base: 0, md: '10vw' }}
                 as="h1"
                 mb={{ base: 2, md: 10 }}

@@ -5,6 +5,9 @@ import { Box, Center, Text, Button, HStack, Divider, ScaleFade } from '@chakra-u
 import Image from 'next/image'
 import Link from "next/link";
 
+import  { urlFor } from '../../sanity/lib/image'
+
+
 const ForestComponent2 = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
 
@@ -14,7 +17,9 @@ const ForestComponent2 = (props) => {
   return (
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} 
-           bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
+          //  bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
+           bgImage={urlFor(landingPageContent.forestBackgroundImage).url()}
+
            bgSize="cover" bgPosition="center" 
            overflowX='hidden'
       >

@@ -5,8 +5,13 @@ import { Box, Center, Text, Button, HStack, Divider, ScaleFade, Slide } from '@c
 import Image from 'next/image'
 import Link from "next/link";
 
+import  { urlFor } from '../../sanity/lib/image'
+
 const AboutUsComponent2 = (props) => {
   const landingPageContent  = props.pageContent[0] || [];
+
+  console.log('landingPage-aboutUs:', landingPageContent)
+  console.log('URL FOR',urlFor(landingPageContent.aboutUsBackgroundImage).url() )
 
   const ref1 = useRef(null)
   const isInView1 = useInView(ref1)
@@ -19,7 +24,8 @@ const AboutUsComponent2 = (props) => {
         left={0}
         right={0}
         bottom={0}
-        bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
+        // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
+        bgImage={urlFor(landingPageContent.aboutUsBackgroundImage).url()}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
