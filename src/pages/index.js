@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Box} from '@chakra-ui/react'
+import { Box, Show} from '@chakra-ui/react'
 import { getCloudinaryImage, getCloudinaryImageBlur } from '../util/cloudinaryImageRetreival';
 
 import NextLink from 'next/link'

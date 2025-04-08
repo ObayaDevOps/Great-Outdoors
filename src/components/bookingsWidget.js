@@ -5,7 +5,7 @@ export default function Home() {
     <Box
       width={{ base: '80%', md: '76%' }} // Responsive width
       margin="0 auto"
-      marginTop={{ base: '0rem', md: '-10rem' }} // Responsive margin
+      // marginTop={{ base: '0rem', md: '-10rem' }} // Responsive margin
       position="absolute"
       left="0"
       right="0"
@@ -13,7 +13,9 @@ export default function Home() {
       display="block"
       // Additional styles can be added here if needed
     >
-      <search-availability id="1687"></search-availability> 
+      {/* <search-availability id="1687"></search-availability>  */}
+      <search-availability id="1687" clientemail="true"></search-availability>
+
     </Box>
   );
 }
