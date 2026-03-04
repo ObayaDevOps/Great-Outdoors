@@ -40,7 +40,7 @@ const exhibitionDetails = [
     roomDescription: 'The room is a lovely wood cabin, surrounded by trees.' ,
     roomPrice: '230,000',
     roomPageLink: '/rest/cabins',
-    roomPhoto: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101654/IMG_9093-scaled_lb7gia.jpg',
+    roomPhoto: 'https://cdn.sanity.io/images/y563wtf6/production/cfb3c33fc3b76658b641153b129c9a22e0ea0549-2560x1707.jpg',
 
   },
   {
@@ -50,7 +50,7 @@ const exhibitionDetails = [
     roomDescription: 'None',
     roomPrice: '300,000',
     roomPageLink: '/rest/cottage',
-    roomPhoto: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101654/IMG_9093-scaled_lb7gia.jpg',
+    roomPhoto: 'https://cdn.sanity.io/images/y563wtf6/production/cfb3c33fc3b76658b641153b129c9a22e0ea0549-2560x1707.jpg',
 
   },
   {
@@ -60,7 +60,7 @@ const exhibitionDetails = [
     roomDescription: 'The room is in a lovely brick, stone and wood cottage, surrounded by trees. It has a private patio with mesh that keeps bugs out, so you can stay out on the patio as long as you want in the evening without being bothered by bugs!',
     roomPrice: '200,000',
     roomPageLink: '/rest/deluxe-room',
-    roomPhoto: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101654/IMG_9093-scaled_lb7gia.jpg',
+    roomPhoto: 'https://cdn.sanity.io/images/y563wtf6/production/cfb3c33fc3b76658b641153b129c9a22e0ea0549-2560x1707.jpg',
 
   },
   {
@@ -70,7 +70,7 @@ const exhibitionDetails = [
     roomDescription: 'None',
     roomPrice: '340,000',
     roomPageLink: '/rest/cottage-double-room',
-    roomPhoto: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101654/IMG_9093-scaled_lb7gia.jpg',
+    roomPhoto: 'https://cdn.sanity.io/images/y563wtf6/production/cfb3c33fc3b76658b641153b129c9a22e0ea0549-2560x1707.jpg',
 
   },
 
@@ -138,7 +138,7 @@ const RoomsListPage = () => {
 
   return (
     <Box       
-    // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101791/A7300733-1024x642_t1fd8f.jpg'}
+    // bgImage={'https://cdn.sanity.io/images/y563wtf6/production/1b98391d97237db25ec2977b6346f95bb8adc9cb-1024x642.jpg'}
     // bgSize="cover"
     // bgPosition="center"
     // bgAttachment="fixed" 
@@ -150,13 +150,13 @@ const RoomsListPage = () => {
 
           <meta property="og:title" content="Great Outdoors Kalanamu" />
           <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-          <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-          <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+          <meta property="og:image" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
+          <meta property="og:image:secure_url" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
           <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
           <meta property="og:type" content="website" />
 
 
-          <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+          <link rel="icon" href="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
         </Head>
 
         <Box>

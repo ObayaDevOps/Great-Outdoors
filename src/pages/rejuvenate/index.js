@@ -45,18 +45,18 @@ export default function RejuvenatePage() {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png"
+          content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png"
         />
         <meta
           property="og:image:secure_url"
-          content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png"
+          content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png"
         />
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
 
         <link
           rel="icon"
-          href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png"
+          href="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png"
         />
       </Head>
 
@@ -169,7 +169,7 @@ const Section1 = () => {
         py={4}
         minHeight={{ base:'190vh', md: "110vh" }}
         bgImage={
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943928/IMG_9060-2_hbfqd4.jpg"
+          "https://cdn.sanity.io/images/y563wtf6/production/68097a71ca6923d143f95c484f37c8af142991c8-1280x1280.jpg"
         }
         bgSize="cover"
         bgPosition="center"
@@ -273,7 +273,7 @@ const Section2 = () => {
         py={4}
         minHeight={{ base:'190vh', md: "110vh" }}
         bgImage={
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG-20211216-WA0012-e1671046591860_zmxnir.jpg"
+          "https://cdn.sanity.io/images/y563wtf6/production/1253a447f8894553bf849a9836e6ddeadd77e4b0-728x756.jpg"
         }
         bgSize="cover"
         bgPosition="center"
@@ -384,7 +384,7 @@ const Section3 = () => {
         py={4}
         minHeight={{ base:'190vh', md: "110vh" }}
         bgImage={
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943925/IMG-20211216-WA0060_ubzh0b.jpg"
+          "https://cdn.sanity.io/images/y563wtf6/production/393668ebe81740b3f7215beceeba2f57a8cf1d2e-1008x756.jpg"
         }
         bgSize="cover"
         bgPosition="center"
@@ -487,7 +487,7 @@ const Section4 = () => {
         py={4}
         minHeight={{ base:'190vh', md: "110vh" }}
         bgImage={
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943927/IMG_8943-2_gdlxkq.jpg"
+          "https://cdn.sanity.io/images/y563wtf6/production/ed3fc35e751f0378fbe794310211a78f1a48c536-1280x1280.jpg"
         }
         bgSize="cover"
         bgPosition="center"
@@ -591,7 +591,7 @@ const Section5 = () => {
         py={4}
         minHeight={{ base:'190vh', md: "110vh" }}
         bgImage={
-          "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724943926/IMG_3184-1024x683-1-e1671047429238_ucl3jf.jpg"
+          "https://cdn.sanity.io/images/y563wtf6/production/51cb483cf2e1c62133105e30e8e9e8d05d78d287-806x683.jpg"
         }
         bgSize="cover"
         bgPosition="center"

@@ -98,13 +98,13 @@ export default function ContactUsPage() {
 
       <meta property="og:title" content="Great Outdoors Kalanamu" />
       <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-      <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      <meta property="og:image" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
+      <meta property="og:image:secure_url" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
       <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
       <meta property="og:type" content="website" />
 
 
-      <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      <link rel="icon" href="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
     </Head>
 
       <Box>
@@ -120,7 +120,7 @@ export default function ContactUsPage() {
         bg={'#0b1722'}
       //   bgImage={
       //     // 'linear(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-      //     "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101678/IMG_3959-scaled_jd1awh.jpg"
+      //     "https://cdn.sanity.io/images/y563wtf6/production/4107d284b7b10447ef08f9970a1244ad81630f9f-2560x1707.jpg"
       //   }
       //   bgSize="cover"
       //   // bgGradient={''}

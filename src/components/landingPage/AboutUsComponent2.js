@@ -24,7 +24,7 @@ const AboutUsComponent2 = (props) => {
         left={0}
         right={0}
         bottom={0}
-        // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101644/IMG_4475-scaled_zlmfjc.jpg'} 
+        // bgImage={'https://cdn.sanity.io/images/y563wtf6/production/89784bdc2529f2dbcadb39e9ede94204c0800560-2560x1707.jpg'} 
         bgImage={urlFor(landingPageContent.aboutUsBackgroundImage).url()}
         bgSize="cover"
         bgPosition="center"

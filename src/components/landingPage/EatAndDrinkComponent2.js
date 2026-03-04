@@ -18,7 +18,7 @@ const EatAndDrinkComponent2 = (props) => {
       <Box minH={{base:' 160vh', md:'120vh'}} 
       bgImage={urlFor(landingPageContent.eatAndDrinkBackgroundImage).url()}
 
-      // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723823743/A7300820-1024x683_rh8gsj.jpg'} 
+      // bgImage={'https://cdn.sanity.io/images/y563wtf6/production/005032a4451f18923a48bfe1d3cd30332843acbd-1024x683.jpg'} 
              bgSize="cover" bgPosition="center"
              overflowX='hidden'
  

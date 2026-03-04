@@ -13,18 +13,36 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
+import { useEffect, useState } from 'react'
 import { FaInstagram, FaLinkedin, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 
 import NextLink from 'next/link'
 import Image from 'next/image'
+import { fetchSiteSettings, siteImageUrl } from '../sanity/lib/siteSettings'
 
 
 
 const Logo = (props) => {
+  const [logoUrl, setLogoUrl] = useState('https://cdn.sanity.io/images/y563wtf6/production/f873f7351d5d403ccd7fce5b7735eba2a6b28b5c-1701x1106.png')
+
+  useEffect(() => {
+    let active = true
+    fetchSiteSettings()
+      .then((settings) => {
+        if (!active) return
+        const mapped = siteImageUrl(settings?.lightLogo)
+        if (mapped) setLogoUrl(mapped)
+      })
+      .catch(() => {})
+    return () => {
+      active = false
+    }
+  }, [])
+
   return (
     <Box p={4}>
-        <Image src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1723819779/tgo-logo-white_rnomcw.png'} 
+        <Image src={logoUrl} 
         width={800/6} height={529/6}/>
     </Box>
   )

@@ -45,7 +45,7 @@ const ForestComponent = () => {
 
           <Box rounded={'xl'} my={{lg: 24}}>
             <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'}
+              src={'https://cdn.sanity.io/images/y563wtf6/production/2b32e69fc3d260069a2a44597f565b4b8f0628f7-2048x1365.jpg'}
               width={2048}
               height={1365}  
             />

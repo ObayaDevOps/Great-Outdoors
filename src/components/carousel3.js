@@ -13,7 +13,7 @@ const Carousel3 =(props)=> {
 
     // const slides =[
     //     {   
-    //         img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg",
+    //         img: "https://cdn.sanity.io/images/y563wtf6/production/f2df4a9d73ef620357e06dff709bc5de4fafe9ed-2560x1707.jpg",
     //         width: 770,
     //         height: 300,
     //         caption: "Great Outdoors",
@@ -21,7 +21,7 @@ const Carousel3 =(props)=> {
     
     //     },
     //     {   
-    //       img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg",
+    //       img: "https://cdn.sanity.io/images/y563wtf6/production/eb731f11d3d652d46dce1693378769069bb0fd4a-2048x1248.jpg",
     //       width: 1024,
     //       height: 683,
     //       caption: "Great Outdoors",
@@ -29,7 +29,7 @@ const Carousel3 =(props)=> {
         
     //     },
     //     {   
-    //       img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    //       img: "https://cdn.sanity.io/images/y563wtf6/production/5137b34e2b874e50e5e934b4a2941860377e0ba5-2021x1267.jpg",
     //       width: 1024,
     //       height: 683,
     //       caption: "Great Outdoors",
@@ -55,7 +55,7 @@ const Carousel3 =(props)=> {
                 // backgroundSize={'cover'}
                 // bgPosition="center" 
                 // bgRepeat={'no-repeat'}  
-                // backgroundImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg'}   
+                // backgroundImage={'https://cdn.sanity.io/images/y563wtf6/production/f2df4a9d73ef620357e06dff709bc5de4fafe9ed-2560x1707.jpg'}   
                 // backgroundImage={slide.img}  
                  
                 >

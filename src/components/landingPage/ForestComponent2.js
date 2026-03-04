@@ -17,7 +17,7 @@ const ForestComponent2 = (props) => {
   return (
     <Box minH={'100vh'} >
       <Box minH={{base:' 160vh', md:'120vh'}} 
-          //  bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720011506/MG_4163_vbv2ja.jpg'} 
+          //  bgImage={'https://cdn.sanity.io/images/y563wtf6/production/2b32e69fc3d260069a2a44597f565b4b8f0628f7-2048x1365.jpg'} 
            bgImage={urlFor(landingPageContent.forestBackgroundImage).url()}
 
            bgSize="cover" bgPosition="center" 

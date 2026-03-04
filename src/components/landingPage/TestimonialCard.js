@@ -21,35 +21,35 @@ const testimonials = [
     role: 'Governance Course ',
     content: 'Your flexibility and willingness to rethink the agenda midway was necessary to ensure the successful outcomes.',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637864/images_1_jje5hj.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/a285f35eac9296b904c08b0366d9151ea70697b3-225x225.jpg',
   },
   {
     name: 'Little Cranes Montessori Kindergarten, Headteacher',
     role: 'Professional Development Course',
     content: 'Well-equipped and well-informed about the specific field. Variety of examples to study and good use of the tangible material. No room for detachment!',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637805/images_fjxltj.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/cc06d4cfb9bc498c852809e3c9c822b5beb3c6b4-225x224.jpg',
   },
   {
     name: 'Taibah International School, Headteacher',
     role: 'School Operations Audit & Review Course',
     content: 'Thorough and very useful in giving us a clear view of areas of strength and our overlooked areas.',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637806/Taibah-International-School-logo-300x155_kzzuvd.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/b865805d73e60f47108aee5bd84ccc15c069e5c1-300x155.jpg',
   },
   {
     name: 'The North Green School, Director',
     role: 'School Start Up Course',
     content: 'The Consultantcy support received was beyond exceptional. It exceeded our expectations!',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637987/images_2_zpvxof.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/526ba18a2e88b4b5f04ee252aa9a236638396d4b-225x225.jpg',
   },
   {
     name: 'Kings International School Kampala, Director',
     role: 'Equipping Leaders Course',
     content:'​I just wanted to write and let you know how much we have enjoyed having you coach us. You really are an extremely good communicator. Everything we\'ve heard or discussed with you has been exactly what we\'ve needed to hear. You are really, really good at your job! ',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637806/thTJLxxo_400x400_jgniba.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/5d4810e2156cea7ba9de5a050f5bef56b796756e-400x400.jpg',
   },
 ]
 

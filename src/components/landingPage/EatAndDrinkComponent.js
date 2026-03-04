@@ -53,7 +53,7 @@ const EatAndDrinkComponent = () => {
 
           <Box rounded={'xl'} my={{lg: 24}}>
             <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720634459/MG_3316-e1671369861591_v1zw6w.jpg'}
+              src={'https://cdn.sanity.io/images/y563wtf6/production/3044e7feaec13467117e426b11368b08ff4f77f5-400x387.jpg'}
               width={1000}
               height={666} 
             />
@@ -61,7 +61,7 @@ const EatAndDrinkComponent = () => {
 
             <Box rounded={'xl'} my={{lg: 24}}>
             <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720634466/MG_3259-e1670999426473_hj0cse.jpg'}
+              src={'https://cdn.sanity.io/images/y563wtf6/production/d6ba2dc158d277312ef404cbdd894009c80a52ff-1000x650.jpg'}
               width={1000}
               height={666} 
             />

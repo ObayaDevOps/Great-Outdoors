@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
 import { Box, Show} from '@chakra-ui/react'
-import { getCloudinaryImage, getCloudinaryImageBlur } from '../util/cloudinaryImageRetreival';
 
 import NextLink from 'next/link'
 
@@ -21,7 +21,7 @@ import AboutUsComponent2 from '../components/landingPage/AboutUsComponent2'
 import EatAndDrinkComponent2 from '../components/landingPage/EatAndDrinkComponent2'
 import Carousel2 from '../components/carousel2'
 
-import BookingsWidget from '../components/bookingsWidget'
+const BookingsWidget = dynamic(() => import('../components/bookingsWidget'), { ssr: false })
 
 import NavBar from '../components/navbar' 
 import Footer from '../components/footer' 
@@ -54,7 +54,7 @@ export async function getStaticProps() {
 
 const slides =[
   {   
-      img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1719928250/IMG_3683-scaled_wby9wk.jpg",
+      img: "https://cdn.sanity.io/images/y563wtf6/production/f2df4a9d73ef620357e06dff709bc5de4fafe9ed-2560x1707.jpg",
       width: 770,
       height: 300,
       caption: "Great Outdoors",
@@ -62,7 +62,7 @@ const slides =[
 
   },
   {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990249/MG_2753-2_vkitl3.jpg",
+    img: "https://cdn.sanity.io/images/y563wtf6/production/eb731f11d3d652d46dce1693378769069bb0fd4a-2048x1248.jpg",
     width: 1024,
     height: 683,
     caption: "Great Outdoors",
@@ -70,7 +70,7 @@ const slides =[
   
   },
   {   
-    img: "https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716990366/MG_2898-2_y3khog.jpg",
+    img: "https://cdn.sanity.io/images/y563wtf6/production/5137b34e2b874e50e5e934b4a2941860377e0ba5-2021x1267.jpg",
     width: 1024,
     height: 683,
     caption: "Great Outdoors",
@@ -92,24 +92,16 @@ export default function Home(props) {
         <meta name="description" content="Retreat.Rest.Rejuvenate" />
         <meta property="og:title" content="Great Outdoors Kalanamu" />
         <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-        <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-        <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <meta property="og:image" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
+        <meta property="og:image:secure_url" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
         <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+        <link rel="icon" href="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
       
         <link href="https://reservations.reserveport.com/static/css/app.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://www.reserveport.com/media/api5/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" />
 
-        <script src="https://reservations.reserveport.com/checkavailability/static/js/manifest.js"></script>
-        <script src="https://reservations.reserveport.com/checkavailability/static/js/vendor.js"></script>
-        <script src="https://reservations.reserveport.com/checkavailability/static/js/app.js"></script>
-
-        <script src="https://www.reserveport.com/media/api5/jquery.min.js" async></script>
-        <script src="https://www.reserveport.com/media/api5/popper.min.js" async></script>
-        <script src="https://www.reserveport.com/media/api5/bootstrap.min.js" async></script>
-      
       </Head>
 
       <Box>
@@ -155,5 +147,3 @@ export default function Home(props) {
       
   )
 }
-
-
