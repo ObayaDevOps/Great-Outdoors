@@ -10,7 +10,7 @@ const testimonials = [
     role: 'Governance Course ',
     content: 'Your flexibility and willingness to rethink the agenda midway was necessary to ensure the successful outcomes.',
     avatar:
-      'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1718637864/images_1_jje5hj.jpg',
+      'https://cdn.sanity.io/images/y563wtf6/production/a285f35eac9296b904c08b0366d9151ea70697b3-225x225.jpg',
   },
 
 ]
@@ -22,7 +22,7 @@ const TestimonialsComponent = () => {
       <Box bg={'white'} mx={10}  p={12} rounded='xl'>
 
         <HStack p={28}>
-          <Box rounded={'2xl'} bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720012115/IMG_4029-scaled_wygye5.jpg'} 
+          <Box rounded={'2xl'} bgImage={'https://cdn.sanity.io/images/y563wtf6/production/a48090036fe7d916fc22fdf2f58d5a05f696f5cb-2560x1707.jpg'} 
           // maxW={'35vw'} 
           p={12}>
           <HStack>
@@ -71,7 +71,7 @@ const TestimonialsComponent = () => {
 
           <Box>
             {/* <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg'}
+              src={'https://cdn.sanity.io/images/y563wtf6/production/843e59ad5c67facf982ff7ca6cdf963fff79deda-1000x666.jpg'}
               width={1000}
               height={666}      
             /> */}

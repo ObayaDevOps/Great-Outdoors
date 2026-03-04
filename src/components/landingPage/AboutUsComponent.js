@@ -55,7 +55,7 @@ const AboutUsComponent = () => {
 
           <Box rounded={'xl'} my={{lg: 24}}>
             <Image
-              src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720008924/MG_2634-3-e1671000104768_k2zbhy.jpg'}
+              src={'https://cdn.sanity.io/images/y563wtf6/production/843e59ad5c67facf982ff7ca6cdf963fff79deda-1000x666.jpg'}
               width={1000}
               height={666} 
             />

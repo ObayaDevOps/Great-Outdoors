@@ -113,7 +113,7 @@ export default function AmenitiesComponent(){
       w="full"
       justifyContent="center"
       alignItems="center"
-      bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1720101466/IMG_4045-scaled_umaqq6.jpg'}
+      bgImage={'https://cdn.sanity.io/images/y563wtf6/production/679d5dc4f0a7b5ce26a6712cca8e414b252d246f-2560x1707.jpg'}
       bgSize="cover" bgPosition="center" bgAttachment="fixed"
       overflowX='hidden'
       minH={{base:' 260vh', md:'170vh'}} 

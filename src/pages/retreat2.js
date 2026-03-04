@@ -38,20 +38,20 @@ const CorporateRetreats = () => {
 
       <meta property="og:title" content="Great Outdoors Kalanamu" />
       <meta property="og:description" content="Eco-friendly forest resort, located only 45 minutes (about 35km) drive from Kampala" />
-      <meta property="og:image" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
-      <meta property="og:image:secure_url" content="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      <meta property="og:image" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
+      <meta property="og:image:secure_url" content="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
       <meta property="og:url" content="https://greatoutdoorsuganda.com/" />
       <meta property="og:type" content="website" />
 
 
-      <link rel="icon" href="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png" />
+      <link rel="icon" href="https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png" />
     </Head>
 
       
       <NavBar />  {/* Add the NavBar component here */}
       <Box width="100vw" position="relative" left="50%" right="50%" marginLeft="-50vw" marginRight="-50vw">
         <Image
-          src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg"
+          src="https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg"
           alt="Corporate Retreat"
           objectFit="cover"
           w="100%"
@@ -86,7 +86,7 @@ const CorporateRetreats = () => {
               </Button>
             </Box>
             <Image
-              src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg"
+              src="https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg"
               alt="Corporate Space"
               borderRadius="lg"
             />
@@ -205,7 +205,7 @@ const CorporateRetreats = () => {
           {/* Accommodation Section */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} alignItems="center" my={8}>
             <Image
-              src="https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg"
+              src="https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg"
               alt="Accommodation"
               borderRadius="lg"
             />
@@ -256,16 +256,16 @@ export default CorporateRetreats;
 
 // Sample data for activities and gallery images
 const activities = [
-  { name: 'Cycling', image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg' },
-  { name: 'Nature Walk', image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg' },
-  { name: 'Bonfire', image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg' },
-  { name: 'Darts', image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg' },
-  { name: 'Darts', image: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg' },
+  { name: 'Cycling', image: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg' },
+  { name: 'Nature Walk', image: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg' },
+  { name: 'Bonfire', image: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg' },
+  { name: 'Darts', image: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg' },
+  { name: 'Darts', image: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg' },
 
 ];
 
 const galleryImages = [
-  { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg', alt: 'Dining & Restaurant' },
-  { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg', alt: 'Event Space' },
-  { src: 'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170789/IMG_4904-Copy_xd8f6m.jpg', alt: 'Pool' },
+  { src: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg', alt: 'Dining & Restaurant' },
+  { src: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg', alt: 'Event Space' },
+  { src: 'https://cdn.sanity.io/images/y563wtf6/production/3b06db02967d6ff7491f366e7b90718ddedbe51b-2048x1365.jpg', alt: 'Pool' },
 ];

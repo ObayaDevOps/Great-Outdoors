@@ -26,6 +26,7 @@ import {
   } from '@chakra-ui/icons';
 
   import NextImage from 'next/image'
+  import { useEffect, useState } from 'react'
 
 
   import NextLink from 'next/link'
@@ -52,11 +53,27 @@ import {
   }
 
   import { FaBeer } from 'react-icons/fa';
+  import { fetchSiteSettings, siteImageUrl } from '../sanity/lib/siteSettings';
 
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode()
+    const [logoUrl, setLogoUrl] = useState('https://cdn.sanity.io/images/y563wtf6/production/641970a92ad5743a146ec13fa1baef3e15a014f6-800x520.png')
+
+    useEffect(() => {
+      let active = true
+      fetchSiteSettings()
+        .then((settings) => {
+          if (!active) return
+          const mapped = siteImageUrl(settings?.primaryLogo)
+          if (mapped) setLogoUrl(mapped)
+        })
+        .catch(() => {})
+      return () => {
+        active = false
+      }
+    }, [])
   
     return (
       <Box
@@ -108,7 +125,7 @@ import {
             >
               <NextLink href='/#' passHref>
                     <NextImage 
-                    src={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1716989029/tgo-logo-e1671037379448_tee1nd.png'} 
+                    src={logoUrl} 
                     width={70} height={70}/>
               </NextLink>
             </Flex>
@@ -374,4 +391,3 @@ import {
   ];
 
   
-

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity:upload:mapping": "node scripts/upload-cloudinary-assets-to-sanity.mjs",
+    "sanity:sync:mapping": "node scripts/sync-mapping-to-site-settings.mjs",
+    "playwright:strict:parity": "node scripts/playwright-strict-parity.mjs"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -16,7 +19,6 @@
     "@sanity/asset-utils": "^2.0.6",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.57.2",
-    "cloudinary-build-url": "^0.2.4",
     "framer-motion": "^10.18.0",
     "next": "14.2.14",
     "next-sanity": "^9.5.0",
@@ -30,5 +32,10 @@
     "sanity": "^3.57.2",
     "styled-components": "^6.1.13",
     "yet-another-react-lightbox": "^3.21.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0"
   }
 }

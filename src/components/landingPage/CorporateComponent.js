@@ -18,7 +18,7 @@ const CorporateComponent = (props) => {
   return (
     <Box bgColor={'#0b1722'} minH={'100vh'} >
       <Box minH={{base:' 160%', md:'120vh'}} 
-        // bgImage={'https://res.cloudinary.com/medoptics-image-cloud/image/upload/v1724170785/IMG_2498-2-scaled-e1671048069683_vfr5dv.jpg'}
+        // bgImage={'https://cdn.sanity.io/images/y563wtf6/production/47f55c2140ee2e99da813b61f68c02fee0ffc39f-2355x1708.jpg'}
         bgImage={urlFor(landingPageContent.corporateBackgroundImage).url()}
 
         

@@ -1,7 +1,6 @@
 import { Heading, Text, Box,Center} from '@chakra-ui/react'
 // import NextImage from 'next/image'
 
-import { getCloudinaryImage, getCloudinaryImageBlur } from '../util/cloudinaryImageRetreival';
 import Image from 'next/image'
 
 import fish from '../../public/backgrounds/fishBoyz.png'
@@ -103,5 +102,4 @@ export default function AboutUs() {
   
     )
 }
-
 
